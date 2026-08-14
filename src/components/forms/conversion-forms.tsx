@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useState, type FormEventHandler } from "react";
 import {
   CheckboxGroup,
   ConsentField,
@@ -14,12 +14,6 @@ import {
   TextField,
 } from "@/components/forms/form-controls";
 import {
-  submitApexEnquiry,
-  submitBaseInterest,
-  submitElevateApplication,
-  submitGeneralEnquiry,
-} from "@/lib/forms/actions";
-import {
   apexFormatOptions,
   apexOrganisationOptions,
   apexSupportOptions,
@@ -31,17 +25,76 @@ import {
   elevateStartOptions,
   existingCoachOptions,
 } from "@/lib/forms/options";
-import { initialFormState } from "@/lib/forms/types";
+import { validateFormSubmission } from "@/lib/forms/schemas";
+import {
+  initialFormState,
+  type FormActionState,
+  type FormSubmissionType,
+} from "@/lib/forms/types";
+
+function focusFormStatus(type: FormSubmissionType) {
+  window.requestAnimationFrame(() => {
+    document.getElementById(`${type}-form-status`)?.focus();
+  });
+}
+
+function useStaticForm(type: FormSubmissionType) {
+  const [state, setState] = useState<FormActionState>(initialFormState);
+
+  const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const honeypot = formData.get("website");
+
+    if (typeof honeypot === "string" && honeypot.length > 0) {
+      setState({
+        status: "failure",
+        message: "We couldn't process this submission.",
+        detail: "Please refresh the page and try again.",
+        errors: {},
+        values: {},
+      });
+      focusFormStatus(type);
+      return;
+    }
+
+    const validation = validateFormSubmission(type, formData);
+    if (!validation.success) {
+      setState({
+        status: "invalid",
+        message: "Check the highlighted fields.",
+        detail: "Your information has not been submitted.",
+        errors: validation.errors,
+        values: validation.values,
+      });
+      focusFormStatus(type);
+      return;
+    }
+
+    setState({
+      status: "unavailable",
+      message: "Form delivery is not configured yet.",
+      detail: "Your details have not been sent or stored. No submission has been completed.",
+      errors: {},
+      values: validation.values,
+    });
+    focusFormStatus(type);
+  };
+
+  return { state, onSubmit };
+}
 
 function FormShell({
-  action,
+  onSubmit,
   state,
+  type,
   children,
   submitLabel,
   disclaimer,
 }: {
-  action: (payload: FormData) => void;
+  onSubmit: FormEventHandler<HTMLFormElement>;
   state: typeof initialFormState;
+  type: FormSubmissionType;
   children: React.ReactNode;
   submitLabel: string;
   disclaimer?: boolean;
@@ -50,9 +103,9 @@ function FormShell({
     return <FormStatus state={state} />;
   }
   return (
-    <form action={action} className="grid gap-9" noValidate={false}>
+    <form onSubmit={onSubmit} className="grid gap-9" noValidate>
       <Honeypot />
-      <FormStatus state={state} />
+      <FormStatus state={state} id={`${type}-form-status`} />
       {children}
       <div className="grid gap-5 border-t border-line pt-8">
         <PrivacyNotice disclaimer={disclaimer} />
@@ -63,9 +116,9 @@ function FormShell({
 }
 
 export function GeneralEnquiryForm() {
-  const [state, action] = useActionState(submitGeneralEnquiry, initialFormState);
+  const { state, onSubmit } = useStaticForm("general");
   return (
-    <FormShell action={action} state={state} submitLabel="Send enquiry">
+    <FormShell type="general" onSubmit={onSubmit} state={state} submitLabel="Send enquiry">
       <TextField label="Name" name="name" state={state} required autoComplete="name" maxLength={120} />
       <TextField label="Email" name="email" state={state} required type="email" autoComplete="email" inputMode="email" maxLength={254} />
       <TextField label="Organisation / team" name="organisation" state={state} autoComplete="organization" maxLength={180} />
@@ -75,9 +128,9 @@ export function GeneralEnquiryForm() {
 }
 
 export function BaseInterestForm() {
-  const [state, action] = useActionState(submitBaseInterest, initialFormState);
+  const { state, onSubmit } = useStaticForm("base_interest");
   return (
-    <FormShell action={action} state={state} submitLabel="Register interest" disclaimer>
+    <FormShell type="base_interest" onSubmit={onSubmit} state={state} submitLabel="Register interest" disclaimer>
       <TextField label="Name" name="name" state={state} required autoComplete="name" maxLength={120} />
       <TextField label="Email" name="email" state={state} required type="email" autoComplete="email" inputMode="email" maxLength={254} />
       <TextField
@@ -94,9 +147,9 @@ export function BaseInterestForm() {
 }
 
 export function ElevateApplicationForm() {
-  const [state, action] = useActionState(submitElevateApplication, initialFormState);
+  const { state, onSubmit } = useStaticForm("elevate_application");
   return (
-    <FormShell action={action} state={state} submitLabel="Submit ELEVATE application" disclaimer>
+    <FormShell type="elevate_application" onSubmit={onSubmit} state={state} submitLabel="Submit ELEVATE application" disclaimer>
       <FormSection number="01" title="About you">
         <div className="grid gap-7 sm:grid-cols-2">
           <TextField label="Full name" name="name" state={state} required autoComplete="name" maxLength={120} />
@@ -130,9 +183,9 @@ export function ElevateApplicationForm() {
 }
 
 export function ApexEnquiryForm() {
-  const [state, action] = useActionState(submitApexEnquiry, initialFormState);
+  const { state, onSubmit } = useStaticForm("apex_enquiry");
   return (
-    <FormShell action={action} state={state} submitLabel="Discuss a project">
+    <FormShell type="apex_enquiry" onSubmit={onSubmit} state={state} submitLabel="Discuss a project">
       <FormSection number="01" title="Contact">
         <div className="grid gap-7 sm:grid-cols-2">
           <TextField label="Name" name="name" state={state} required autoComplete="name" maxLength={120} />

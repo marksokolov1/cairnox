@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { getPublicAssetPath } from "@/config/site";
 import { cn } from "@/lib/cn";
 
 type AmbientVideoProps = {
@@ -12,6 +13,8 @@ type AmbientVideoProps = {
 
 export function AmbientVideo({ className, poster, src, videoClassName }: AmbientVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const posterPath = getPublicAssetPath(poster);
+  const videoPath = getPublicAssetPath(src);
 
   useEffect(() => {
     const videoElement = videoRef.current;
@@ -60,11 +63,11 @@ export function AmbientVideo({ className, poster, src, videoClassName }: Ambient
         loop
         muted
         playsInline
-        poster={poster}
+        poster={posterPath}
         preload="metadata"
         tabIndex={-1}
       >
-        <source src={src} type="video/mp4" />
+        <source src={videoPath} type="video/mp4" />
       </video>
     </div>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import { useFormStatus } from "react-dom";
 import { Button, TextLink } from "@/components/ui/primitives";
 import { cn } from "@/lib/cn";
 import type { FormActionState, FormFieldValue } from "@/lib/forms/types";
@@ -228,12 +227,13 @@ export function FormSection({
   );
 }
 
-export function FormStatus({ state }: { state: FormActionState }) {
+export function FormStatus({ state, id }: { state: FormActionState; id?: string }) {
   if (state.status === "idle") return null;
   const isSuccess = state.status === "success";
   return (
     <div
       role={isSuccess ? "status" : "alert"}
+      id={id}
       className={cn(
         "border-l-2 px-5 py-4",
         isSuccess ? "border-moss bg-stone-light" : "border-ink bg-stone-light",
@@ -270,10 +270,9 @@ export function PrivacyNotice({ disclaimer = false }: { disclaimer?: boolean }) 
 }
 
 export function SubmitButton({ children }: { children: ReactNode }) {
-  const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} aria-disabled={pending} className="w-full sm:w-auto">
-      {pending ? "Submitting…" : children}
+    <Button type="submit" className="w-full sm:w-auto">
+      {children}
     </Button>
   );
 }

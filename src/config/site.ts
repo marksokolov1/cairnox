@@ -1,5 +1,6 @@
 const configuredSiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://marksokolov1.github.io/cairnox/";
+const configuredBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const siteConfig = {
   name: "CAIRNOX",
@@ -9,6 +10,10 @@ export const siteConfig = {
   url: configuredSiteUrl.replace(/\/+$/, ""),
 } as const;
 
+export const siteBasePath = configuredBasePath
+  ? `/${configuredBasePath.replace(/^\/+|\/+$/g, "")}`
+  : "";
+
 export function getAbsoluteUrl(pathname = "/") {
   if (/^https?:\/\//i.test(pathname)) {
     return pathname;
@@ -17,6 +22,14 @@ export function getAbsoluteUrl(pathname = "/") {
   const normalizedPath = pathname === "/" ? "/" : `/${pathname.replace(/^\/+/, "")}`;
 
   return `${siteConfig.url}${normalizedPath}`;
+}
+
+export function getPublicAssetPath(pathname: string) {
+  if (/^(?:https?:)?\/\//i.test(pathname) || pathname.startsWith("data:")) {
+    return pathname;
+  }
+
+  return `${siteBasePath}/${pathname.replace(/^\/+/, "")}`;
 }
 
 export const primaryNavigation = [

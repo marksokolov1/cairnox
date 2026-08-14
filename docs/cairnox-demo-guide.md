@@ -19,6 +19,8 @@ pnpm build
 pnpm start
 ```
 
+The production preview serves the generated static export from `out/`.
+
 ## Recommended demo route
 
 1. Homepage — brand positioning and overview

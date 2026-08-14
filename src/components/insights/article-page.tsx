@@ -6,6 +6,7 @@ import type {
   InsightBodyBlock,
   PublishedInsightArticle,
 } from "@/types/insight-article";
+import { getPublicAssetPath } from "@/config/site";
 
 function headingId(text: string) {
   return text
@@ -71,7 +72,7 @@ function ArticleBlock({ block }: { block: InsightBodyBlock }) {
       return (
         <figure>
           <Image
-            src={block.image.src}
+            src={getPublicAssetPath(block.image.src)}
             alt={block.image.alt}
             width={block.image.width}
             height={block.image.height}

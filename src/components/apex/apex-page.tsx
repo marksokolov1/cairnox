@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AmbientVideo } from "@/components/home/ambient-video";
+import { getPublicAssetPath } from "@/config/site";
 import {
   ArrowLink,
   BodyCopy,
@@ -429,7 +430,7 @@ export function ApexPage() {
         <Container className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <figure className="relative aspect-[4/5] overflow-hidden bg-charcoal lg:col-span-5">
             <Image
-              src="/media/images/mathew-skyner-usa-cricket-team-training.jpg"
+              src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-team-training.jpg")}
               alt="Mathew Skyner observing athletes during a USA Cricket training session"
               fill
               sizes="(min-width: 1024px) 42vw, 100vw"

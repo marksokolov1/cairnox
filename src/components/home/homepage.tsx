@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AmbientVideo } from "@/components/home/ambient-video";
+import { getPublicAssetPath } from "@/config/site";
 import {
   ArrowLink,
   BodyCopy,
@@ -152,7 +153,7 @@ export function Homepage() {
 
           <div className="relative min-h-[23rem] overflow-hidden bg-stone-light sm:min-h-[32rem] lg:col-span-5 lg:my-8 lg:min-h-0">
             <Image
-              src="/media/images/mathew-skyner-active-rugby-coaching.jpg"
+              src={getPublicAssetPath("/media/images/mathew-skyner-active-rugby-coaching.jpg")}
               alt="Mathew Skyner actively coaching athletes during a rugby training session"
               fill
               priority
@@ -187,7 +188,7 @@ export function Homepage() {
         <Container className="grid items-center gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
           <figure className="relative aspect-[4/5] overflow-hidden bg-charcoal lg:col-span-5 lg:aspect-[4/5] lg:w-[112%] lg:max-w-none">
             <Image
-              src="/media/images/mathew-skyner-rugby-coaching-night-ball.jpg"
+              src={getPublicAssetPath("/media/images/mathew-skyner-rugby-coaching-night-ball.jpg")}
               alt="Mathew Skyner holding a rugby ball on a floodlit field at night"
               fill
               sizes="(min-width: 1024px) 44vw, 100vw"
@@ -240,7 +241,7 @@ export function Homepage() {
             </div>
             <figure className="relative aspect-[4/5] min-h-[24rem] overflow-hidden bg-charcoal lg:col-span-5 lg:min-h-[35rem]">
               <Image
-                src="/media/images/mathew-skyner-rugby-field-night-profile.jpg"
+                src={getPublicAssetPath("/media/images/mathew-skyner-rugby-field-night-profile.jpg")}
                 alt="Mathew Skyner walking in profile across a floodlit rugby field at night"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -378,7 +379,7 @@ export function Homepage() {
             </blockquote>
             <figure className="relative min-h-[27rem] overflow-hidden bg-stone lg:col-span-5 lg:min-h-[37rem]">
               <Image
-                src="/media/images/mathew-skyner-professional-rugby-coach-portrait.jpg"
+                src={getPublicAssetPath("/media/images/mathew-skyner-professional-rugby-coach-portrait.jpg")}
                 alt="Mathew Skyner smiling while carrying rugby training equipment"
                 fill
                 sizes="(min-width: 1024px) 42vw, 100vw"
@@ -410,7 +411,7 @@ export function Homepage() {
         <Container>
           <figure className="relative aspect-[4/3] overflow-hidden bg-charcoal sm:aspect-[16/9] lg:aspect-[2/1]">
             <Image
-              src="/media/images/mathew-skyner-usa-cricket-performance-team-wide.jpg"
+              src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-performance-team-wide.jpg")}
               alt="Mathew Skyner working with a USA Cricket training group on the field"
               fill
               sizes="100vw"

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getPublicAssetPath } from "@/config/site";
 import {
   ArrowLink,
   BodyCopy,
@@ -260,7 +261,7 @@ export function ResultsPage() {
             <figure className="border-b border-ink py-10 lg:col-span-4 lg:border-b-0 lg:pr-10 lg:py-12">
               <div className="relative aspect-[3/2] overflow-hidden bg-stone-light lg:aspect-[4/5]">
                 <Image
-                  src="/media/images/mathew-skyner-active-rugby-coaching.jpg"
+                  src={getPublicAssetPath("/media/images/mathew-skyner-active-rugby-coaching.jpg")}
                   alt="Mathew Skyner actively coaching during a rugby training session"
                   fill
                   sizes="(min-width: 1024px) 32vw, 100vw"
@@ -307,7 +308,7 @@ export function ResultsPage() {
           <figure>
             <div className="relative aspect-[16/9] overflow-hidden bg-stone-light lg:aspect-[16/7]">
               <Image
-                src="/media/images/mathew-skyner-usa-cricket-performance-team-wide.jpg"
+                src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-performance-team-wide.jpg")}
                 alt="Mathew Skyner addressing athletes in a USA Cricket training environment"
                 fill
                 sizes="100vw"

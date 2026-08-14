@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getPublicAssetPath } from "@/config/site";
 import {
   ArrowLink,
   BodyCopy,
@@ -157,7 +158,7 @@ export function AboutPage() {
           <figure className="pb-8 sm:pb-12 lg:col-span-5 lg:py-8">
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone-light lg:h-full lg:aspect-auto">
               <Image
-                src="/media/images/mathew-skyner-professional-rugby-coach-portrait.jpg"
+                src={getPublicAssetPath("/media/images/mathew-skyner-professional-rugby-coach-portrait.jpg")}
                 alt="Mathew Skyner smiling while carrying rugby training equipment"
                 fill
                 priority
@@ -209,7 +210,7 @@ export function AboutPage() {
           <figure className="lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden bg-stone-light">
               <Image
-                src="/media/images/mathew-skyner-usa-cricket-performance-coach-equipment.jpg"
+                src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-performance-coach-equipment.jpg")}
                 alt="Mathew Skyner carrying training equipment in a USA Cricket environment"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -334,7 +335,7 @@ export function AboutPage() {
             <figure className="lg:col-span-6">
               <div className="relative aspect-[3/2] overflow-hidden bg-stone-light">
                 <Image
-                  src="/media/images/mathew-skyner-rugby-strength-conditioning-coach.jpg"
+                  src={getPublicAssetPath("/media/images/mathew-skyner-rugby-strength-conditioning-coach.jpg")}
                   alt="Mathew Skyner coaching from the rugby sideline with a whistle"
                   fill
                   sizes="(min-width: 1024px) 48vw, 100vw"
@@ -419,7 +420,7 @@ export function AboutPage() {
           <figure className="lg:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden bg-charcoal">
               <Image
-                src="/media/images/mathew-skyner-usa-cricket-team-training.jpg"
+                src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-team-training.jpg")}
                 alt="Mathew Skyner observing athletes during a USA Cricket training session"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"

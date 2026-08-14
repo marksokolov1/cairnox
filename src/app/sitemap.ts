@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getAbsoluteUrl } from "@/config/site";
 import { getPublishedInsights } from "@/content/insights/articles";
 
+export const dynamic = "force-static";
+
 const routes = [
   "",
   "/base",

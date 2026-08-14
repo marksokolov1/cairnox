@@ -127,3 +127,5 @@ Check every source before publication. Do not cite research from summaries when 
 When published entries exist, `getPublishedInsights()` can populate a featured article and latest-articles listing on `/insights`. Category controls should be introduced only when the number of published articles makes filtering useful.
 
 Published articles automatically enter `src/app/sitemap.ts` with their canonical URL and most recent approved date. Drafts remain excluded. Search and category archive pages are deliberately deferred until the library justifies them.
+
+For the empty launch library, the static build uses a reserved validation slug required by Next.js and removes it from `out/` immediately after export. It is not published, listed or added to the sitemap.

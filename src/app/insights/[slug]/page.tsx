@@ -10,7 +10,11 @@ import { getAbsoluteUrl, siteConfig } from "@/config/site";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getPublishedInsights().map((article) => ({ slug: article.slug }));
+  const articles = getPublishedInsights();
+
+  return articles.length
+    ? articles.map((article) => ({ slug: article.slug }))
+    : [{ slug: "__build-placeholder__" }];
 }
 
 export async function generateMetadata({

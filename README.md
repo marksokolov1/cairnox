@@ -4,7 +4,7 @@ The public website for CAIRNOX, a founder-led high-performance coaching, perform
 
 ## Current status
 
-The approved public pages, responsive site shell, media, SEO foundation, Insights architecture and four contact journeys are implemented. The application is demo-ready and builds for production.
+The approved public pages, responsive site shell, media, SEO foundation, Insights architecture and four contact journeys are implemented. The application exports as a static site and deploys to GitHub Pages.
 
 **Production form delivery is intentionally not configured yet.** Forms demonstrate structure, accessibility and validation without sending or storing submissions externally.
 
@@ -39,6 +39,8 @@ pnpm build
 pnpm start
 ```
 
+`pnpm build` creates the deployable site in `out/`. The local production preview uses Python's built-in static server.
+
 ## Routes
 
 Public pages:
@@ -67,7 +69,7 @@ Legal placeholders exist at `/privacy`, `/terms`, `/cookie-policy` and `/trainin
 src/app/                 App Router pages, metadata, sitemap and robots
 src/components/          Page, layout, form and design-system components
 src/content/insights/    Typed local Insights content registry
-src/lib/forms/           Validation, server actions and provider adapters
+src/lib/forms/           Validation and future provider architecture
 public/brand/            Runtime logo asset
 public/media/            Runtime images, video and poster assets
 docs/                    Implementation, content, demo and publishing guides
@@ -79,9 +81,9 @@ Runtime assets required by the website are tracked under `public/`. Original ref
 
 ## Forms
 
-Forms use shared client constraints and authoritative server-side validation, accessible inline errors, a honeypot, a rate-limit adapter point and a provider interface.
+The GitHub Pages build uses shared browser-side validation, accessible inline errors and a honeypot. Valid submissions return a truthful unavailable notice and are not transmitted or stored.
 
-Without a configured provider, valid submissions return a truthful notice that no information was sent or stored. For local-only delivery-flow testing, see [the forms and conversion guide](docs/cairnox-forms-and-conversion-guide.md).
+The existing provider interfaces remain as architecture for a future server-backed integration. See [the forms and conversion guide](docs/cairnox-forms-and-conversion-guide.md).
 
 ## Insights
 
@@ -92,7 +94,7 @@ Insights uses a typed local content registry and future `/insights/[slug]` route
 Copy `.env.example` to `.env.local` when local configuration is needed.
 
 - `NEXT_PUBLIC_SITE_URL` — canonical public site URL; currently set provisionally to `https://marksokolov1.github.io/cairnox/`.
-- `CAIRNOX_FORM_PROVIDER` — optional local-only development adapter selector. The only current value is `development`, and it is disabled in production.
+- `NEXT_PUBLIC_BASE_PATH` — repository path prefix; the deployment workflow sets it to `/cairnox` and local development leaves it empty.
 
 No production form-provider credentials are defined because no provider has been approved.
 
@@ -105,6 +107,8 @@ No production form-provider credentials are defined because no provider has been
 - [Demo guide](docs/cairnox-demo-guide.md)
 - [GitHub publishing guide](docs/github-publish-guide.md)
 
-## Deployment
+## GitHub Pages deployment
 
-The application is deployment-ready, but it is not claimed to be live. Before public launch, configure the production domain, approved form-delivery provider and recipient address, final legal copy, and any optional analytics tooling.
+Pushes to `main` run `.github/workflows/deploy-pages.yml`, build a path-safe static export and deploy the `out/` directory to `https://marksokolov1.github.io/cairnox/`.
+
+In the GitHub repository, **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**. Production form delivery, final legal copy and any optional analytics remain separate launch tasks.

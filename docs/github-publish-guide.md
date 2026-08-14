@@ -1,43 +1,43 @@
-# Publish CAIRNOX to GitHub
+# Publish CAIRNOX with GitHub Pages
 
-The local repository is already initialized on the `main` branch. No GitHub remote is configured.
+The local repository is connected to `https://github.com/marksokolov1/cairnox.git`. The website is deployed by `.github/workflows/deploy-pages.yml` whenever `main` is pushed.
 
-## Option A — GitHub website and terminal
+## One-time GitHub Pages setting
 
-1. Sign in to GitHub and create a new, empty repository.
-2. Do **not** initialize it with another README, `.gitignore` or license.
-3. Copy the repository URL shown by GitHub.
-4. Open Terminal and run:
+1. Open the `marksokolov1/cairnox` repository on GitHub.
+2. Go to **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. Open the **Actions** tab and select **Deploy CAIRNOX to GitHub Pages**.
+5. Run the workflow if it has not already started from the latest push.
+
+The published URL is:
+
+`https://marksokolov1.github.io/cairnox/`
+
+## Publish future changes
+
+From the project directory:
 
 ```bash
 cd /Users/marksokolov/Desktop/cairnox
-git remote add origin <repository-url>
-git push -u origin main
+git status
+git add <changed-files>
+git commit -m "Describe the update"
+git push origin main
 ```
 
-Use an HTTPS URL if you prefer GitHub's browser/credential-manager sign-in. Use an SSH URL only if an SSH key is already configured with GitHub.
-
-Verify the connection and local status:
+Verify the remote and deployment:
 
 ```bash
 git remote -v
 git status
 ```
 
-## Option B — GitHub CLI
+Then check the GitHub **Actions** tab. A successful run deploys the generated `out/` artifact; source files and the README are not served as the website.
 
-If the optional `gh` command is installed and authenticated:
+## Important limitations
 
-```bash
-cd /Users/marksokolov/Desktop/cairnox
-gh repo create --source=. --remote=origin --push
-```
-
-Follow the prompts to choose the repository owner, name and visibility. This project does not require Git LFS.
-
-## Before publishing
-
-- Confirm the new repository contains no environment files or secrets.
-- Keep the repository private until the owner decides otherwise.
-- The provisional public URL is `https://marksokolov1.github.io/cairnox/`; update `NEXT_PUBLIC_SITE_URL` if the production URL changes.
-- Production form delivery still requires an approved provider and receiving address.
+- GitHub Pages is static hosting, so the demo forms validate in the browser but do not send or store data.
+- Production form delivery still requires an approved external provider and receiving address.
+- Update both workflow environment values if the repository name or public URL changes.
+- This project does not require Git LFS.

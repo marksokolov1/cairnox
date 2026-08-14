@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getPublicAssetPath } from "@/config/site";
 import { cn } from "@/lib/cn";
 
 export function Logo({ className, priority = false }: { className?: string; priority?: boolean }) {
@@ -10,7 +11,7 @@ export function Logo({ className, priority = false }: { className?: string; prio
       aria-label="CAIRNOX home"
     >
       <Image
-        src="/brand/cairnox-logo.png"
+        src={getPublicAssetPath("/brand/cairnox-logo.png")}
         alt="CAIRNOX Performance"
         width={2172}
         height={724}
