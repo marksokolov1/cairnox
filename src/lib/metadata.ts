@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteConfig } from "@/config/site";
+import { getAbsoluteUrl, siteConfig } from "@/config/site";
 
 export function createPageMetadata({
   title,
@@ -15,13 +15,13 @@ export function createPageMetadata({
   return {
     title,
     description,
-    alternates: { canonical: pathname },
+    alternates: { canonical: getAbsoluteUrl(pathname) },
     openGraph: {
       type: "website",
       siteName: siteConfig.name,
       title,
       description,
-      url: pathname,
+      url: getAbsoluteUrl(pathname),
     },
     robots: { index, follow: true },
   };

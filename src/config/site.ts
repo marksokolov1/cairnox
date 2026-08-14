@@ -1,10 +1,23 @@
+const configuredSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://marksokolov1.github.io/cairnox/";
+
 export const siteConfig = {
   name: "CAIRNOX",
   title: "CAIRNOX | High-Performance Coaching & Consultancy",
   description:
     "Founder-led high-performance coaching, performance programmes and consultancy built on structure, progression and performance.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: configuredSiteUrl.replace(/\/+$/, ""),
 } as const;
+
+export function getAbsoluteUrl(pathname = "/") {
+  if (/^https?:\/\//i.test(pathname)) {
+    return pathname;
+  }
+
+  const normalizedPath = pathname === "/" ? "/" : `/${pathname.replace(/^\/+/, "")}`;
+
+  return `${siteConfig.url}${normalizedPath}`;
+}
 
 export const primaryNavigation = [
   { label: "BASE", href: "/base", descriptor: "Performance Programmes" },

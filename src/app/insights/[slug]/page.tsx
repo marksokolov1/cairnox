@@ -5,7 +5,7 @@ import {
   getPublishedInsight,
   getPublishedInsights,
 } from "@/content/insights/articles";
-import { siteConfig } from "@/config/site";
+import { getAbsoluteUrl, siteConfig } from "@/config/site";
 
 export const dynamicParams = false;
 
@@ -36,18 +36,18 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: { canonical: pathname },
+    alternates: { canonical: getAbsoluteUrl(pathname) },
     robots: { index: true, follow: true },
     openGraph: {
       type: "article",
       siteName: siteConfig.name,
       title,
       description,
-      url: pathname,
+      url: getAbsoluteUrl(pathname),
       publishedTime: article.publicationDate,
       modifiedTime: article.updatedDate,
       authors: [article.author.name],
-      images: openGraphImage ? [{ url: openGraphImage }] : undefined,
+      images: openGraphImage ? [{ url: getAbsoluteUrl(openGraphImage) }] : undefined,
     },
   };
 }

@@ -39,5 +39,5 @@ Follow the prompts to choose the repository owner, name and visibility. This pro
 
 - Confirm the new repository contains no environment files or secrets.
 - Keep the repository private until the owner decides otherwise.
-- Set `NEXT_PUBLIC_SITE_URL` to the approved production origin during deployment.
+- The provisional public URL is `https://marksokolov1.github.io/cairnox/`; update `NEXT_PUBLIC_SITE_URL` if the production URL changes.
 - Production form delivery still requires an approved provider and receiving address.

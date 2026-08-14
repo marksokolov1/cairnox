@@ -91,7 +91,7 @@ Insights uses a typed local content registry and future `/insights/[slug]` route
 
 Copy `.env.example` to `.env.local` when local configuration is needed.
 
-- `NEXT_PUBLIC_SITE_URL` — canonical production origin; defaults to `http://localhost:3000`.
+- `NEXT_PUBLIC_SITE_URL` — canonical public site URL; currently set provisionally to `https://marksokolov1.github.io/cairnox/`.
 - `CAIRNOX_FORM_PROVIDER` — optional local-only development adapter selector. The only current value is `development`, and it is disabled in production.
 
 No production form-provider credentials are defined because no provider has been approved.
