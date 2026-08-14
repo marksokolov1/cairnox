@@ -1,0 +1,387 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-canvas: var(--cairnox-cream);
+  --color-ink: var(--cairnox-black);
+  --color-charcoal: var(--cairnox-charcoal);
+  --color-mineral: var(--cairnox-mineral);
+  --color-stone: var(--cairnox-stone);
+  --color-stone-light: var(--cairnox-stone-light);
+  --color-moss: var(--cairnox-moss);
+  --color-ochre: var(--cairnox-ochre);
+  --color-line: var(--cairnox-line);
+  --font-sans: var(--font-cairnox-sans);
+  --font-display: var(--font-cairnox-display);
+}
+
+:root {
+  /* Provisional implementation values. These are centralized for later approval. */
+  --cairnox-cream: #f2eee4;
+  --cairnox-black: #111310;
+  --cairnox-charcoal: #292c28;
+  --cairnox-mineral: #656960;
+  --cairnox-stone: #aaa99f;
+  --cairnox-stone-light: #e3ded2;
+  --cairnox-moss: #4f5948;
+  --cairnox-ochre: #8a6f3c;
+  --cairnox-line: #cbc5b8;
+
+  /* Provisional system-font stack; replace these two tokens to rebrand globally. */
+  --font-cairnox-sans: "Helvetica Neue", "Inter", "Arial Nova", Arial, sans-serif;
+  --font-cairnox-display: "Helvetica Neue", "Inter", "Arial Nova", Arial, sans-serif;
+
+  --container-gutter: clamp(1.25rem, 3.5vw, 4rem);
+  --container-max: 96rem;
+  --space-section-compact: clamp(3rem, 6vw, 5rem);
+  --space-section: clamp(4.5rem, 8vw, 8rem);
+  --space-section-large: clamp(6rem, 11vw, 11rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--cairnox-cream);
+}
+
+body {
+  margin: 0;
+  background: var(--cairnox-cream);
+  color: var(--cairnox-black);
+  font-family: var(--font-cairnox-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--cairnox-moss);
+  color: var(--cairnox-cream);
+}
+
+a,
+button,
+summary,
+input,
+textarea,
+select {
+  outline-offset: 4px;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  background: var(--cairnox-black);
+  color: var(--cairnox-cream);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-container {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+  padding-inline: var(--container-gutter);
+}
+
+.section-space-compact {
+  padding-block: var(--space-section-compact);
+}
+
+.section-space {
+  padding-block: var(--space-section);
+}
+
+.section-space-large {
+  padding-block: var(--space-section-large);
+}
+
+.type-display {
+  max-width: 16ch;
+  font-family: var(--font-cairnox-display);
+  font-size: clamp(2.6rem, 7vw, 6.75rem);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.type-hero {
+  max-width: none;
+  font-size: clamp(3rem, 5.2vw, 5.75rem);
+  line-height: 0.94;
+}
+
+.type-section-heading {
+  max-width: 22ch;
+  font-family: var(--font-cairnox-display);
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.type-body {
+  max-width: 68ch;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.type-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.button-base {
+  display: inline-flex;
+  min-height: 2.875rem;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+  padding: 0.8rem 1.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.text-link {
+  text-decoration-line: underline;
+  text-decoration-color: var(--cairnox-stone);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+  transition: text-decoration-color 160ms ease;
+}
+
+.text-link:hover {
+  text-decoration-color: currentColor;
+}
+
+.arrow-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.arrow-link-mark {
+  transition: transform 160ms ease;
+}
+
+.arrow-link:hover .arrow-link-mark {
+  transform: translateX(0.25rem);
+}
+
+.nav-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: border-color 160ms ease;
+}
+
+.nav-link:hover {
+  border-color: currentColor;
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.3em;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.footer-link:hover {
+  color: var(--cairnox-cream);
+  text-decoration-color: currentColor;
+}
+
+.homepage .type-eyebrow,
+.elevate-page .type-eyebrow,
+.base-page .type-eyebrow,
+.apex-page .type-eyebrow,
+.method-page .type-eyebrow,
+.about-page .type-eyebrow,
+.results-page .type-eyebrow,
+.insights-page .type-eyebrow,
+.contact-system .type-eyebrow,
+.site-footer .type-eyebrow {
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+}
+
+.homepage .border-line,
+.elevate-page .border-line,
+.base-page .border-line,
+.apex-page .border-line,
+.method-page .border-line,
+.about-page .border-line,
+.results-page .border-line,
+.insights-page .border-line,
+.contact-system .border-line {
+  border-color: color-mix(in srgb, var(--cairnox-black) 20%, transparent);
+}
+
+.homepage .arrow-link,
+.elevate-page .arrow-link,
+.base-page .arrow-link,
+.apex-page .arrow-link,
+.method-page .arrow-link,
+.about-page .arrow-link,
+.results-page .arrow-link,
+.insights-page .arrow-link,
+.contact-system .arrow-link {
+  font-size: 0.75rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.form-control {
+  width: 100%;
+  min-height: 3.25rem;
+  border: 1px solid color-mix(in srgb, var(--cairnox-black) 32%, transparent);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--cairnox-cream) 72%, transparent);
+  color: var(--cairnox-black);
+  padding: 0.8rem 0.9rem;
+  font: inherit;
+  line-height: 1.4;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.form-control:hover {
+  border-color: color-mix(in srgb, var(--cairnox-black) 55%, transparent);
+}
+
+.form-control:focus {
+  border-color: var(--cairnox-black);
+  background: var(--cairnox-cream);
+}
+
+.form-control[aria-invalid="true"] {
+  border-color: var(--cairnox-black);
+  border-width: 2px;
+}
+
+.form-control::placeholder {
+  color: var(--cairnox-mineral);
+  opacity: 0.82;
+}
+
+.form-textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.form-select {
+  appearance: auto;
+}
+
+.form-choice {
+  display: flex;
+  min-height: 2.75rem;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--cairnox-black) 14%, transparent);
+  padding-block: 0.65rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.form-choice input {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: 0 0 auto;
+  accent-color: var(--cairnox-black);
+}
+
+.form-honeypot {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+
+.button-base:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.menu-trigger {
+  display: inline-flex;
+  width: 2.875rem;
+  height: 2.875rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 1px solid var(--cairnox-line);
+}
+
+.menu-trigger-line {
+  display: block;
+  width: 1rem;
+  height: 1px;
+  background: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .arrow-link-mark {
+    transition: none;
+  }
+}

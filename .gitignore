@@ -1,0 +1,37 @@
+# Dependencies and local package stores
+/node_modules/
+/.pnpm-store/
+
+# Next.js and generated output
+/.next/
+/out/
+/build/
+/coverage/
+*.tsbuildinfo
+
+# Local environment and deployment state
+.env*
+!.env.example
+.vercel/
+
+# Logs and caches
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+.turbo/
+
+# Operating-system and editor state
+.DS_Store
+.idea/
+.vscode/
+
+# Local review output
+/artifacts/
+
+# Original/reference assets retained locally; runtime copies are under public/
+/Media/
+/CAIRNOX_Brand_Identity_Description.docx
+/logo_transparent.png
