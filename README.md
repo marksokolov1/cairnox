@@ -93,8 +93,8 @@ Insights uses a typed local content registry and future `/insights/[slug]` route
 
 Copy `.env.example` to `.env.local` when local configuration is needed.
 
-- `NEXT_PUBLIC_SITE_URL` — canonical public site URL; currently set provisionally to `https://marksokolov1.github.io/cairnox/`.
-- `NEXT_PUBLIC_BASE_PATH` — repository path prefix; the deployment workflow sets it to `/cairnox` and local development leaves it empty.
+- `NEXT_PUBLIC_SITE_URL` — canonical public site URL; set to `https://cairnox.com/` for production.
+- `NEXT_PUBLIC_BASE_PATH` — optional repository path prefix; empty for the root-domain deployment and local development.
 
 No production form-provider credentials are defined because no provider has been approved.
 
@@ -109,6 +109,6 @@ No production form-provider credentials are defined because no provider has been
 
 ## GitHub Pages deployment
 
-Pushes to `main` run `.github/workflows/deploy-pages.yml`, build a path-safe static export and deploy the `out/` directory to `https://marksokolov1.github.io/cairnox/`.
+Pushes to `main` run `.github/workflows/deploy-pages.yml`, build a static export and deploy the `out/` directory for `https://cairnox.com/`.
 
-In the GitHub repository, **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**. Production form delivery, final legal copy and any optional analytics remain separate launch tasks.
+In the GitHub repository, **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**, and **Custom domain** must be set to `cairnox.com`. Production form delivery, final legal copy and any optional analytics remain separate launch tasks.

@@ -1,5 +1,5 @@
 const configuredSiteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://marksokolov1.github.io/cairnox/";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://cairnox.com/";
 const configuredBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const siteConfig = {
