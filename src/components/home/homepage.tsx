@@ -153,12 +153,12 @@ export function Homepage() {
 
           <div className="relative min-h-[23rem] overflow-hidden bg-stone-light sm:min-h-[32rem] lg:col-span-5 lg:my-8 lg:min-h-0">
             <Image
-              src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-resisted-sprint-coaching.jpg")}
-              alt="Mathew Skyner coaching a USA Cricket athlete during resisted sprint training"
+              src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-performance-coach-portrait.jpg")}
+              alt="Mathew Skyner in a USA Cricket performance environment"
               fill
               priority
               sizes="(min-width: 1024px) 42vw, 100vw"
-              className="object-cover object-[58%_center] saturate-[0.88] contrast-[1.04] sepia-[0.02]"
+              className="object-cover object-[50%_42%] saturate-[0.9] contrast-[1.04] sepia-[0.02]"
             />
           </div>
         </Container>

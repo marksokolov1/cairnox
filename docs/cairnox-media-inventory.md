@@ -12,12 +12,12 @@ The source files were inspected individually and copied without renaming or alte
 
 | Exact source filename | Public path | Visible depiction | Implemented placement | Notes |
 |---|---|---|---|---|
-| `2026-08-27 18.19.39.jpg` | `/media/images/mathew-skyner-usa-cricket-resisted-sprint-coaching.jpg` | Mathew coaching a USA Cricket athlete during resisted sprint work | Homepage hero; BASE experience | Strongest action photograph in the candidate library. |
+| `2026-08-27 18.19.39.jpg` | `/media/images/mathew-skyner-usa-cricket-resisted-sprint-coaching.jpg` | Mathew coaching a USA Cricket athlete during resisted sprint work | BASE experience | Strong action photograph retained where the training context has more supporting explanation. |
 | `2026-08-27 18.18.55.jpg` | `/media/images/mathew-skyner-usa-cricket-world-cup-field.jpg` | Mathew on field within a USA Cricket / T20 World Cup venue environment | Homepage founder section | Portrait source; venue context retained. |
 | `2026-08-27 18.19.24.jpg` | `/media/images/mathew-skyner-usa-cricket-training-field.jpg` | Mathew observing a USA Cricket field training session | Homepage philosophy | Crop keeps Mathew primary and de-emphasises the partial athlete at left. |
 | `2026-08-27 18.18.49.jpg` | `/media/images/mathew-skyner-usa-cricket-individual-resistance-coaching.jpg` | Mathew coaching one athlete during resistance training | ELEVATE founder proof | Directly supports individual-coaching positioning. |
 | `2026-08-27 18.19.09.jpg` | `/media/images/mathew-skyner-usa-cricket-athlete-conversation.jpg` | Mathew walking and speaking with a USA Cricket athlete | METHOD cross-context section | Landscape source uses a landscape container to preserve both people. |
-| `2026-08-27 18.19.05.jpg` | `/media/images/mathew-skyner-usa-cricket-performance-coach-portrait.jpg` | Mathew in a USA Cricket performance environment | ABOUT hero | Primary founder portrait for the cricket-led site. |
+| `2026-08-27 18.19.05.jpg` | `/media/images/mathew-skyner-usa-cricket-performance-coach-portrait.jpg` | Mathew in a USA Cricket performance environment | Homepage hero; ABOUT hero | Primary founder portrait and immediate cricket-performance introduction. |
 | `2026-08-27 18.19.28.jpg` | `/media/images/mathew-skyner-usa-cricket-field-coaching.jpg` | Mathew working during USA Cricket field training | ABOUT coaching approach | Working-practitioner evidence. |
 | `2026-08-27 18.19.32.jpg` | `/media/images/usa-cricket-team-performance-environment.jpg` | USA Cricket players and performance staff at a T20 World Cup venue | RESULTS environment proof | Kept separate from the clearly labelled rugby testimonial section. |
 
