@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { footerNavigation, legalNavigation } from "@/config/site";
 import { Container } from "@/components/ui/primitives";
+import { CompactSocialLinks } from "@/components/contact/contact-links";
 
 export function SiteFooter() {
   return (
@@ -29,6 +30,7 @@ export function SiteFooter() {
             <p className="mt-2 max-w-sm text-sm leading-relaxed text-stone">
               Structure. Progression. Performance.
             </p>
+            <CompactSocialLinks className="mt-5 text-sm text-stone" />
           </div>
           <nav aria-label="Legal">
             <ul className="flex flex-wrap gap-x-6 gap-y-3 text-[0.78rem] text-stone">

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { ArrowLink, BodyCopy, Container, DisplayHeading, Eyebrow, Section, SectionHeading, TextLink } from "@/components/ui/primitives";
 import { ApexEnquiryForm, BaseInterestForm, ElevateApplicationForm, GeneralEnquiryForm } from "@/components/forms/conversion-forms";
+import { DirectContactLinks } from "@/components/contact/contact-links";
 
 type ContactPathway = {
   label: string;
@@ -93,6 +94,7 @@ export function ContactHub() {
               <p className="mt-7 max-w-sm text-base leading-7 text-mineral">
                 Use this short form for questions that do not belong to BASE, ELEVATE or APEX. Required fields are marked with an asterisk.
               </p>
+              <DirectContactLinks className="mt-9 max-w-sm" />
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
               <GeneralEnquiryForm />
@@ -151,6 +153,7 @@ export function SpecialistContactPage({
               <Eyebrow>{formLabel}</Eyebrow>
               <p className="mt-7 max-w-sm text-base leading-7 text-mineral">{formIntro}</p>
               <p className="mt-5 text-sm text-mineral">Required fields are marked with an asterisk.</p>
+              <DirectContactLinks className="mt-9 max-w-sm" />
             </aside>
             <div className="lg:col-span-7 lg:col-start-6">{form}</div>
           </div>

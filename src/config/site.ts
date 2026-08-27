@@ -10,6 +10,22 @@ export const siteConfig = {
   url: configuredSiteUrl.replace(/\/+$/, ""),
 } as const;
 
+export const contactConfig = {
+  email: "mathew@cairnox.com",
+  instagram: [
+    {
+      label: "Mathew Skyner",
+      handle: "@mathewskyner",
+      href: "https://www.instagram.com/mathewskyner/",
+    },
+    {
+      label: "CAIRNOX Performance",
+      handle: "@cairnox_performance",
+      href: "https://www.instagram.com/cairnox_performance/",
+    },
+  ],
+} as const;
+
 export const siteBasePath = configuredBasePath
   ? `/${configuredBasePath.replace(/^\/+|\/+$/g, "")}`
   : "";

@@ -6,7 +6,7 @@ The public website for CAIRNOX, a cricket-led performance coaching, programme an
 
 The approved public pages, responsive site shell, media, SEO foundation, Insights architecture and four contact journeys are implemented. The application exports as a static site and deploys to GitHub Pages.
 
-**Production form delivery is intentionally not configured yet.** Forms demonstrate structure, accessibility and validation without sending or storing submissions externally.
+Production form delivery uses FormSubmit's free AJAX endpoint and routes validated submissions to `mathew@cairnox.com`. FormSubmit requires a one-time email confirmation before forwarding begins. Direct email links remain available on the contact pages and in the global footer.
 
 ## Technology
 
@@ -17,7 +17,7 @@ The approved public pages, responsive site shell, media, SEO foundation, Insight
 - ESLint
 - pnpm
 
-No component library, animation framework, analytics SDK, CMS or form-delivery service is installed.
+No component library, animation framework, analytics SDK or CMS is installed. Form delivery uses FormSubmit without an additional package.
 
 ## Quick start
 

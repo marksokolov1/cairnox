@@ -71,19 +71,18 @@ The form boundary lives in `src/lib/forms/`:
 
 ### Current provider status
 
-Production delivery is **not configured**. After successful browser validation, the UI explicitly states that details were not sent or stored. It never shows a successful delivery state.
+Production delivery uses FormSubmit's free AJAX endpoint. Validated submissions are sent to `mathew@cairnox.com`; no API key or browser-exposed secret is required. FormSubmit requires a one-time confirmation from that mailbox before forwarding begins.
 
-## Connecting real delivery
+The published direct-contact address remains available on the contact pages and alongside each form as an email fallback.
 
-The owner must provide and approve:
+## FormSubmit activation and delivery
 
-1. A submission/email provider.
-2. The receiving email address or approved destination for each submission type.
-3. Provider credentials and any required verified sending domain.
-4. The preferred production rate-limiting service or infrastructure approach.
-5. Any retention, deletion or CRM-routing requirements before storing submissions.
+1. Submit or trigger the form once after integration.
+2. Open the activation email sent by FormSubmit to `mathew@cairnox.com`.
+3. Click the confirmation link once.
+4. Submit a second test enquiry and confirm it arrives with the expected subject and Reply-To address.
 
-Then connect the forms to an approved external endpoint or move delivery to a server-capable deployment. The existing `FormSubmissionProvider` interface can support the latter approach. All provider credentials must remain outside browser-delivered code.
+FormSubmit documents that submissions can be retained for up to 30 days. This is disclosed beside every submit action, with a link to FormSubmit's privacy terms. If CAIRNOX later requires domain restriction, custom retention or a private server-side provider, replace `src/lib/forms/formsubmit-client.ts` through the existing provider architecture.
 
 ## Spam and rate-limit strategy
 
@@ -91,14 +90,14 @@ Then connect the forms to an approved external endpoint or move delivery to a se
 - `src/lib/forms/rate-limit.ts` provides a future server-side rate-limit adapter point.
 - No CAPTCHA is installed.
 - The current rate-limit adapter is explicitly marked unconfigured and does not claim production protection.
-- No delivery request is currently made from the browser.
+- The browser sends validated submissions to FormSubmit's AJAX endpoint over HTTPS.
 
 Before launch, connect rate limiting using a stable client identifier available in the chosen deployment environment, establish limits per form type, and confirm the failure policy.
 
 ## Success, unavailable and failure behavior
 
-- Success copy appears only after a configured provider returns an accepted result.
-- Unconfigured delivery explains that details were not sent or stored and preserves the entered values.
+- Success copy appears only after FormSubmit returns an accepted HTTP/JSON result.
+- Delivery failures preserve entered values and provide the direct email fallback.
 - Provider failure shows “We couldn't send this yet. Please try again.” and preserves entered values where feasible.
 - Development acceptance is explicitly labelled as a test with no email sent.
 

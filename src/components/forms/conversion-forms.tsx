@@ -4,6 +4,7 @@ import { useState, type FormEventHandler } from "react";
 import {
   CheckboxGroup,
   ConsentField,
+  DirectEmailFallback,
   FormSection,
   FormStatus,
   Honeypot,
@@ -26,6 +27,7 @@ import {
   existingCoachOptions,
 } from "@/lib/forms/options";
 import { validateFormSubmission } from "@/lib/forms/schemas";
+import { submitWithFormSubmit } from "@/lib/forms/formsubmit-client";
 import {
   initialFormState,
   type FormActionState,
@@ -40,10 +42,12 @@ function focusFormStatus(type: FormSubmissionType) {
 
 function useStaticForm(type: FormSubmissionType) {
   const [state, setState] = useState<FormActionState>(initialFormState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+  const onSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const honeypot = formData.get("website");
 
     if (typeof honeypot === "string" && honeypot.length > 0) {
@@ -71,17 +75,65 @@ function useStaticForm(type: FormSubmissionType) {
       return;
     }
 
-    setState({
-      status: "unavailable",
-      message: "Form delivery is not configured yet.",
-      detail: "Your details have not been sent or stored. No submission has been completed.",
-      errors: {},
-      values: validation.values,
-    });
-    focusFormStatus(type);
+    setIsSubmitting(true);
+
+    try {
+      const delivery = await submitWithFormSubmit(type, validation.values);
+
+      if (!delivery.accepted) {
+        setState({
+          status: "failure",
+          message: "We couldn't send this yet. Please try again.",
+          detail: "Your information has not been delivered.",
+          errors: {},
+          values: validation.values,
+        });
+        focusFormStatus(type);
+        return;
+      }
+
+      const successContent: Record<FormSubmissionType, { message: string; detail: string }> = {
+        general: {
+          message: "Enquiry received.",
+          detail: "Thanks for contacting CAIRNOX. Your enquiry has been delivered for review.",
+        },
+        base_interest: {
+          message: "Interest registered.",
+          detail: "Thanks for your interest in CAIRNOX BASE. Your details have been received.",
+        },
+        elevate_application: {
+          message: "Application received.",
+          detail: "Thanks for applying for CAIRNOX ELEVATE. Mathew will review the information you provided before any next step is arranged.",
+        },
+        apex_enquiry: {
+          message: "Enquiry received.",
+          detail: "Thanks for contacting CAIRNOX about APEX. The project context will be reviewed before any next step is arranged.",
+        },
+      };
+
+      form.reset();
+      setState({
+        status: "success",
+        ...successContent[type],
+        errors: {},
+        values: {},
+      });
+      focusFormStatus(type);
+    } catch {
+      setState({
+        status: "failure",
+        message: "We couldn't send this yet. Please try again.",
+        detail: "Your information has not been delivered. You can also email Mathew directly.",
+        errors: {},
+        values: validation.values,
+      });
+      focusFormStatus(type);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  return { state, onSubmit };
+  return { state, onSubmit, isSubmitting };
 }
 
 function FormShell({
@@ -91,6 +143,7 @@ function FormShell({
   children,
   submitLabel,
   disclaimer,
+  isSubmitting,
 }: {
   onSubmit: FormEventHandler<HTMLFormElement>;
   state: typeof initialFormState;
@@ -98,9 +151,10 @@ function FormShell({
   children: React.ReactNode;
   submitLabel: string;
   disclaimer?: boolean;
+  isSubmitting: boolean;
 }) {
   if (state.status === "success") {
-    return <FormStatus state={state} />;
+    return <FormStatus state={state} id={`${type}-form-status`} />;
   }
   return (
     <form onSubmit={onSubmit} className="grid gap-9" noValidate>
@@ -109,16 +163,19 @@ function FormShell({
       {children}
       <div className="grid gap-5 border-t border-line pt-8">
         <PrivacyNotice disclaimer={disclaimer} />
-        <SubmitButton>{submitLabel}</SubmitButton>
+        <DirectEmailFallback />
+        <SubmitButton disabled={isSubmitting}>
+          {isSubmitting ? "Sending…" : submitLabel}
+        </SubmitButton>
       </div>
     </form>
   );
 }
 
 export function GeneralEnquiryForm() {
-  const { state, onSubmit } = useStaticForm("general");
+  const { state, onSubmit, isSubmitting } = useStaticForm("general");
   return (
-    <FormShell type="general" onSubmit={onSubmit} state={state} submitLabel="Send enquiry">
+    <FormShell type="general" onSubmit={onSubmit} state={state} submitLabel="Send enquiry" isSubmitting={isSubmitting}>
       <TextField label="Name" name="name" state={state} required autoComplete="name" maxLength={120} />
       <TextField label="Email" name="email" state={state} required type="email" autoComplete="email" inputMode="email" maxLength={254} />
       <TextField label="Organisation / team" name="organisation" state={state} autoComplete="organization" maxLength={180} />
@@ -128,9 +185,9 @@ export function GeneralEnquiryForm() {
 }
 
 export function BaseInterestForm() {
-  const { state, onSubmit } = useStaticForm("base_interest");
+  const { state, onSubmit, isSubmitting } = useStaticForm("base_interest");
   return (
-    <FormShell type="base_interest" onSubmit={onSubmit} state={state} submitLabel="Register interest" disclaimer>
+    <FormShell type="base_interest" onSubmit={onSubmit} state={state} submitLabel="Register interest" disclaimer isSubmitting={isSubmitting}>
       <TextField label="Name" name="name" state={state} required autoComplete="name" maxLength={120} />
       <TextField label="Email" name="email" state={state} required type="email" autoComplete="email" inputMode="email" maxLength={254} />
       <TextField
@@ -147,9 +204,9 @@ export function BaseInterestForm() {
 }
 
 export function ElevateApplicationForm() {
-  const { state, onSubmit } = useStaticForm("elevate_application");
+  const { state, onSubmit, isSubmitting } = useStaticForm("elevate_application");
   return (
-    <FormShell type="elevate_application" onSubmit={onSubmit} state={state} submitLabel="Submit ELEVATE application" disclaimer>
+    <FormShell type="elevate_application" onSubmit={onSubmit} state={state} submitLabel="Submit ELEVATE application" disclaimer isSubmitting={isSubmitting}>
       <FormSection number="01" title="About you">
         <div className="grid gap-7 sm:grid-cols-2">
           <TextField label="Full name" name="name" state={state} required autoComplete="name" maxLength={120} />
@@ -183,9 +240,9 @@ export function ElevateApplicationForm() {
 }
 
 export function ApexEnquiryForm() {
-  const { state, onSubmit } = useStaticForm("apex_enquiry");
+  const { state, onSubmit, isSubmitting } = useStaticForm("apex_enquiry");
   return (
-    <FormShell type="apex_enquiry" onSubmit={onSubmit} state={state} submitLabel="Discuss a project">
+    <FormShell type="apex_enquiry" onSubmit={onSubmit} state={state} submitLabel="Discuss a project" isSubmitting={isSubmitting}>
       <FormSection number="01" title="Contact">
         <div className="grid gap-7 sm:grid-cols-2">
           <TextField label="Name" name="name" state={state} required autoComplete="name" maxLength={120} />

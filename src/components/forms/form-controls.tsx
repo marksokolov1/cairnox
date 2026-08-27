@@ -4,6 +4,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { Button, TextLink } from "@/components/ui/primitives";
 import { cn } from "@/lib/cn";
 import type { FormActionState, FormFieldValue } from "@/lib/forms/types";
+import { contactConfig } from "@/config/site";
 
 function fieldValue(value: FormFieldValue | undefined) {
   return typeof value === "string" ? value : "";
@@ -258,8 +259,9 @@ export function Honeypot() {
 export function PrivacyNotice({ disclaimer = false }: { disclaimer?: boolean }) {
   return (
     <p className="max-w-xl text-sm leading-6 text-mineral">
-      Your information will only be used to respond to your enquiry or application.{" "}
+      Your information will be used to respond to your enquiry or application and is processed by FormSubmit for email delivery. FormSubmit may retain submissions for up to 30 days.{" "}
       <TextLink href="/privacy">Privacy</TextLink>
+      {" · "}<a className="text-link" href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noreferrer">FormSubmit privacy</a>
       {disclaimer && (
         <>
           {" · "}<TextLink href="/training-disclaimer">Training disclaimer</TextLink>
@@ -269,9 +271,20 @@ export function PrivacyNotice({ disclaimer = false }: { disclaimer?: boolean }) 
   );
 }
 
-export function SubmitButton({ children }: { children: ReactNode }) {
+export function DirectEmailFallback() {
   return (
-    <Button type="submit" className="w-full sm:w-auto">
+    <p className="max-w-xl text-sm leading-6 text-mineral">
+      Prefer to email directly?{" "}
+      <a className="text-link" href={`mailto:${contactConfig.email}`}>
+        {contactConfig.email}
+      </a>
+    </p>
+  );
+}
+
+export function SubmitButton({ children, disabled = false }: { children: ReactNode; disabled?: boolean }) {
+  return (
+    <Button type="submit" className="w-full disabled:cursor-wait disabled:opacity-60 sm:w-auto" disabled={disabled}>
       {children}
     </Button>
   );
