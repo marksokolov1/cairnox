@@ -1,6 +1,6 @@
 # CAIRNOX
 
-The public website for CAIRNOX, a founder-led high-performance coaching, performance-programme and consultancy brand.
+The public website for CAIRNOX, a cricket-led performance coaching, programme and consultancy brand.
 
 ## Current status
 

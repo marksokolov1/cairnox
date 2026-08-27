@@ -2,9 +2,9 @@ import { ResultsPage as ResultsPageContent } from "@/components/results/results-
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Results & Athlete Proof",
+  title: "Performance Experience & Evidence",
   description:
-    "Explore genuine athlete testimonials, high-performance experience and the evidence principles CAIRNOX uses to evaluate performance work responsibly.",
+    "Explore CAIRNOX cricket performance experience, genuine professional-rugby testimonials and the evidence principles used to evaluate work responsibly.",
   pathname: "/results",
 });
 

@@ -141,7 +141,7 @@ function validateBase(formData: FormData): ValidationResult {
   const errors: FormErrors = {};
   requireText(values, errors, "name", "Name", fieldLimits.name);
   validateEmail(values, errors);
-  optionalText(values, errors, "trainingContext", "Sport / training context", fieldLimits.short);
+  optionalText(values, errors, "trainingContext", "Cricket role and training context", fieldLimits.short);
   validateSelectionGroup(values, errors, "interests", "area of interest", baseInterestOptions);
   optionalText(values, errors, "additionalContext", "Additional context", fieldLimits.message);
   return result(values, errors);
@@ -168,7 +168,7 @@ function validateElevate(formData: FormData): ValidationResult {
   requireText(values, errors, "name", "Full name", fieldLimits.name);
   validateEmail(values, errors);
   optionalText(values, errors, "location", "Location", fieldLimits.short);
-  requireText(values, errors, "sportContext", "Sport / performance context", fieldLimits.short);
+  requireText(values, errors, "sportContext", "Cricket role and performance context", fieldLimits.short);
   validateAllowed(values, errors, "currentLevel", "Current level", elevateLevelOptions, true);
   validateAllowed(values, errors, "seasonStatus", "Current season status", elevateSeasonOptions);
   validateSelectionGroup(
@@ -215,7 +215,7 @@ function validateApex(formData: FormData): ValidationResult {
   requireText(values, errors, "organisation", "Organisation", fieldLimits.short);
   optionalText(values, errors, "role", "Role", fieldLimits.short);
   validateAllowed(values, errors, "organisationType", "Type of organisation", apexOrganisationOptions, true);
-  requireText(values, errors, "sport", "Sport / performance environment", fieldLimits.short);
+  requireText(values, errors, "sport", "Cricket programme / performance environment", fieldLimits.short);
   optionalText(values, errors, "programmeContext", "Athlete / programme context", fieldLimits.message);
   validateSelectionGroup(values, errors, "supportAreas", "area of support", apexSupportOptions, true);
   requireText(values, errors, "projectObjective", "What you are trying to improve or solve", fieldLimits.message);

@@ -26,7 +26,7 @@ const commercialModel = [
   {
     number: "03",
     title: "Independent delivery",
-    copy: "Follow the programme around your own training environment and schedule.",
+    copy: "Follow the programme around your own cricket and training schedule.",
   },
 ] as const;
 
@@ -44,7 +44,7 @@ const foundationPillars = [
   {
     number: "03",
     title: "Conditioning",
-    copy: "Build the capacity to repeatedly meet the physical demands of training and competition.",
+    copy: "Build the capacity to meet the repeated physical demands of practice and matches.",
   },
 ] as const;
 
@@ -90,7 +90,7 @@ const systemElements = [
   {
     number: "04",
     title: "Performance education",
-    copy: "Supporting information designed to help athletes understand the principles behind the work.",
+    copy: "Supporting information designed to help players understand the principles behind the work.",
   },
   {
     number: "05",
@@ -107,23 +107,23 @@ const systemElements = [
 const audiences = [
   {
     number: "01",
-    title: "Competitive athletes",
-    copy: "Athletes who want organised physical preparation alongside sport.",
+    title: "Competitive cricketers",
+    copy: "Players who want organised physical preparation alongside cricket.",
   },
   {
     number: "02",
-    title: "Aspiring professionals",
-    copy: "Performers looking to establish stronger training structure.",
+    title: "Aspiring professional players",
+    copy: "Cricketers looking to establish a stronger physical training structure.",
   },
   {
     number: "03",
-    title: "Independent trainers",
-    copy: "Athletes capable of training independently but seeking better programming.",
+    title: "Independent players",
+    copy: "Cricketers capable of training independently but seeking better programming.",
   },
   {
     number: "04",
     title: "Highly motivated performers",
-    copy: "Individuals who want serious performance programming rather than generic fitness plans.",
+    copy: "Players who want serious cricket performance programming rather than generic fitness plans.",
   },
 ] as const;
 
@@ -155,7 +155,7 @@ const baseComparison = [
 const elevateComparison = [
   "Personalised programme",
   "Ongoing direct support",
-  "Adaptation around sport and schedule",
+  "Adaptation around cricket role and schedule",
   "Coaching that responds continually to the individual",
 ] as const;
 
@@ -166,19 +166,22 @@ export function BasePage() {
         <Container className="grid lg:grid-cols-12 lg:items-stretch">
           <div className="flex flex-col justify-center py-14 sm:py-20 lg:col-span-7 lg:min-h-[47rem] lg:py-24 lg:pr-[clamp(2.5rem,5vw,6.5rem)]">
             <Eyebrow className="text-moss">CAIRNOX BASE</Eyebrow>
+            <p className="mt-5 text-[0.78rem] font-bold tracking-[0.11em] text-mineral uppercase">
+              Cricket Performance Programmes
+            </p>
             <DisplayHeading id="base-hero-title" className="type-hero mt-7 sm:mt-9">
-              <span className="block">Build the{` `}</span>
-              <span className="block">foundation.</span>
+              <span className="block">Build the physical</span>
+              <span className="block">foundation for cricket.</span>
             </DisplayHeading>
             <BodyCopy className="mt-8 max-w-[43rem] text-charcoal sm:mt-10">
-              Structured strength, power and conditioning programmes for athletes who want expert
-              programming and a clear system to follow independently.
+              Progressive strength, power and conditioning programmes structured around the physical
+              demands and calendar of cricket, for players ready to train independently.
             </BodyCopy>
             <p className="mt-5 text-[0.82rem] font-bold tracking-[0.1em] text-mineral uppercase">
               One purchase. A complete performance programme. Built to progress.
             </p>
             <div className="mt-9 flex flex-col gap-3 min-[440px]:flex-row sm:mt-11">
-              <ButtonLink href="#programmes">View programmes</ButtonLink>
+              <ButtonLink href="/contact/base">Register interest</ButtonLink>
               <ButtonLink href="#how-base-works" variant="secondary">
                 How BASE works
               </ButtonLink>
@@ -212,8 +215,8 @@ export function BasePage() {
               </SectionHeading>
             </div>
             <BodyCopy className="text-charcoal lg:col-span-5">
-              BASE takes the principles behind CAIRNOX performance coaching and turns them into
-              structured programmes athletes can follow independently.
+              BASE takes the principles behind CAIRNOX cricket performance coaching and turns them
+              into complete, progressive programmes players can follow independently.
             </BodyCopy>
           </div>
 
@@ -235,7 +238,7 @@ export function BasePage() {
           </ol>
 
           <p className="mt-12 max-w-[26ch] text-[clamp(1.8rem,3vw,3.25rem)] font-medium leading-[1.08] tracking-[-0.04em] lg:mt-16">
-            BASE gives the athlete the system.
+            BASE gives the player the system.
           </p>
         </Container>
       </Section>
@@ -250,8 +253,8 @@ export function BasePage() {
               </SectionHeading>
             </div>
             <p className="max-w-xl text-[1.05rem] leading-relaxed text-charcoal lg:col-span-5 lg:pb-1">
-              BASE develops physical qualities that support athletic performance through connected,
-              progressive training rather than a collection of random workouts.
+              BASE develops the strength, power and conditioning that support cricket performance
+              through connected, progressive training rather than random workouts.
             </p>
           </div>
 
@@ -284,7 +287,7 @@ export function BasePage() {
               </SectionHeading>
             </div>
             <BodyCopy className="text-charcoal lg:col-span-5 lg:pt-1">
-              A programme should do more than tell an athlete what to do today. BASE is designed
+              A programme should do more than tell a player what to do today. BASE is designed
               around progression across the complete training process.
             </BodyCopy>
           </div>
@@ -342,14 +345,14 @@ export function BasePage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">Built for independent athletes</Eyebrow>
+            <Eyebrow className="text-moss">Built for independent cricketers</Eyebrow>
               <SectionHeading id="who-for-title" className="mt-6 max-w-[13ch]">
                 Expert structure. Your execution.
               </SectionHeading>
             </div>
             <p className="max-w-xl text-[1.05rem] leading-relaxed text-charcoal lg:col-span-5 lg:pb-1">
-              BASE is for serious performers who want better direction and are ready to take
-              responsibility for the work.
+              BASE is for serious players who want better physical-preparation direction and are
+              ready to take responsibility for the work.
             </p>
           </div>
 
@@ -443,8 +446,8 @@ export function BasePage() {
         <Container className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <figure className="relative aspect-[4/3] overflow-hidden bg-charcoal lg:col-span-5 lg:aspect-[5/4]">
             <Image
-              src={getPublicAssetPath("/media/images/mathew-skyner-active-rugby-coaching.jpg")}
-              alt="Mathew Skyner actively coaching during an outdoor rugby training session"
+              src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-resisted-sprint-coaching.jpg")}
+              alt="Mathew Skyner delivering physical preparation with a USA Cricket athlete"
               fill
               sizes="(min-width: 1024px) 42vw, 100vw"
               className="object-cover object-[52%_center] saturate-[0.9] contrast-[1.03]"
@@ -456,10 +459,10 @@ export function BasePage() {
               Programming shaped by the environments that demand it.
             </SectionHeading>
             <BodyCopy className="mt-8 text-charcoal">
-              CAIRNOX is led by Mathew Skyner, whose experience spans professional rugby, USA
-              Cricket, PSA Squash, British Cycling, professional soccer and NCAA programmes. BASE
-              translates that performance experience into structured programming athletes can
-              access independently.
+              CAIRNOX is led by Mathew Skyner. His USA Cricket performance-environment experience
+              leads the application, supported by work across professional rugby, PSA Squash,
+              British Cycling, professional soccer and NCAA programmes. BASE translates that wider
+              performance experience into cricket programming players can access independently.
             </BodyCopy>
             <ArrowLink href="/about" className="mt-9">
               About Mathew
@@ -490,7 +493,7 @@ export function BasePage() {
                 ))}
               </ul>
               <p className="mt-8 text-[0.75rem] font-bold tracking-[0.11em] uppercase">
-                Current page / Performance Programmes
+                Current page / Cricket Performance Programmes
               </p>
             </article>
 
@@ -532,11 +535,13 @@ export function BasePage() {
             </div>
             <div className="lg:col-span-5">
               <p className="text-[clamp(1.35rem,2vw,1.8rem)] font-medium leading-snug tracking-[-0.025em]">
-                The first CAIRNOX BASE programmes are being prepared for release.
+                The first CAIRNOX BASE cricket performance programmes are being prepared for release.
               </p>
               <p className="mt-6 max-w-xl text-[1rem] leading-relaxed text-stone-light">
-                Programmes will focus on structured physical development across strength, power and
-                conditioning, with clear guidance for athletes training independently.
+                Programmes will focus on cricket strength, power, conditioning and athletic
+                development, with clear guidance for players training independently. Future programme
+                territories may include off-season and in-season development, fast-bowling physical
+                preparation and batting power; no products are presented as launched yet.
               </p>
               <div className="mt-9 flex flex-col items-start gap-5 min-[440px]:flex-row min-[440px]:items-center">
                 <ButtonLink href="/contact/base" variant="inverse">
@@ -566,8 +571,8 @@ export function BasePage() {
             </div>
             <div className="lg:col-span-5">
               <p className="max-w-xl text-lg leading-relaxed text-charcoal">
-                BASE gives you the structure to train with purpose, progress deliberately and build
-                the physical foundation performance depends upon.
+                BASE gives cricket players the structure to train with purpose, progress deliberately
+                and build the physical foundation performance depends upon.
               </p>
               <div className="mt-8 flex flex-col items-start gap-5 min-[440px]:flex-row min-[440px]:items-center">
                 <ButtonLink href="/contact/base">Register interest</ButtonLink>

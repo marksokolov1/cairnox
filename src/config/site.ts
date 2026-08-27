@@ -4,9 +4,9 @@ const configuredBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const siteConfig = {
   name: "CAIRNOX",
-  title: "CAIRNOX | High-Performance Coaching & Consultancy",
+  title: "CAIRNOX | Cricket Performance Coaching & Consultancy",
   description:
-    "Founder-led high-performance coaching, performance programmes and consultancy built on structure, progression and performance.",
+    "Cricket physical preparation, structured performance programmes, individual coaching and consultancy for serious players and cricket organisations.",
   url: configuredSiteUrl.replace(/\/+$/, ""),
 } as const;
 
@@ -33,9 +33,9 @@ export function getPublicAssetPath(pathname: string) {
 }
 
 export const primaryNavigation = [
-  { label: "BASE", href: "/base", descriptor: "Performance Programmes" },
-  { label: "ELEVATE", href: "/elevate", descriptor: "1:1 Performance Coaching" },
-  { label: "APEX", href: "/apex", descriptor: "High-Performance Consultancy" },
+  { label: "BASE", href: "/base", descriptor: "Cricket Performance Programmes" },
+  { label: "ELEVATE", href: "/elevate", descriptor: "1:1 Cricket Performance Coaching" },
+  { label: "APEX", href: "/apex", descriptor: "Cricket Performance Consultancy" },
   { label: "METHOD", href: "/method" },
   { label: "ABOUT", href: "/about" },
   { label: "RESULTS", href: "/results" },
@@ -54,15 +54,15 @@ export const footerNavigation = [
   },
   {
     heading: "BASE",
-    links: [{ label: "Performance Programmes", href: "/base" }],
+    links: [{ label: "Cricket Performance Programmes", href: "/base" }],
   },
   {
     heading: "ELEVATE",
-    links: [{ label: "1:1 Performance Coaching", href: "/elevate" }],
+    links: [{ label: "1:1 Cricket Performance Coaching", href: "/elevate" }],
   },
   {
     heading: "APEX",
-    links: [{ label: "High-Performance Consultancy", href: "/apex" }],
+    links: [{ label: "Cricket Performance Consultancy", href: "/apex" }],
   },
   {
     heading: "CONNECT",

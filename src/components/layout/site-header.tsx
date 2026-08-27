@@ -30,7 +30,7 @@ export function SiteHeader() {
             href="/contact"
             className="min-h-[2.6rem] shrink-0 px-[1.125rem] py-[0.7rem] text-[0.7rem]"
           >
-            Work with Mathew
+            Work with CAIRNOX
           </ButtonLink>
         </div>
 

@@ -14,11 +14,11 @@ import {
 } from "@/components/ui/primitives";
 
 const experience = [
+  "USA Cricket",
   "Professional Rugby",
   "PSA Squash",
   "British Cycling",
   "Professional Soccer",
-  "USA Cricket",
   "NCAA Programmes",
 ] as const;
 
@@ -44,9 +44,9 @@ const services = [
   {
     index: "01 / FOUNDATION",
     label: "BASE",
-    descriptor: "Performance Programmes",
+    descriptor: "Cricket Performance Programmes",
     expression: "Build the foundation.",
-    copy: "Structured strength, power and conditioning programmes for athletes who want expert programming and a clear system to follow independently.",
+    copy: "Structured strength, power and conditioning programmes for serious cricketers who want a clear system to follow independently.",
     note: "One-time purchase",
     cta: "Explore BASE",
     href: "/base",
@@ -54,9 +54,9 @@ const services = [
   {
     index: "02 / PROGRESSION",
     label: "ELEVATE",
-    descriptor: "1:1 Performance Coaching",
+    descriptor: "1:1 Cricket Performance Coaching",
     expression: "Build around the athlete.",
-    copy: "Individual programming, direct support and ongoing performance management built around your sport, schedule and development needs.",
+    copy: "Individual physical preparation and direct support built around the player, role, schedule, season and development needs.",
     note: "Limited coaching availability",
     cta: "Explore ELEVATE",
     href: "/elevate",
@@ -64,9 +64,9 @@ const services = [
   {
     index: "03 / PEAK",
     label: "APEX",
-    descriptor: "High-Performance Consultancy",
+    descriptor: "Cricket Performance Consultancy",
     expression: "Build the performance environment.",
-    copy: "Physical-development and load-management consultancy for coaches, schools, clubs and sporting organisations.",
+    copy: "Performance-system consultancy for cricket academies, schools, clubs, teams and organisations.",
     note: "Online / in-person / hybrid",
     cta: "Explore APEX",
     href: "/apex",
@@ -102,9 +102,9 @@ const apexFocusAreas = [
 ] as const;
 
 const finalRoutes = [
-  { label: "BASE", descriptor: "Performance Programmes", href: "/base" },
-  { label: "ELEVATE", descriptor: "1:1 Performance Coaching", href: "/elevate" },
-  { label: "APEX", descriptor: "High-Performance Consultancy", href: "/apex" },
+  { label: "BASE", descriptor: "Cricket Performance Programmes", href: "/base" },
+  { label: "ELEVATE", descriptor: "1:1 Cricket Performance Coaching", href: "/elevate" },
+  { label: "APEX", descriptor: "Cricket Performance Consultancy", href: "/apex" },
 ] as const;
 
 function Attribution({ name }: { name: string }) {
@@ -122,43 +122,43 @@ export function Homepage() {
       <section aria-labelledby="hero-title" className="border-b border-line bg-canvas">
         <Container className="grid min-h-[calc(100svh-4.75rem)] lg:grid-cols-12 lg:items-stretch">
           <div className="flex flex-col justify-center py-12 sm:py-20 lg:col-span-7 lg:min-h-[44rem] lg:-translate-y-[4.5rem] lg:py-24 lg:pr-[clamp(2.5rem,5vw,6.5rem)]">
-            <Eyebrow className="text-moss">High-Performance Coaching &amp; Consultancy</Eyebrow>
+            <Eyebrow className="text-moss">Cricket Performance Coaching &amp; Consultancy</Eyebrow>
             <DisplayHeading
               id="hero-title"
               className="type-hero mt-7 sm:mt-9"
             >
-              <span className="block lg:whitespace-nowrap">Performance is built</span>
-              <span className="block lg:whitespace-nowrap">layer by layer.</span>
+              <span className="block lg:whitespace-nowrap">Cricket performance,</span>
+              <span className="block lg:whitespace-nowrap">built layer by layer.</span>
             </DisplayHeading>
             <BodyCopy className="mt-8 max-w-[42rem] text-charcoal sm:mt-10">
-              Performance coaching, structured programmes and high-performance consultancy for
-              athletes and organisations serious about physical development. Led by Mathew Skyner.
+              Cricket physical preparation, structured performance programmes, individual coaching
+              and consultancy for serious players and cricket organisations. Led by Mathew Skyner.
             </BodyCopy>
             <div className="mt-9 flex flex-col gap-3 min-[440px]:flex-row sm:mt-11">
               <ButtonLink href="/contact" className="min-h-11 py-[0.72rem] sm:min-h-[2.875rem] sm:py-[0.8rem]">
-                Work with Mathew
+                Find your pathway
               </ButtonLink>
               <ButtonLink
-                href="#ways-to-work"
+                href="/method"
                 variant="secondary"
                 className="min-h-11 py-[0.72rem] sm:min-h-[2.875rem] sm:py-[0.8rem]"
               >
-                Explore CAIRNOX
+                Explore the CAIRNOX Method
               </ButtonLink>
             </div>
             <p className="mt-10 border-t border-line pt-4 text-[0.7rem] font-bold tracking-[0.12em] text-mineral uppercase sm:mt-14">
-              Athlete development / Physical preparation / Performance systems
+              Cricket physical preparation / Athlete development / Performance systems
             </p>
           </div>
 
           <div className="relative min-h-[23rem] overflow-hidden bg-stone-light sm:min-h-[32rem] lg:col-span-5 lg:my-8 lg:min-h-0">
             <Image
-              src={getPublicAssetPath("/media/images/mathew-skyner-active-rugby-coaching.jpg")}
-              alt="Mathew Skyner actively coaching athletes during a rugby training session"
+              src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-resisted-sprint-coaching.jpg")}
+              alt="Mathew Skyner coaching a USA Cricket athlete during resisted sprint training"
               fill
               priority
               sizes="(min-width: 1024px) 42vw, 100vw"
-              className="object-cover object-[52%_center] saturate-[0.88] contrast-[1.04] sepia-[0.02]"
+              className="object-cover object-[58%_center] saturate-[0.88] contrast-[1.04] sepia-[0.02]"
             />
           </div>
         </Container>
@@ -167,7 +167,7 @@ export function Homepage() {
       <section aria-labelledby="experience-title" className="bg-ink py-8 text-canvas sm:py-10">
         <Container>
           <h2 id="experience-title" className="type-eyebrow text-stone">
-            Experience across high-performance sport
+            Cricket-led expertise, built across high-performance sport
           </h2>
           <ul className="mt-6 grid grid-cols-2 border-t border-white/30 sm:grid-cols-3 lg:grid-cols-6">
             {experience.map((item, index) => (
@@ -188,28 +188,28 @@ export function Homepage() {
         <Container className="grid items-center gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
           <figure className="relative aspect-[4/5] overflow-hidden bg-charcoal lg:col-span-5 lg:aspect-[4/5] lg:w-[112%] lg:max-w-none">
             <Image
-              src={getPublicAssetPath("/media/images/mathew-skyner-rugby-coaching-night-ball.jpg")}
-              alt="Mathew Skyner holding a rugby ball on a floodlit field at night"
+              src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-world-cup-field.jpg")}
+              alt="Mathew Skyner in a USA Cricket performance environment at a T20 World Cup venue"
               fill
               sizes="(min-width: 1024px) 44vw, 100vw"
-              className="object-cover object-center"
+              className="object-cover object-[50%_44%]"
             />
           </figure>
           <div className="lg:col-span-6 lg:col-start-7 lg:pt-10 xl:pt-14">
             <Eyebrow className="text-moss">The experience behind CAIRNOX</Eyebrow>
             <SectionHeading id="founder-title" className="mt-6 max-w-[12ch]">
-              Built in high-performance sport.
+              Cricket first. High-performance experience behind it.
             </SectionHeading>
             <div className="mt-8 space-y-5 text-[clamp(1.05rem,1.4vw,1.25rem)] leading-relaxed text-charcoal">
               <p>
-                CAIRNOX is led by Mathew Skyner, a high-performance coach whose experience spans
-                professional and international sport across rugby, cricket, squash, cycling, soccer
-                and NCAA programmes.
+                CAIRNOX is led by Mathew Skyner. His experience in the USA Cricket performance
+                environment places cricket at the centre of the work: physical preparation,
+                long-term player development and better performance decisions.
               </p>
               <p>
-                Different sports create different demands, but the principle remains consistent:
-                performance is developed through intelligent preparation, clear progression and work
-                accumulated over time.
+                Experience across professional rugby, PSA Squash, British Cycling, professional
+                soccer and NCAA programmes provides the wider high-performance perspective behind
+                the system. The demands change; the need for structure and progression remains.
               </p>
             </div>
             <ArrowLink href="/about" className="mt-9">
@@ -241,11 +241,11 @@ export function Homepage() {
             </div>
             <figure className="relative aspect-[4/5] min-h-[24rem] overflow-hidden bg-charcoal lg:col-span-5 lg:min-h-[35rem]">
               <Image
-                src={getPublicAssetPath("/media/images/mathew-skyner-rugby-field-night-profile.jpg")}
-                alt="Mathew Skyner walking in profile across a floodlit rugby field at night"
+                src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-training-field.jpg")}
+                alt="Mathew Skyner observing a USA Cricket field training session"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover object-center"
+                className="object-cover object-[62%_center]"
               />
             </figure>
           </div>
@@ -279,8 +279,8 @@ export function Homepage() {
               </SectionHeading>
             </div>
             <p className="max-w-xl text-base leading-relaxed text-charcoal lg:col-span-5 lg:pb-1">
-              Three ways to access the same performance philosophy, from structured independent
-              programming to individual coaching and organisational consultancy.
+              Three cricket-performance pathways built on the same philosophy, from structured
+              independent programming to individual coaching and organisational consultancy.
             </p>
           </div>
 
@@ -333,12 +333,12 @@ export function Homepage() {
           <div className="lg:pt-8">
             <Eyebrow className="text-moss">The CAIRNOX method</Eyebrow>
             <SectionHeading id="method-title" className="mt-6 max-w-[14ch]">
-              A system, not a collection of workouts.
+              A cricket performance system, not a collection of workouts.
             </SectionHeading>
             <BodyCopy className="mt-8 max-w-2xl text-charcoal">
-              Effective physical preparation requires more than selecting exercises. Training has to
-              account for the athlete, the demands of the sport, the competitive schedule and the way
-              the athlete responds over time.
+              Effective cricket physical preparation requires more than selecting exercises. Training
+              has to account for the player, playing role, practice and match schedule, workload,
+              recovery and the way the player responds over time.
             </BodyCopy>
 
             <dl className="mt-12 grid border-t border-line sm:grid-cols-2">
@@ -363,7 +363,7 @@ export function Homepage() {
 
       <Section aria-labelledby="testimonials-title" tone="muted" spacing="large">
         <Container>
-          <Eyebrow className="text-moss">Professional athlete testimonials</Eyebrow>
+          <Eyebrow className="text-moss">Professional trust across high-performance sport</Eyebrow>
           <SectionHeading id="testimonials-title" className="mt-6 max-w-[13ch]">
             Trust built through the work.
           </SectionHeading>
@@ -421,13 +421,14 @@ export function Homepage() {
 
           <div className="mt-12 grid gap-12 lg:mt-16 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
-              <Eyebrow className="text-stone">For teams &amp; organisations</Eyebrow>
+              <Eyebrow className="text-stone">For cricket teams &amp; organisations</Eyebrow>
               <SectionHeading id="apex-title" className="mt-6 max-w-[13ch]">
                 Build the performance environment.
               </SectionHeading>
               <p className="mt-8 max-w-2xl text-[clamp(1.05rem,1.4vw,1.25rem)] leading-relaxed text-stone-light">
-                APEX supports coaches, schools, clubs and sporting organisations looking to improve
-                how physical performance is planned, monitored and developed.
+                APEX supports cricket academies, schools, clubs, teams and organisations looking to
+                improve how physical preparation, workload and player development are planned,
+                monitored and delivered.
               </p>
               <div className="mt-9 flex flex-col items-start gap-5 min-[440px]:flex-row min-[440px]:items-center">
                 <ButtonLink href="/apex" variant="inverse">
@@ -472,7 +473,7 @@ export function Homepage() {
                 wider performance environment, start with the route that fits where you are now.
               </p>
               <ButtonLink href="/contact" className="mt-8">
-                Work with Mathew
+                Work with CAIRNOX
               </ButtonLink>
             </div>
           </div>

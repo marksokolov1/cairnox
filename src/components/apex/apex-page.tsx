@@ -32,8 +32,8 @@ const consultancyPrinciples = [
 
 const environmentAreas = [
   "Physical development",
-  "Training load",
-  "Competition",
+  "Cricket practice",
+  "Match workload",
   "Monitoring",
   "Recovery",
   "Staff alignment",
@@ -42,28 +42,28 @@ const environmentAreas = [
 const consultancyAreas = [
   {
     number: "01",
-    title: "Physical development systems",
-    copy: "Review and structure how physical qualities are developed across athletes or groups.",
+    title: "Cricket physical-development systems",
+    copy: "Review and structure how physical qualities are developed across cricket players or squads.",
   },
   {
     number: "02",
-    title: "Load management",
-    copy: "Improve how training and competition demands are considered when planning physical work.",
+    title: "Fast-bowler workload planning",
+    copy: "Support careful planning around bowling, practice, matches and physical preparation without making injury-prevention guarantees.",
   },
   {
     number: "03",
-    title: "Seasonal planning",
-    copy: "Create clearer physical-development structure around the competitive calendar.",
+    title: "Seasonal performance planning",
+    copy: "Create clearer physical-development structure around the cricket calendar.",
   },
   {
     number: "04",
     title: "Athlete monitoring",
-    copy: "Support practical approaches to collecting and using information about athlete response and workload.",
+    copy: "Support practical approaches to collecting and using information about player response and workload.",
   },
   {
     number: "05",
     title: "Programme review",
-    copy: "Review existing physical-preparation processes and identify areas for improvement.",
+    copy: "Review existing cricket physical-preparation processes and identify areas for improvement.",
   },
   {
     number: "06",
@@ -131,22 +131,22 @@ const audiences = [
   {
     number: "01",
     title: "Coaches",
-    copy: "Seeking stronger physical-development structure around their athletes.",
+    copy: "Seeking stronger physical-development structure around their cricket players.",
   },
   {
     number: "02",
-    title: "Schools & academies",
-    copy: "Building or refining long-term athlete-development processes.",
+    title: "Schools & cricket academies",
+    copy: "Building or refining long-term player-development processes.",
   },
   {
     number: "03",
-    title: "Clubs",
-    copy: "Looking to improve physical preparation, workload planning or performance systems.",
+    title: "Clubs & teams",
+    copy: "Looking to improve cricket physical preparation, workload planning or performance systems.",
   },
   {
     number: "04",
-    title: "Sporting organisations",
-    copy: "Seeking practitioner-led support around wider physical-performance strategy.",
+    title: "Cricket organisations",
+    copy: "Seeking practitioner-led support around wider cricket-performance strategy.",
   },
 ] as const;
 
@@ -157,13 +157,17 @@ export function ApexPage() {
         <Container className="grid lg:grid-cols-12 lg:items-stretch">
           <div className="flex flex-col justify-center py-14 sm:py-20 lg:col-span-7 lg:min-h-[47rem] lg:py-24 lg:pr-[clamp(2.5rem,5vw,6.5rem)]">
             <Eyebrow className="text-moss">CAIRNOX APEX</Eyebrow>
+            <p className="mt-5 text-[0.78rem] font-bold tracking-[0.11em] text-mineral uppercase">
+              Cricket Performance Consultancy
+            </p>
             <DisplayHeading id="apex-hero-title" className="type-hero mt-7 max-w-[11ch] sm:mt-9">
-              <span className="block">Build the{` `}</span>
+              <span className="block">Build the cricket</span>
               <span className="block">performance environment.</span>
             </DisplayHeading>
             <BodyCopy className="mt-8 max-w-[45rem] text-charcoal sm:mt-10">
-              High-performance consultancy for coaches, schools, clubs and sporting organisations
-              looking to improve how physical development is planned, monitored and delivered.
+              Cricket performance consultancy for professional teams, clubs, academies, schools,
+              colleges, governing bodies and development programmes looking to improve how physical
+              preparation is planned, monitored and delivered.
             </BodyCopy>
             <p className="mt-5 text-[0.82rem] font-bold tracking-[0.1em] text-mineral uppercase">
               Systems. Structure. Better performance decisions.
@@ -175,7 +179,7 @@ export function ApexPage() {
               </ButtonLink>
             </div>
             <p className="mt-10 border-t border-line pt-4 text-[0.72rem] font-bold tracking-[0.12em] text-mineral uppercase sm:mt-14">
-              Peak / Expertise systemised / High-performance consultancy
+              Peak / Expertise systemised / Cricket performance consultancy
             </p>
           </div>
 
@@ -197,15 +201,15 @@ export function ApexPage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">High-performance consultancy</Eyebrow>
+              <Eyebrow className="text-moss">Cricket performance consultancy</Eyebrow>
               <SectionHeading id="what-apex-title" className="mt-6 max-w-[14ch]">
                 Expertise applied to the system.
               </SectionHeading>
             </div>
             <BodyCopy className="text-charcoal lg:col-span-5">
-              APEX works with the people responsible for developing athletes, helping performance
-              environments create clearer structures around physical preparation, workload and
-              long-term development.
+              APEX works with the people responsible for developing cricketers, helping teams and
+              organisations create clearer structures around physical preparation, cricket workload,
+              seasonal planning and long-term player development.
             </BodyCopy>
           </div>
 
@@ -236,12 +240,12 @@ export function ApexPage() {
             <div className="lg:col-span-8">
               <Eyebrow className="text-stone">Performance is never one variable</Eyebrow>
               <SectionHeading id="environment-title" className="mt-6 max-w-[15ch]">
-                The athlete is shaped by the system around them.
+                The player is shaped by the system around them.
               </SectionHeading>
             </div>
             <p className="max-w-xl text-[1.05rem] leading-relaxed text-stone-light lg:col-span-4 lg:pb-1">
-              Physical preparation does not sit in isolation. Training, competition, workload,
-              recovery, monitoring and staff communication all influence how athletes are developed
+              Physical preparation does not sit in isolation. Cricket practice, matches, workload,
+              recovery, monitoring and staff communication all influence how players are developed
               and supported.
             </p>
           </div>
@@ -274,8 +278,8 @@ export function ApexPage() {
               </SectionHeading>
             </div>
             <p className="max-w-xl text-[1.05rem] leading-relaxed text-charcoal lg:col-span-5 lg:pb-1">
-              Consultancy is shaped around the environment and the practical decisions its people
-              need to make.
+              Consultancy is shaped around the cricket environment and the practical decisions its
+              coaches, performance staff and leaders need to make.
             </p>
           </div>
 
@@ -361,9 +365,9 @@ export function ApexPage() {
               Good performance environments connect the work.
             </SectionHeading>
             <p className="mt-8 max-w-2xl text-[clamp(1.05rem,1.4vw,1.25rem)] leading-relaxed text-stone-light">
-              A strong programme is only useful if it fits the wider environment. APEX considers how
-              physical preparation interacts with schedules, coaching practice, competition
-              demands, athlete monitoring and staff decision-making.
+              A strong programme is only useful if it fits the wider cricket environment. APEX
+              considers how physical preparation interacts with cricket practice, matches, travel,
+              workload, recovery, monitoring and staff decision-making.
             </p>
 
             <div className="mt-12 border-y border-white/30 sm:grid sm:grid-cols-2">
@@ -443,10 +447,10 @@ export function ApexPage() {
               Practitioner experience, applied to the organisation.
             </SectionHeading>
             <BodyCopy className="mt-8 text-charcoal">
-              CAIRNOX is led by Mathew Skyner, whose experience spans professional rugby, USA
-              Cricket, PSA Squash, British Cycling, professional soccer and NCAA programmes. APEX
-              applies that practitioner perspective to the structures surrounding athlete
-              development.
+              CAIRNOX is led by Mathew Skyner. His USA Cricket performance-environment experience
+              leads the APEX application, supported by work across professional rugby, PSA Squash,
+              British Cycling, professional soccer and NCAA programmes. APEX applies that wider
+              practitioner perspective to the structures surrounding cricket player development.
             </BodyCopy>
             <ArrowLink href="/about" className="mt-9">
               About Mathew
@@ -461,12 +465,12 @@ export function ApexPage() {
             <div className="lg:col-span-8">
               <Eyebrow className="text-moss">Who we work with</Eyebrow>
               <SectionHeading id="audience-title" className="mt-6 max-w-[15ch]">
-                For the people responsible for developing athletes.
+                For the people responsible for developing cricketers.
               </SectionHeading>
             </div>
             <p className="max-w-lg text-[1.05rem] leading-relaxed text-charcoal lg:col-span-4 lg:pb-1">
-              APEX is designed for performance decision-makers working across athlete-development
-              environments.
+              APEX is designed for coaches, performance staff, school and academy leaders, club
+              leadership and cricket programme decision-makers.
             </p>
           </div>
 
@@ -502,9 +506,9 @@ export function ApexPage() {
             </div>
             <div className="lg:col-span-5">
               <p className="max-w-xl text-lg leading-relaxed text-charcoal">
-                APEX engagements begin with the performance problem, the environment and the people
-                involved. Start a conversation about where CAIRNOX may be able to support your
-                organisation.
+                APEX engagements begin with the cricket performance problem, the environment and the
+                people involved. Start a conversation about where CAIRNOX may be able to support your
+                team or organisation.
               </p>
               <div className="mt-8 flex flex-col items-start gap-5 min-[440px]:flex-row min-[440px]:items-center">
                 <ButtonLink href="/contact/apex">Discuss a project</ButtonLink>

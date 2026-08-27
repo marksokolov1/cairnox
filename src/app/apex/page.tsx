@@ -2,9 +2,9 @@ import { ApexPage as ApexPageContent } from "@/components/apex/apex-page";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "APEX | High-Performance Consultancy",
+  title: "APEX | Cricket Performance Consultancy",
   description:
-    "High-performance consultancy for coaches, schools, clubs and sporting organisations focused on physical development, load management and performance systems.",
+    "Cricket performance consultancy for teams, clubs, academies, schools and organisations focused on physical development, workload and performance systems.",
   pathname: "/apex",
 });
 

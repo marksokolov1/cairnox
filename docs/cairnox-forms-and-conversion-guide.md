@@ -7,9 +7,9 @@ This document describes the launch contact architecture, the static GitHub Pages
 | Route | Submission type | Purpose |
 | --- | --- | --- |
 | `/contact` | `general` | Route-selection hub plus a short general enquiry form at `#general-enquiry` |
-| `/contact/base` | `base_interest` | Low-friction interest registration for future BASE performance programmes |
-| `/contact/elevate` | `elevate_application` | Selective application for direct 1:1 coaching with Mathew |
-| `/contact/apex` | `apex_enquiry` | Professional project enquiry for teams and organisations |
+| `/contact/base` | `base_interest` | Low-friction interest registration for future BASE cricket performance programmes |
+| `/contact/elevate` | `elevate_application` | Selective application for direct 1:1 cricket performance coaching with Mathew |
+| `/contact/apex` | `apex_enquiry` | Professional cricket-performance project enquiry for teams and organisations |
 
 The four submission type IDs are included internally with each validated payload. They are not editable form controls.
 
@@ -23,13 +23,13 @@ The four submission type IDs are included internally with each validated payload
 ### BASE interest
 
 - Required: name, email
-- Optional: sport/training context, interest areas, additional context
-- Interest options: Strength; Power; Conditioning; Athletic Development; In-Season Training; Off-Season Training; Mobility / Robustness; General Performance Programme
+- Optional: cricket role/training context, interest areas, additional context
+- Interest options: Cricket Strength and Power; Fast-Bowling Physical Preparation; Batting Power and Rotational Performance; Cricket Conditioning; In-Season Cricket Training; Off-Season Cricket Development; Cricket Athletic Development; General Cricket Performance Programme
 
 ### ELEVATE application
 
 - About you: required full name and email; optional city/country location
-- Your sport: required sport/performance context and current level; optional season status
+- Your cricket: required cricket role/performance context and current level; optional season status
 - What you need: required improvement areas and main reason for seeking 1:1 coaching; optional current-training context
 - Coaching context: optional current coach/team programme, competition schedule and ideal start timing
 - Final: optional additional context; required acknowledgement that this is an application and availability is not guaranteed
@@ -39,7 +39,7 @@ The form intentionally does not request diagnoses, medical history, medication, 
 ### APEX enquiry
 
 - Contact: required name, work email and organisation; optional role
-- Environment: required organisation type and sport/performance environment; optional athlete/programme context
+- Environment: required cricket organisation type and cricket programme/performance environment; optional player/programme context
 - Area of support: at least one approved consultancy area is required
 - Project context: required objective/problem; optional current environment, preferred support formats and timing
 - Final: optional additional context

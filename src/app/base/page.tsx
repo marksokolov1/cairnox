@@ -2,9 +2,9 @@ import { BasePage as BasePageContent } from "@/components/base/base-page";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "BASE | Performance Programmes",
+  title: "BASE | Cricket Performance Programmes",
   description:
-    "Structured strength, power and conditioning programmes for athletes who want expert programming and a clear system to follow independently.",
+    "Structured cricket strength, power and conditioning programmes for serious players who want expert programming and a clear system to follow independently.",
   pathname: "/base",
 });
 

@@ -30,33 +30,33 @@ const editorialPrinciples = [
 const topics = [
   {
     number: "01",
-    title: "Physical Preparation",
-    copy: "Strength, power, conditioning and the physical qualities supporting sport.",
+    title: "Cricket Physical Preparation",
+    copy: "Strength, power, conditioning and the physical qualities supporting cricket.",
   },
   {
     number: "02",
-    title: "Athlete Development",
-    copy: "How physical qualities are developed across time rather than isolated sessions.",
+    title: "Strength & Power for Cricket",
+    copy: "How strength, explosive qualities and rotational performance can be developed over time.",
   },
   {
     number: "03",
-    title: "Performance Planning",
-    copy: "How training fits around objectives, practice, competition and the wider calendar.",
+    title: "Cricket Conditioning & Development",
+    copy: "Conditioning, movement and long-term athletic development for cricket players.",
   },
   {
     number: "04",
-    title: "Monitoring & Adaptation",
-    copy: "Using relevant information to guide future decisions.",
+    title: "In-Season & Off-Season Planning",
+    copy: "How physical preparation fits around practice, matches, travel and season phase.",
   },
   {
     number: "05",
-    title: "Load & Recovery",
-    copy: "Understanding training demand, competition and the athlete's ability to adapt.",
+    title: "Workload & Monitoring",
+    copy: "Fast-bowling demands, training load, recovery and information that supports decisions.",
   },
   {
     number: "06",
-    title: "Performance Systems",
-    copy: "How coaches and organisations structure physical-development environments.",
+    title: "Cricket Performance Systems",
+    copy: "How academies, clubs, teams and organisations structure player-development environments.",
   },
 ] as const;
 
@@ -91,27 +91,27 @@ const editorialStandard = [
 const athleteTopics = [
   "Why training is structured the way it is",
   "How progression works",
-  "How physical preparation interacts with sport",
+  "How physical preparation interacts with cricket practice and matches",
   "When more individual support may be needed",
 ] as const;
 
 const coachTopics = [
-  "Physical-development systems",
-  "Load management",
-  "Monitoring",
-  "Seasonal planning",
-  "Performance environments",
+  "Cricket physical-development systems",
+  "Fast-bowler workload planning",
+  "Athlete monitoring",
+  "Seasonal cricket planning",
+  "Academy and team performance environments",
 ] as const;
 
 const editorialQuestions = [
-  "How should training change across a competitive season?",
-  "When does more training stop being better training?",
-  "What makes a performance programme progressive?",
-  "How should physical preparation fit around sport practice?",
-  "What information is actually useful when monitoring athletes?",
-  "When does an athlete need individual coaching rather than a fixed programme?",
-  "What makes a performance system useful to coaches?",
-  "How do you build physical qualities without losing sight of the sport?",
+  "How should cricket physical preparation change across a competitive season?",
+  "What physical demands make fast-bowling preparation different?",
+  "How can strength and power support cricket without losing sight of the sport?",
+  "How should physical training fit around cricket practice and matches?",
+  "What information is useful when monitoring cricket players?",
+  "When does a player need individual coaching rather than a fixed programme?",
+  "What makes an academy performance system useful to coaches?",
+  "How should off-season development prepare a player for the cricket calendar?",
 ] as const;
 
 export function InsightsPage() {
@@ -123,17 +123,17 @@ export function InsightsPage() {
 
           <div className="mt-16 grid gap-12 lg:mt-24 lg:grid-cols-12 lg:items-end">
             <DisplayHeading id="insights-hero-title" className="type-hero max-w-[10ch] lg:col-span-7">
-              Thinking for better performance.
+              Thinking for better cricket performance.
             </DisplayHeading>
 
             <div className="lg:col-span-5 lg:pb-1">
               <BodyCopy className="text-charcoal">
-                Practical thinking on physical preparation, athlete development and the systems
-                surrounding performance.
+                Practical thinking on cricket physical preparation, player development and the
+                systems surrounding performance.
               </BodyCopy>
               <p className="mt-6 border-t border-line pt-5 text-[0.98rem] leading-relaxed text-charcoal">
-                Built for athletes, coaches and performance professionals who want to understand
-                the reasoning behind the work.
+                Built for cricket players, coaches and performance professionals who want to
+                understand the reasoning behind the work.
               </p>
               <div className="mt-8 flex flex-col gap-3 min-[460px]:flex-row lg:flex-col xl:flex-row">
                 <ButtonLink href="#topics">Explore the topics</ButtonLink>
@@ -145,7 +145,7 @@ export function InsightsPage() {
           </div>
 
           <div className="mt-16 grid border-y border-ink sm:grid-cols-3 lg:mt-24">
-            {["Athletes", "Coaches", "Performance professionals"].map((audience, index) => (
+            {["Cricket players", "Cricket coaches", "Performance professionals"].map((audience, index) => (
               <p
                 key={audience}
                 className={`flex min-h-20 items-end border-b border-ink py-5 text-[0.76rem] font-bold tracking-[0.1em] uppercase sm:border-b-0 sm:px-6 ${
@@ -170,9 +170,9 @@ export function InsightsPage() {
             </div>
             <div className="space-y-5 lg:col-span-5">
               <BodyCopy className="text-charcoal">
-                Good performance coaching is not simply a list of exercises. Decisions are shaped
-                by the athlete, the sport, the schedule and what the work is intended to achieve.
-                INSIGHTS is where CAIRNOX explores those decisions in more depth.
+                Cricket performance coaching is not simply a list of exercises. Decisions are shaped
+                by the player, playing role, practice and match schedule, season phase and what the
+                work is intended to achieve. INSIGHTS is where CAIRNOX explores those decisions.
               </BodyCopy>
               <p className="text-[1rem] leading-relaxed text-charcoal">
                 The aim is not to publish for the sake of publishing. The aim is to make useful
@@ -214,8 +214,8 @@ export function InsightsPage() {
               </SectionHeading>
             </div>
             <p className="max-w-xl text-[1.02rem] leading-relaxed text-charcoal lg:col-span-4 lg:pb-1">
-              Six editorial territories connect the athlete, the training process and the wider
-              performance environment.
+              Six editorial territories connect the cricket player, physical preparation and the
+              wider team or academy environment.
             </p>
           </div>
 
@@ -411,9 +411,9 @@ export function InsightsPage() {
             </div>
             <div className="lg:col-span-5">
               <BodyCopy className="text-charcoal">
-                The CAIRNOX METHOD explains the philosophy that connects physical preparation,
-                progression and the wider performance environment. It is the best place to begin
-                before the Insights library grows.
+                The CAIRNOX METHOD explains the philosophy that connects cricket physical
+                preparation, progression and the wider performance environment. It is the best place
+                to begin before the Insights library grows.
               </BodyCopy>
               <div className="mt-8 flex flex-col gap-3 min-[460px]:flex-row lg:flex-col xl:flex-row">
                 <ButtonLink href="/method">Read the Method</ButtonLink>

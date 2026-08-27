@@ -10,7 +10,9 @@ This document translates the master brand strategy into practical website rules.
 
 ## Brand positioning
 
-CAIRNOX is a founder-led high-performance coaching and consultancy brand.
+CAIRNOX is a founder-led, cricket-led performance coaching and consultancy brand. Its primary application is elite cricket performance development and physical preparation systems, supported by wider high-performance experience.
+
+Positioning principle: **Cricket first. High-performance experience behind it.**
 
 - Core territory: **Scottish geology × elite performance × sports science × modern industrial design**
 - Core belief: **Performance is built layer by layer.**
@@ -29,56 +31,55 @@ Internal principle: **Brand first. Founder powered. Scalable by design.**
 
 ## Audience
 
-The experience is athlete-first and must not resemble a general fitness or personal-training business.
+The experience is cricket-player-first and must not resemble a generic cricket academy, technical batting/bowling service, general fitness or personal-training business.
 
 Primary audience:
 
-- professional athletes
-- aspiring professional athletes
-- elite and high-level competitive athletes
-- highly motivated performance-focused individuals
+- professional and aspiring professional cricket players
+- serious high-level competitive cricket players
+- parents of developing players
+- highly motivated cricket performers
 
 Secondary/professional audience:
 
-- coaches
-- schools
-- academies
-- clubs
-- sporting organisations
+- cricket coaches
+- schools and cricket academies
+- cricket clubs and teams
+- cricket organisations and governing bodies
 - performance staff
 
 ## Business architecture
 
 BASE, ELEVATE and APEX are three applications of one CAIRNOX philosophy. They are not Bronze/Silver/Gold packages, should not be differentiated primarily by colour and must not read as linear pricing upgrades.
 
-### BASE — Performance Programmes
+### BASE — Cricket Performance Programmes
 
 - Philosophical role: **Foundation**
 - Brand expression: **Build the foundation.**
 - Commercial role: **Expertise productised.**
 - Model: one-time purchase, scalable delivery
-- Core product: a complete, structured strength, power and conditioning programme an athlete can follow independently
+- Core product: a complete, structured cricket strength, power and conditioning programme a player can follow independently
 - Supporting material: selected ebooks and resources; never position BASE as an ebook shop
 - Primary intent/action: “I want a structured programme I can follow.” → **View Programmes** → purchase
 
-### ELEVATE — 1:1 Performance Coaching
+### ELEVATE — 1:1 Cricket Performance Coaching
 
 - Philosophical role: **Progression**
 - Brand expression: **Build around the athlete.**
 - Commercial role: **Expertise personalised.**
 - Model: limited-availability monthly coaching
 - Service territory: personalised programming, direct ongoing support, nutrition support, training modification, athlete monitoring, schedule management where relevant and ongoing communication
-- Key distinction: **BASE gives the athlete the system. ELEVATE adapts the system around the athlete.**
+- Key distinction: **BASE gives the player the system. ELEVATE adapts the system around the player.**
 - Primary intent/action: “I want direct coaching built around me.” → **Apply for Coaching** → qualified application/consultation
 
 Do not manufacture scarcity, imply medical dietetic services or publish a guaranteed “24/7 response” promise without later owner approval.
 
-### APEX — High-Performance Consultancy
+### APEX — Cricket Performance Consultancy
 
 - Philosophical role: **Peak**
 - Brand expression: **Build the performance environment.**
 - Commercial role: **Expertise systemised.**
-- Audience: coaches, schools, academies, clubs and sporting organisations
+- Audience: cricket coaches, schools, academies, clubs, teams, governing bodies and cricket organisations
 - Service territory: physical development systems, load management, seasonal planning, athlete monitoring, physical preparation strategy, programme review and staff/coach development
 - Delivery: in person, online, hybrid, project-based or ongoing advisory
 - Primary intent/action: “We want to improve our performance system/environment.” → **Discuss a Project** → qualified consultancy enquiry
@@ -87,13 +88,13 @@ Use professional language around systems, decisions, frameworks, implementation,
 
 ## Experience and proof
 
-Approved multi-sport experience territory:
+Approved experience territory, with USA Cricket as the principal application and the remainder as supporting high-performance authority:
 
+- USA Cricket
 - Professional Rugby
 - PSA Squash
 - British Cycling
 - Professional Soccer
-- USA Cricket
 - NCAA Programs
 
 Do not add employers, titles, dates, certifications, partners, statistics or outcomes unless approved supporting material is supplied.
@@ -178,13 +179,13 @@ Future route patterns reserved in architecture, not implemented in Phase 1:
 
 ## Navigation and conversion
 
-Desktop navigation: BASE, ELEVATE, APEX, METHOD, ABOUT, RESULTS, INSIGHTS. Primary global CTA: **WORK WITH MATHEW**.
+Desktop navigation: BASE, ELEVATE, APEX, METHOD, ABOUT, RESULTS, INSIGHTS. Primary global CTA: **WORK WITH CAIRNOX**. Founder-specific direct-coaching sections may retain **WORK WITH MATHEW**.
 
 The accessible mobile navigation displays the offer descriptors alongside the proprietary tier names:
 
-- BASE — Performance Programmes
-- ELEVATE — 1:1 Performance Coaching
-- APEX — High-Performance Consultancy
+- BASE — Cricket Performance Programmes
+- ELEVATE — 1:1 Cricket Performance Coaching
+- APEX — Cricket Performance Consultancy
 
 Do not collapse the three commercial paths into a generic Contact action. Their future funnel events should remain distinct.
 

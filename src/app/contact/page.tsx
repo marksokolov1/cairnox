@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Contact",
-  description: "Contact CAIRNOX about performance programmes, 1:1 coaching, high-performance consultancy or general enquiries.",
+  description: "Contact CAIRNOX about cricket performance programmes, 1:1 coaching, cricket consultancy or general enquiries.",
   pathname: "/contact",
 });
 

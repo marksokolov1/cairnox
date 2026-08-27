@@ -134,11 +134,11 @@ export function BaseInterestForm() {
       <TextField label="Name" name="name" state={state} required autoComplete="name" maxLength={120} />
       <TextField label="Email" name="email" state={state} required type="email" autoComplete="email" inputMode="email" maxLength={254} />
       <TextField
-        label="Sport / training context"
+        label="Cricket role and training context"
         name="trainingContext"
         state={state}
         maxLength={180}
-        placeholder="e.g. rugby, cricket, squash, general athletic development"
+        placeholder="e.g. fast bowler, batter, wicketkeeper, all-rounder"
       />
       <CheckboxGroup legend="What are you most interested in?" name="interests" state={state} options={baseInterestOptions} />
       <TextareaField label="Anything else we should know?" name="additionalContext" state={state} rows={5} maxLength={3000} />
@@ -157,8 +157,8 @@ export function ElevateApplicationForm() {
           <TextField label="Location" name="location" state={state} autoComplete="address-level2" maxLength={180} placeholder="City / country" className="sm:col-span-2" />
         </div>
       </FormSection>
-      <FormSection number="02" title="Your sport">
-        <TextField label="Sport / performance context" name="sportContext" state={state} required maxLength={180} />
+      <FormSection number="02" title="Your cricket context">
+        <TextField label="Cricket role and performance context" name="sportContext" state={state} required maxLength={180} />
         <SelectField label="Current level" name="currentLevel" state={state} options={elevateLevelOptions} required />
         <SelectField label="Current season status" name="seasonStatus" state={state} options={elevateSeasonOptions} />
       </FormSection>
@@ -196,8 +196,8 @@ export function ApexEnquiryForm() {
       </FormSection>
       <FormSection number="02" title="Environment">
         <SelectField label="Type of organisation" name="organisationType" state={state} options={apexOrganisationOptions} required />
-        <TextField label="Sport / performance environment" name="sport" state={state} required maxLength={180} />
-        <TextareaField label="Approximate athlete / programme context" name="programmeContext" state={state} rows={5} maxLength={3000} />
+        <TextField label="Cricket programme / performance environment" name="sport" state={state} required maxLength={180} />
+        <TextareaField label="Approximate player / programme context" name="programmeContext" state={state} rows={5} maxLength={3000} />
       </FormSection>
       <FormSection number="03" title="Area of support">
         <CheckboxGroup legend="What would you like to discuss?" name="supportAreas" state={state} options={apexSupportOptions} required />

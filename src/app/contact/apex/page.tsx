@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Discuss an APEX Project",
-  description: "Discuss high-performance consultancy support for your team or organisation with CAIRNOX APEX.",
+  description: "Discuss cricket performance consultancy support for your team or organisation with CAIRNOX APEX.",
   pathname: "/contact/apex",
 });
 

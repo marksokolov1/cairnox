@@ -8,7 +8,7 @@ Public library at launch: intentionally empty
 
 ## Purpose
 
-INSIGHTS is the CAIRNOX editorial home for practical, evidence-aware thinking about athletic development, physical preparation and performance systems. It should help athletes understand the reasoning behind training and help coaches or performance professionals think more clearly about planning, monitoring and delivery.
+INSIGHTS is the CAIRNOX editorial home for practical, evidence-aware thinking about cricket physical preparation, player development and performance systems. It should help cricket players understand the reasoning behind training and help coaches or performance professionals think more clearly about planning, workload, monitoring and delivery.
 
 The publication is not an SEO content engine, news feed or substitute for academic research. Articles should begin with a useful performance question, add the context needed to interpret it and connect the discussion back to practice.
 
@@ -16,12 +16,12 @@ The publication is not an SEO content engine, news feed or substitute for academ
 
 Use one of the categories defined in `src/types/insight-article.ts`:
 
-- Physical Preparation
-- Athlete Development
-- Performance Planning
-- Monitoring & Adaptation
-- Load & Recovery
-- Performance Systems
+- Physical Preparation — cricket strength, power and conditioning
+- Athlete Development — long-term cricket athletic development
+- Performance Planning — in-season and off-season cricket planning
+- Monitoring & Adaptation — player response and training decisions
+- Load & Recovery — including fast-bowling workload where appropriate
+- Performance Systems — academy, club, team and organisational environments
 
 Do not create a new category for a single article. Add a category only when it represents a durable editorial territory.
 

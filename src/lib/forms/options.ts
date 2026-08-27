@@ -1,12 +1,12 @@
 export const baseInterestOptions = [
-  "Strength",
-  "Power",
-  "Conditioning",
-  "Athletic Development",
-  "In-Season Training",
-  "Off-Season Training",
-  "Mobility / Robustness",
-  "General Performance Programme",
+  "Cricket Strength and Power",
+  "Fast-Bowling Physical Preparation",
+  "Batting Power and Rotational Performance",
+  "Cricket Conditioning",
+  "In-Season Cricket Training",
+  "Off-Season Cricket Development",
+  "Cricket Athletic Development",
+  "General Cricket Performance Programme",
 ] as const;
 
 export const elevateLevelOptions = [
@@ -30,11 +30,13 @@ export const elevateSeasonOptions = [
 export const elevateImprovementOptions = [
   "Strength",
   "Power",
-  "Speed",
+  "Speed and Movement",
   "Conditioning",
-  "Athletic Development",
+  "Fast-Bowling Physical Preparation",
+  "Batting Power and Rotational Performance",
+  "Cricket Athletic Development",
   "Training Structure",
-  "Playing / Competition Schedule Management",
+  "Match and Practice Schedule Management",
   "General Physical Preparation",
   "Other",
 ] as const;
@@ -49,21 +51,21 @@ export const elevateStartOptions = [
 ] as const;
 
 export const apexOrganisationOptions = [
-  "Professional Club / Team",
-  "Academy",
-  "School",
-  "College / University",
-  "Sporting Organisation / Governing Body",
+  "Professional Cricket Club / Team",
+  "Cricket Academy",
+  "School Cricket Programme",
+  "College / University Cricket Programme",
+  "Cricket Organisation / Governing Body",
   "Coaching Organisation",
   "Other",
 ] as const;
 
 export const apexSupportOptions = [
-  "Physical Development Systems",
-  "Load Management",
-  "Seasonal Planning",
+  "Cricket Physical-Development Systems",
+  "Fast-Bowler Workload Planning",
+  "Seasonal Performance Planning",
   "Athlete Monitoring",
-  "Physical Preparation Strategy",
+  "Physical-Preparation Strategy",
   "Programme Review",
   "Coach / Staff Development",
   "Other",

@@ -51,7 +51,7 @@ const layers = [
     number: "03",
     title: "Performance",
     expression: "Express preparation when it matters.",
-    copy: "The outcome of the work is the athlete's ability to perform within their sporting environment.",
+    copy: "The outcome of the work is the player's ability to perform within the cricket environment.",
   },
 ] as const;
 
@@ -61,17 +61,17 @@ const pillars = [
   {
     number: "01",
     title: "Physical preparation",
-    copy: "Develop strength, power, conditioning and movement qualities relevant to performance.",
+    copy: "Develop strength, power, conditioning and movement qualities relevant to cricket performance.",
   },
   {
     number: "02",
     title: "Performance planning",
-    copy: "Structure training around objectives, competitive demands and the wider schedule.",
+    copy: "Structure training around the playing role, practice, matches, travel and the wider season.",
   },
   {
     number: "03",
     title: "Monitoring & adaptation",
-    copy: "Use athlete response, workload and performance information to inform future training decisions.",
+    copy: "Use player response, workload and performance information to inform future training decisions.",
   },
   {
     number: "04",
@@ -83,28 +83,28 @@ const pillars = [
 const contextFactors = [
   {
     number: "01",
-    title: "Sport",
-    copy: "The physical demands of competition.",
+    title: "Playing role",
+    copy: "The physical demands of batting, bowling, wicketkeeping or all-round performance.",
   },
   {
     number: "02",
-    title: "Athlete",
-    copy: "Current needs, development and training history.",
+    title: "Player",
+    copy: "Current capacity, development needs and training history.",
   },
   {
     number: "03",
     title: "Schedule",
-    copy: "Practice, competition, travel and available training time.",
+    copy: "Cricket practice, matches, travel and available training time.",
   },
   {
     number: "04",
     title: "Workload",
-    copy: "The demands already being placed on the athlete.",
+    copy: "The demands already being placed on the player.",
   },
   {
     number: "05",
     title: "Recovery",
-    copy: "The athlete's ability to absorb and respond to training.",
+    copy: "The player's ability to absorb and respond to training.",
   },
   {
     number: "06",
@@ -126,7 +126,7 @@ const applications = [
     number: "01 / Foundation",
     title: "BASE",
     role: "The methodology productised.",
-    copy: "Structured performance programmes athletes can follow independently.",
+    copy: "Structured cricket performance programmes players can follow independently.",
     expression: "Build the foundation.",
     cta: "Explore BASE",
     href: "/base",
@@ -135,7 +135,7 @@ const applications = [
     number: "02 / Progression",
     title: "ELEVATE",
     role: "The methodology personalised.",
-    copy: "Individual coaching adapted around the athlete, sport and schedule.",
+    copy: "Individual cricket coaching adapted around the player, role and schedule.",
     expression: "Build around the athlete.",
     cta: "Explore ELEVATE",
     href: "/elevate",
@@ -144,7 +144,7 @@ const applications = [
     number: "03 / Peak",
     title: "APEX",
     role: "The methodology applied to the environment.",
-    copy: "Consultancy supporting the systems surrounding groups of athletes.",
+    copy: "Consultancy supporting the systems surrounding cricket squads and player pathways.",
     expression: "Build the performance environment.",
     cta: "Explore APEX",
     href: "/apex",
@@ -152,8 +152,8 @@ const applications = [
 ] as const;
 
 const sports = [
-  "Professional Rugby",
   "USA Cricket",
+  "Professional Rugby",
   "PSA Squash",
   "British Cycling",
   "Professional Soccer",
@@ -161,9 +161,9 @@ const sports = [
 ] as const;
 
 const finalPaths = [
-  { label: "BASE", descriptor: "Performance Programmes", href: "/base" },
-  { label: "ELEVATE", descriptor: "1:1 Performance Coaching", href: "/elevate" },
-  { label: "APEX", descriptor: "High-Performance Consultancy", href: "/apex" },
+  { label: "BASE", descriptor: "Cricket Performance Programmes", href: "/base" },
+  { label: "ELEVATE", descriptor: "1:1 Cricket Performance Coaching", href: "/elevate" },
+  { label: "APEX", descriptor: "Cricket Performance Consultancy", href: "/apex" },
 ] as const;
 
 export function MethodPage() {
@@ -180,9 +180,9 @@ export function MethodPage() {
 
             <div className="lg:col-span-4 lg:pb-1">
               <BodyCopy className="text-charcoal">
-                Athletic development is not created in one session. It is built through the
-                accumulation of deliberate work, repeated over time and structured around where the
-                athlete needs to go.
+                Cricket performance is not created in one session. It is built through deliberate
+                physical development repeated over time and structured around where the player needs
+                to go.
               </BodyCopy>
               <p className="mt-6 border-t border-line pt-5 text-[0.84rem] font-bold leading-relaxed tracking-[0.08em] text-mineral uppercase">
                 Strong foundations. Intelligent progression. Performance expressed when it matters.
@@ -224,8 +224,8 @@ export function MethodPage() {
                 a time, and only remain standing when each layer is supported by what came before it.
               </BodyCopy>
               <p className="text-[1.05rem] leading-relaxed text-charcoal">
-                CAIRNOX applies that idea to performance. The athlete has a direction. Training
-                provides the structure. Each session adds another layer.
+                CAIRNOX applies that idea to cricket performance. The player has a direction.
+                Training provides the structure. Each session adds another layer.
               </p>
             </div>
           </div>
@@ -352,8 +352,8 @@ export function MethodPage() {
               </SectionHeading>
             </div>
             <p className="max-w-lg text-[1.05rem] leading-relaxed text-charcoal lg:col-span-4 lg:pb-1">
-              These four areas operate as one connected methodology: preparing the athlete, planning
-              the work, understanding the response and developing capacity over time.
+              These four areas operate as one connected cricket methodology: preparing the player,
+              planning around the sport, understanding the response and developing capacity over time.
             </p>
           </div>
 
@@ -388,9 +388,9 @@ export function MethodPage() {
               </SectionHeading>
             </div>
             <BodyCopy className="text-charcoal lg:col-span-5">
-              The same training solution does not fit every athlete, sport or moment in the season.
-              Physical preparation has to account for what the athlete is preparing for and what
-              already exists around them.
+              A fast bowler, batter, wicketkeeper and all-rounder do not require identical physical
+              preparation. Decisions have to account for the player, role, current capacity, cricket
+              schedule, workload, recovery, season phase and objective.
             </BodyCopy>
           </div>
 
@@ -519,13 +519,13 @@ export function MethodPage() {
       <Section aria-labelledby="sports-title" tone="muted" spacing="large">
         <Container className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           <figure className="lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden bg-charcoal">
-              <Image
-                src={getPublicAssetPath("/media/images/mathew-skyner-rugby-coaching-night-ball.jpg")}
-                alt="Mathew Skyner holding a rugby ball on a field at night"
+              <div className="relative aspect-[3/2] overflow-hidden bg-charcoal">
+                <Image
+                  src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-athlete-conversation.jpg")}
+                  alt="Mathew Skyner walking with a USA Cricket athlete during a training day"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover object-center saturate-[0.9] contrast-[1.04]"
+                  className="object-cover object-[50%_50%] saturate-[0.9] contrast-[1.04]"
               />
             </div>
             <figcaption className="mt-3 text-[0.72rem] font-bold tracking-[0.11em] text-mineral uppercase">
@@ -539,10 +539,11 @@ export function MethodPage() {
               The sport changes. The need for structure doesn&apos;t.
             </SectionHeading>
             <p className="mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-charcoal">
-              Mathew Skyner&apos;s experience spans professional rugby, USA Cricket, PSA Squash, British
-              Cycling, professional soccer and NCAA programmes. Each environment creates different
-              physical and competitive demands, reinforcing the importance of adapting performance
-              principles to context rather than relying on a single template.
+              Cricket is the principal application of CAIRNOX. Mathew Skyner&apos;s USA Cricket
+              performance-environment experience sits alongside professional rugby, PSA Squash,
+              British Cycling, professional soccer and NCAA programmes. That wider background
+              reinforces why cricket preparation must respond to the role, player and environment
+              rather than rely on one template.
             </p>
 
             <ul className="mt-12 grid border-t border-ink sm:grid-cols-2">
@@ -572,11 +573,11 @@ export function MethodPage() {
             </div>
             <div className="lg:col-span-5">
               <BodyCopy className="text-charcoal">
-                The CAIRNOX philosophy stays consistent. The level of support changes depending on
-                where you are and what you need from the system.
+                The CAIRNOX philosophy stays consistent across cricket. The level of support changes
+                depending on the player or organisation and what is needed from the system.
               </BodyCopy>
               <ButtonLink href="/contact" className="mt-8">
-                Work with Mathew
+                Work with CAIRNOX
               </ButtonLink>
             </div>
           </div>

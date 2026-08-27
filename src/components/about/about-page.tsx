@@ -12,8 +12,8 @@ import {
 } from "@/components/ui/primitives";
 
 const experience = [
-  "Professional Rugby",
   "USA Cricket",
+  "Professional Rugby",
   "PSA Squash",
   "British Cycling",
   "Professional Soccer",
@@ -24,7 +24,7 @@ const lessons = [
   {
     number: "01",
     title: "Context matters",
-    copy: "Training has to reflect the athlete, sport, schedule and current demands.",
+    copy: "Training has to reflect the player, role, cricket schedule and current demands.",
   },
   {
     number: "02",
@@ -70,7 +70,7 @@ const coachingPrinciples = [
   {
     number: "01",
     title: "Individual context",
-    copy: "Understand what the athlete actually needs rather than applying a fixed template.",
+    copy: "Understand what the player actually needs rather than applying a fixed template.",
   },
   {
     number: "02",
@@ -85,7 +85,7 @@ const coachingPrinciples = [
   {
     number: "04",
     title: "Adaptability",
-    copy: "Adjust when schedules, competition and athlete response change.",
+    copy: "Adjust when practice, matches, travel and player response change.",
   },
   {
     number: "05",
@@ -97,20 +97,20 @@ const coachingPrinciples = [
 const pathways = [
   {
     label: "BASE",
-    descriptor: "Performance Programmes",
-    copy: "Structured programming to follow independently.",
+    descriptor: "Cricket Performance Programmes",
+    copy: "Structured cricket programming to follow independently.",
     href: "/base",
   },
   {
     label: "ELEVATE",
-    descriptor: "1:1 Performance Coaching",
-    copy: "Direct individual coaching and ongoing support.",
+    descriptor: "1:1 Cricket Performance Coaching",
+    copy: "Direct individual cricket coaching and ongoing support.",
     href: "/elevate",
   },
   {
     label: "APEX",
-    descriptor: "High-Performance Consultancy",
-    copy: "Support for coaches and organisations.",
+    descriptor: "Cricket Performance Consultancy",
+    copy: "Support for cricket coaches and organisations.",
     href: "/apex",
   },
 ] as const;
@@ -139,9 +139,9 @@ export function AboutPage() {
               <span className="block">behind CAIRNOX.</span>
             </DisplayHeading>
             <BodyCopy className="mt-8 max-w-[45rem] text-charcoal sm:mt-10">
-              CAIRNOX is led by Mathew Skyner, a high-performance coach whose experience spans
-              professional and international sporting environments across rugby, cricket, squash,
-              cycling, soccer and NCAA programmes.
+              CAIRNOX is led by Mathew Skyner, a practitioner with experience inside the USA Cricket
+              performance environment and across professional and international sport. Cricket
+              physical preparation is now the principal application of that experience.
             </BodyCopy>
             <p className="mt-7 max-w-[43rem] border-t border-line pt-5 text-[0.96rem] font-semibold leading-relaxed text-charcoal">
               Different environments. Different demands. The same need for clear structure and
@@ -158,8 +158,8 @@ export function AboutPage() {
           <figure className="pb-8 sm:pb-12 lg:col-span-5 lg:py-8">
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone-light lg:h-full lg:aspect-auto">
               <Image
-                src={getPublicAssetPath("/media/images/mathew-skyner-professional-rugby-coach-portrait.jpg")}
-                alt="Mathew Skyner smiling while carrying rugby training equipment"
+                src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-performance-coach-portrait.jpg")}
+                alt="Mathew Skyner in a USA Cricket performance environment"
                 fill
                 priority
                 sizes="(min-width: 1024px) 42vw, 100vw"
@@ -184,9 +184,9 @@ export function AboutPage() {
             </div>
             <div className="space-y-6 lg:col-span-5 lg:pt-12">
               <BodyCopy className="text-charcoal">
-                Before CAIRNOX became a brand, the work already existed: preparing athletes,
-                managing physical development, adapting training around competition and helping
-                people perform within demanding sporting environments.
+                Before CAIRNOX became a brand, the work already existed: preparing players, managing
+                physical development, adapting training around practice and competition, and working
+                within demanding cricket and high-performance environments.
               </BodyCopy>
               <p className="text-[1.05rem] leading-relaxed text-charcoal">
                 CAIRNOX gives that experience a structure — a way to make the thinking behind the
@@ -223,13 +223,14 @@ export function AboutPage() {
           </figure>
 
           <div className="lg:col-span-7">
-            <Eyebrow className="text-moss">Experience across performance environments</Eyebrow>
+              <Eyebrow className="text-moss">Cricket experience, wider performance perspective</Eyebrow>
             <SectionHeading id="experience-title" className="mt-6 max-w-[12ch]">
-              Experience across sport.
+              Cricket experience. Performance perspective.
             </SectionHeading>
             <p className="mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-charcoal">
-              Working across different sports reinforces an important principle: the demands change,
-              but good performance preparation still requires structure, progression and context.
+              Experience in the USA Cricket environment leads the story. Work across other sports
+              reinforces an important principle: the demands change, but good physical preparation
+              still requires structure, progression and context.
             </p>
 
             <ul className="mt-12 grid border-t border-ink sm:grid-cols-2">
@@ -297,9 +298,8 @@ export function AboutPage() {
                 direction, a strong foundation and progress accumulated one layer at a time.
               </p>
               <p className="text-[1.05rem] leading-relaxed text-charcoal">
-                BASE, ELEVATE and APEX apply the same philosophy at different levels — from
-                independent programming, to individual coaching, to the performance environment
-                itself.
+                BASE, ELEVATE and APEX apply the same philosophy within cricket at different levels —
+                from independent programming, to individual coaching, to the performance environment.
               </p>
             </div>
           </div>
@@ -335,8 +335,8 @@ export function AboutPage() {
             <figure className="lg:col-span-6">
               <div className="relative aspect-[3/2] overflow-hidden bg-stone-light">
                 <Image
-                  src={getPublicAssetPath("/media/images/mathew-skyner-rugby-strength-conditioning-coach.jpg")}
-                  alt="Mathew Skyner coaching from the rugby sideline with a whistle"
+                  src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-field-coaching.jpg")}
+                  alt="Mathew Skyner working within a USA Cricket field training session"
                   fill
                   sizes="(min-width: 1024px) 48vw, 100vw"
                   className="object-cover object-[50%_48%] saturate-[0.9] contrast-[1.03]"
@@ -353,8 +353,9 @@ export function AboutPage() {
                 Serious about the detail. Clear about the purpose.
               </SectionHeading>
               <p className="mt-8 max-w-xl text-[1.05rem] leading-relaxed text-charcoal">
-                The work can be technical without becoming impersonal. Good coaching makes the
-                purpose clear, responds to the environment and keeps long-term development in view.
+                Cricket physical preparation can be technical without becoming impersonal. Good
+                coaching makes the purpose clear, responds to the player and schedule, and keeps
+                long-term development in view.
               </p>
             </div>
           </div>
@@ -438,14 +439,14 @@ export function AboutPage() {
               No two performance environments are the same.
             </SectionHeading>
             <p className="mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-stone-light">
-              A cricketer, rugby player, squash athlete, cyclist and soccer player do not need
-              identical preparation. Different sports create different competitive demands,
-              schedules and physical priorities. The value is in understanding which principles
-              matter and how they should be applied.
+              Cricket roles do not require identical preparation, and neither do athletes across
+              different sports. The USA Cricket environment provides the principal context for
+              CAIRNOX; wider multisport experience supports the ability to adapt principles to the
+              player, schedule and physical priorities rather than force one template.
             </p>
 
             <p className="mt-12 border-t border-white/30 pt-7 text-[0.78rem] font-bold leading-relaxed tracking-[0.12em] text-stone uppercase">
-              Professional Rugby / USA Cricket / PSA Squash / British Cycling / Professional Soccer
+              USA Cricket / Professional Rugby / PSA Squash / British Cycling / Professional Soccer
               / NCAA Programmes
             </p>
           </div>
@@ -463,8 +464,8 @@ export function AboutPage() {
             </div>
             <div className="lg:col-span-5">
               <BodyCopy className="text-charcoal">
-                CAIRNOX makes Mathew&apos;s expertise accessible through independent programmes,
-                individual coaching and consultancy for performance environments.
+                CAIRNOX makes Mathew&apos;s expertise accessible through cricket performance programmes,
+                individual coaching and consultancy for cricket environments.
               </BodyCopy>
               <ButtonLink href="/contact" className="mt-8">
                 Start a conversation

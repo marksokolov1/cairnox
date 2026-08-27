@@ -21,25 +21,25 @@ const pathways: readonly ContactPathway[] = [
   },
   {
     label: "BASE",
-    descriptor: "Performance Programmes",
+    descriptor: "Cricket Performance Programmes",
     title: "Register your interest.",
-    copy: "Register interest in upcoming CAIRNOX performance programmes.",
+    copy: "Register interest in upcoming CAIRNOX cricket performance programmes.",
     cta: "Register interest",
     href: "/contact/base",
   },
   {
     label: "ELEVATE",
-    descriptor: "1:1 Performance Coaching",
+    descriptor: "1:1 Cricket Performance Coaching",
     title: "Apply for coaching.",
-    copy: "Apply for individual coaching with Mathew Skyner.",
+    copy: "Apply for individual cricket performance coaching with Mathew Skyner.",
     cta: "Apply for ELEVATE",
     href: "/contact/elevate",
   },
   {
     label: "APEX",
-    descriptor: "High-Performance Consultancy",
+    descriptor: "Cricket Performance Consultancy",
     title: "Discuss the environment.",
-    copy: "Start a conversation about support for your team or organisation.",
+    copy: "Start a conversation about cricket performance support for your team or organisation.",
     cta: "Discuss a project",
     href: "/contact/apex",
   },
@@ -59,7 +59,7 @@ export function ContactHub() {
             </div>
             <div className="self-end lg:col-span-4 lg:col-start-9">
               <BodyCopy className="text-mineral">
-                Whether you are looking for a performance programme, individual coaching, organisational support or simply have a question, choose the route that best fits the conversation.
+                Whether you are looking for a cricket performance programme, individual coaching, organisational support or simply have a question, choose the route that best fits the conversation.
               </BodyCopy>
             </div>
           </div>
@@ -175,9 +175,9 @@ export function BaseContactPage() {
       service="BASE"
       eyebrow="CAIRNOX BASE"
       headline={<>Register your<br /> interest.</>}
-      copy="The first CAIRNOX BASE performance programmes are being prepared for release. Leave your details to register interest and indicate what you are looking for from a programme."
+      copy="The first CAIRNOX BASE cricket performance programmes are being prepared for release. Leave your details to register interest and indicate what you need from a programme."
       formLabel="BASE interest"
-      formIntro="A low-friction registration for athletes interested in structured performance programming. No launch date, pricing or access is promised by submitting this form."
+      formIntro="A low-friction registration for cricket players interested in structured physical-preparation programming. No launch date, pricing or access is promised by submitting this form."
       form={<BaseInterestForm />}
       alternative={<p className="text-base">Need individual coaching? <TextLink href="/elevate">Explore ELEVATE.</TextLink></p>}
     />
@@ -190,10 +190,10 @@ export function ElevateContactPage() {
       service="ELEVATE"
       eyebrow="CAIRNOX ELEVATE"
       headline={<>Apply for<br /> 1:1 coaching.</>}
-      copy="ELEVATE is limited because the coaching is delivered directly by Mathew. The application helps establish your sporting context, current needs and whether the service is likely to be the right fit."
+      copy="ELEVATE is limited because the coaching is delivered directly by Mathew. The application helps establish your cricket role, schedule, physical priorities and whether the service is likely to be the right fit."
       note="This is an application for coaching, not an automatic purchase."
       formLabel="ELEVATE application"
-      formIntro="Share enough context for Mathew to understand the athlete, the sporting environment and the level of support being sought. Sensitive health information is not requested here."
+      formIntro="Share enough context for Mathew to understand the player, cricket environment and level of support being sought. Sensitive health information is not requested here."
       form={<ElevateApplicationForm />}
       alternative={<p className="text-base">Looking for a programme to follow independently? <TextLink href="/base">Explore BASE.</TextLink></p>}
     />
@@ -206,11 +206,11 @@ export function ApexContactPage() {
       service="APEX"
       eyebrow="CAIRNOX APEX"
       headline={<>Let&apos;s understand<br /> the environment.</>}
-      copy="APEX starts with the organisation, the performance challenge and the people involved. Share enough context to begin a useful conversation."
+      copy="APEX starts with the cricket organisation, performance challenge and people involved. Share enough context to begin a useful conversation."
       formLabel="APEX project enquiry"
-      formIntro="A professional project enquiry designed to establish the organisation, performance context and area of support before any next step is arranged."
+      formIntro="A professional project enquiry designed to establish the cricket environment, performance context and area of support before any next step is arranged."
       form={<ApexEnquiryForm />}
-      alternative={<p className="text-base">Looking for individual athlete support? <TextLink href="/elevate">Explore ELEVATE.</TextLink></p>}
+      alternative={<p className="text-base">Looking for individual player support? <TextLink href="/elevate">Explore ELEVATE.</TextLink></p>}
     />
   );
 }

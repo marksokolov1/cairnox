@@ -15,17 +15,17 @@ import {
 const audiences = [
   {
     number: "01",
-    title: "Competitive athletes",
-    copy: "Training around a demanding sporting calendar.",
+    title: "Competitive cricketers",
+    copy: "Physical preparation around a demanding cricket calendar.",
   },
   {
     number: "02",
-    title: "Professional & aspiring professional athletes",
-    copy: "Physical preparation aligned with higher performance demands.",
+    title: "Professional & aspiring professional players",
+    copy: "Cricket physical preparation aligned with higher performance demands.",
   },
   {
     number: "03",
-    title: "Athletes with complex schedules",
+    title: "Players with complex schedules",
     copy: "Training that can adapt around travel, matches, tournaments and changing workloads.",
   },
   {
@@ -38,7 +38,7 @@ const audiences = [
 const serviceElements = [
   {
     title: "Personalised programming",
-    copy: "Training designed around the athlete's current needs, objectives and sport.",
+    copy: "Training designed around the player's role, current needs, objectives and cricket context.",
   },
   {
     title: "Strength, power & conditioning",
@@ -46,15 +46,15 @@ const serviceElements = [
   },
   {
     title: "Ongoing programme adjustment",
-    copy: "Training evolves as schedules, demands and athlete response change.",
+    copy: "Training evolves as practice, matches, travel, demands and player response change.",
   },
   {
     title: "Direct coaching support",
     copy: "Ongoing communication and guidance rather than a static programme.",
   },
   {
-    title: "Competition / playing schedule management",
-    copy: "Where relevant, training is structured around the athlete's sporting calendar.",
+    title: "Match & practice schedule management",
+    copy: "Where relevant, physical preparation is structured around the player's cricket calendar.",
   },
   {
     title: "Nutrition support",
@@ -70,7 +70,7 @@ const processSteps = [
   {
     number: "01",
     title: "Understand",
-    copy: "Establish the athlete's current position, sport, schedule, goals and physical demands.",
+    copy: "Establish the player's role, training history, schedule, objectives and physical demands.",
   },
   {
     number: "02",
@@ -90,14 +90,14 @@ const processSteps = [
   {
     number: "05",
     title: "Adapt",
-    copy: "Adjust the programme as the athlete develops and the competitive environment changes.",
+    copy: "Adjust the programme as the player develops and the cricket environment changes.",
   },
 ] as const;
 
 const athleteContext = [
-  "Training",
-  "Practice",
-  "Competition",
+  "Physical training",
+  "Cricket practice",
+  "Matches",
   "Recovery",
   "Travel",
   "Adaptation",
@@ -119,19 +119,22 @@ export function ElevatePage() {
         <Container className="grid lg:min-h-[48rem] lg:grid-cols-12 lg:items-stretch">
           <div className="flex flex-col justify-center py-12 sm:py-20 lg:col-span-7 lg:py-24 lg:pr-[clamp(2.5rem,5vw,6.5rem)]">
             <Eyebrow className="text-moss">CAIRNOX ELEVATE</Eyebrow>
+            <p className="mt-5 text-[0.78rem] font-bold tracking-[0.11em] text-mineral uppercase">
+              1:1 Cricket Performance Coaching
+            </p>
             <DisplayHeading
               id="elevate-hero-title"
               className="mt-7 max-w-[13ch] text-[clamp(3rem,5.2vw,5.5rem)] leading-[0.94] sm:mt-9"
             >
-              <span className="block lg:whitespace-nowrap">Coaching built</span>
-              <span className="block lg:whitespace-nowrap">around the athlete.</span>
+              <span className="block">Cricket performance coaching</span>
+              <span className="block">built around the player.</span>
             </DisplayHeading>
             <BodyCopy className="mt-8 max-w-[39rem] text-charcoal sm:mt-10">
-              Individual performance coaching for athletes who need training adapted around their
-              sport, schedule and development needs.
+              Individual physical preparation and performance management for cricketers who need
+              training adapted around their role, schedule, season and development needs.
             </BodyCopy>
             <p className="mt-7 max-w-[39rem] border-t border-line pt-5 text-[0.96rem] font-semibold leading-relaxed text-charcoal sm:text-base">
-              Personalised programming. Ongoing support. Training that evolves with you.
+              Personalised programming. Ongoing support. Physical preparation that evolves with you.
             </p>
             <div className="mt-9 flex flex-col gap-3 min-[440px]:flex-row sm:mt-11">
               <ButtonLink href="/contact/elevate">Apply for ELEVATE</ButtonLink>
@@ -165,8 +168,8 @@ export function ElevatePage() {
               </SectionHeading>
             </div>
             <p className="max-w-xl text-[1.05rem] leading-relaxed text-charcoal lg:col-span-5 lg:pb-1">
-              Both routes are built on the same performance philosophy. The difference is how the
-              programme responds to the athlete.
+              Both routes are built on the same cricket performance philosophy. The difference is
+              how the programme responds to the player.
             </p>
           </div>
 
@@ -174,7 +177,7 @@ export function ElevatePage() {
             <article className="py-9 lg:min-h-[25rem] lg:pr-12 lg:py-12">
               <p className="type-eyebrow text-mineral">01 / BASE</p>
               <h3 className="mt-8 text-[clamp(2.5rem,4vw,4.5rem)] font-semibold leading-none tracking-[-0.05em]">
-                The athlete follows the programme.
+                The player follows the programme.
               </h3>
               <p className="mt-8 max-w-lg text-[1.05rem] leading-relaxed text-charcoal">
                 Structured independent performance programming.
@@ -183,17 +186,17 @@ export function ElevatePage() {
             <article className="border-t border-ink py-9 lg:min-h-[25rem] lg:border-t-0 lg:border-l lg:py-12 lg:pl-12">
               <p className="type-eyebrow text-mineral">02 / ELEVATE</p>
               <h3 className="mt-8 text-[clamp(2.5rem,4vw,4.5rem)] font-semibold leading-none tracking-[-0.05em]">
-                The programme follows the athlete.
+                The programme follows the player.
               </h3>
               <p className="mt-8 max-w-lg text-[1.05rem] leading-relaxed text-charcoal">
-                Training is adapted around sport, competition schedule, current physical needs,
-                training response and development priorities.
+                Training is adapted around playing role, practice and match schedule, season phase,
+                current physical needs, training response and development priorities.
               </p>
             </article>
           </div>
 
           <p className="mt-12 max-w-[30ch] text-[clamp(1.65rem,3vw,3.2rem)] font-semibold leading-[1.05] tracking-[-0.04em] lg:mt-16">
-            BASE gives the athlete the system. ELEVATE adapts the system around the athlete.
+            BASE gives the player the system. ELEVATE adapts the system around the player.
           </p>
         </Container>
       </Section>
@@ -206,8 +209,8 @@ export function ElevatePage() {
               When generic programming isn&apos;t enough.
             </SectionHeading>
             <p className="mt-8 max-w-lg text-[1.05rem] leading-relaxed text-charcoal">
-              ELEVATE is for athletes who need direct individual coaching and a training structure
-              that can respond to the realities of performance sport.
+              ELEVATE is for cricketers who need direct individual coaching and a physical training
+              structure that can respond to the realities of their cricket environment.
             </p>
           </div>
 
@@ -243,7 +246,7 @@ export function ElevatePage() {
             </div>
             <p className="max-w-xl text-[1.05rem] leading-relaxed text-stone-light lg:col-span-5 lg:pb-1">
               ELEVATE is an ongoing coaching relationship. Programming, communication and adjustment
-              work together as the athlete and their demands change.
+              work together as the player and cricket demands change.
             </p>
           </div>
 
@@ -280,8 +283,8 @@ export function ElevatePage() {
             Structure that evolves with you.
           </SectionHeading>
           <BodyCopy className="mt-8 max-w-2xl text-charcoal">
-            The coaching process creates a clear starting structure, then keeps that structure
-            responsive to the athlete and the competitive environment.
+              The coaching process creates a clear starting structure, then keeps it responsive to
+              the player, cricket schedule, season phase, training response and recovery demands.
           </BodyCopy>
 
           <ol className="mt-14 border-t border-ink lg:mt-20 lg:grid lg:grid-cols-5">
@@ -307,15 +310,15 @@ export function ElevatePage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
             <div className="lg:col-span-7">
-              <Eyebrow className="text-stone">The athlete doesn&apos;t exist in isolation</Eyebrow>
+              <Eyebrow className="text-stone">The player doesn&apos;t exist in isolation</Eyebrow>
               <SectionHeading id="context-title" className="mt-6 max-w-[13ch]">
-                Training has to fit the sport.
+                Training has to fit cricket.
               </SectionHeading>
             </div>
             <p className="max-w-xl text-[clamp(1.05rem,1.4vw,1.25rem)] leading-relaxed text-stone-light lg:col-span-5 lg:pb-1">
-              Physical preparation has to coexist with practice, competition, travel, recovery and
-              the realities of the sporting calendar. ELEVATE is built to manage that wider context
-              rather than treating every training week the same.
+              Physical preparation has to coexist with cricket practice, matches, travel, recovery
+              and the realities of the season. ELEVATE manages that wider context rather than
+              treating every training week the same. It is not technical batting or bowling coaching.
             </p>
           </div>
 
@@ -339,8 +342,8 @@ export function ElevatePage() {
         <Container className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
           <figure className="relative aspect-[4/3] overflow-hidden bg-charcoal lg:col-span-5 lg:aspect-[5/4]">
             <Image
-              src={getPublicAssetPath("/media/images/mathew-skyner-rugby-strength-conditioning-coach.jpg")}
-              alt="Mathew Skyner coaching from the sideline with a whistle during rugby training"
+              src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-individual-resistance-coaching.jpg")}
+              alt="Mathew Skyner coaching a USA Cricket athlete during individual resistance training"
               fill
               sizes="(min-width: 1024px) 42vw, 100vw"
               className="object-cover object-[52%_center] saturate-[0.92] contrast-[1.03]"
@@ -352,9 +355,10 @@ export function ElevatePage() {
               Experience applied to the individual.
             </SectionHeading>
             <p className="mt-8 max-w-2xl text-[clamp(1.05rem,1.4vw,1.25rem)] leading-relaxed text-charcoal">
-              ELEVATE is delivered directly by Mathew. His experience across professional rugby, USA
-              Cricket, PSA Squash, British Cycling, professional soccer and NCAA programmes informs
-              an approach built around the athlete rather than a single sport or fixed template.
+              ELEVATE is delivered directly by Mathew. His USA Cricket performance-environment
+              experience leads the work, supported by experience across professional rugby, PSA
+              Squash, British Cycling, professional soccer and NCAA programmes. The approach is built
+              around the individual cricketer rather than a fixed template.
             </p>
             <ArrowLink href="/about" className="mt-9">
               About Mathew
@@ -433,8 +437,9 @@ export function ElevatePage() {
             </div>
             <div className="lg:col-span-5">
               <p className="max-w-xl text-lg leading-relaxed text-charcoal">
-                If you are looking for individual performance coaching built around your sport,
-                schedule and development needs, apply to discuss whether ELEVATE is the right fit.
+                If you are looking for individual cricket performance coaching built around your
+                role, schedule, season and development needs, apply to discuss whether ELEVATE is the
+                right fit.
               </p>
               <div className="mt-8 flex flex-col items-start gap-5 min-[440px]:flex-row min-[440px]:items-center">
                 <ButtonLink href="/contact/elevate">Apply for ELEVATE</ButtonLink>
@@ -444,8 +449,8 @@ export function ElevatePage() {
           </div>
 
           <p className="mt-14 border-t border-line pt-6 text-[0.96rem] leading-relaxed text-mineral lg:mt-20">
-            Not sure you need 1:1 coaching? BASE offers structured performance programmes you can
-            follow independently.
+            Not sure you need 1:1 coaching? BASE offers structured cricket performance programmes
+            you can follow independently.
           </p>
         </Container>
       </Section>

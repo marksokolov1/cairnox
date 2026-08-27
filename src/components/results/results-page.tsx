@@ -35,8 +35,8 @@ const proofPrinciples = [
 ] as const;
 
 const experience = [
-  "Professional Rugby",
   "USA Cricket",
+  "Professional Rugby",
   "PSA Squash",
   "British Cycling",
   "Professional Soccer",
@@ -47,19 +47,19 @@ const tierEvidence = [
   {
     number: "01 / Foundation",
     title: "BASE",
-    descriptor: "Performance Programmes",
+    descriptor: "Cricket Performance Programmes",
     copy: "A structured programme should ultimately be evaluated against its stated physical-development objective and how effectively the athlete can progress through it.",
   },
   {
     number: "02 / Progression",
     title: "ELEVATE",
-    descriptor: "1:1 Performance Coaching",
-    copy: "Individual coaching should be evaluated against the athlete's specific objectives, sport, training response and competitive context.",
+    descriptor: "1:1 Cricket Performance Coaching",
+    copy: "Individual coaching should be evaluated against the player's specific objectives, role, training response and competitive context.",
   },
   {
     number: "03 / Peak",
     title: "APEX",
-    descriptor: "High-Performance Consultancy",
+    descriptor: "Cricket Performance Consultancy",
     copy: "Consultancy should be evaluated against the problem the organisation is trying to solve and whether the resulting systems improve clarity, delivery or decision-making.",
   },
 ] as const;
@@ -99,7 +99,7 @@ const caseStudyStandard = [
 
 const availableProof = [
   "Genuine athlete testimonials",
-  "Real high-performance coaching experience",
+  "Verified experience inside cricket and high-performance environments",
   "Documentary performance media",
   "Established CAIRNOX methodology",
 ] as const;
@@ -114,20 +114,20 @@ const futureEvidence = [
 const pathways = [
   {
     label: "BASE",
-    descriptor: "Performance Programmes",
-    copy: "Structured programming to follow independently.",
+    descriptor: "Cricket Performance Programmes",
+    copy: "Structured cricket programming to follow independently.",
     href: "/base",
   },
   {
     label: "ELEVATE",
-    descriptor: "1:1 Performance Coaching",
-    copy: "Individual coaching adapted around the athlete.",
+    descriptor: "1:1 Cricket Performance Coaching",
+    copy: "Individual coaching adapted around the player.",
     href: "/elevate",
   },
   {
     label: "APEX",
-    descriptor: "High-Performance Consultancy",
-    copy: "Support for performance systems and organisations.",
+    descriptor: "Cricket Performance Consultancy",
+    copy: "Support for cricket performance systems and organisations.",
     href: "/apex",
   },
 ] as const;
@@ -159,12 +159,12 @@ export function ResultsPage() {
             <div className="lg:col-span-5 lg:pb-1">
               <BodyCopy className="text-charcoal">
                 CAIRNOX believes performance claims should be supported by the work behind them. At
-                launch, that proof comes from real coaching experience, athlete relationships and
-                the environments in which the work has been applied.
+                launch, that proof comes from verified cricket-environment experience, wider
+                high-performance work and genuine professional-rugby testimonials.
               </BodyCopy>
               <p className="mt-6 border-t border-line pt-5 text-[0.96rem] leading-relaxed text-charcoal">
-                Case studies and quantified outcomes will be added as CAIRNOX programmes and
-                engagements develop and can be documented responsibly.
+                Cricket case studies and quantified outcomes will be added only as CAIRNOX
+                programmes and engagements develop and can be documented responsibly.
               </p>
               <div className="mt-8 flex flex-col gap-3 min-[460px]:flex-row lg:flex-col xl:flex-row">
                 <ButtonLink href="#athlete-voices">Hear from the athletes</ButtonLink>
@@ -252,8 +252,9 @@ export function ResultsPage() {
               What the work has meant to the people in it.
             </SectionHeading>
             <p className="max-w-xl text-[1.02rem] leading-relaxed text-charcoal lg:col-span-4 lg:pb-1">
-              Their words evidence professional trust, long-term support and the human relationship
-              behind the technical work.
+              These verified Professional Rugby testimonials evidence professional trust, long-term
+              support and the human relationship behind the technical work. They are not presented as
+              cricket testimonials.
             </p>
           </div>
 
@@ -308,8 +309,8 @@ export function ResultsPage() {
           <figure>
             <div className="relative aspect-[16/9] overflow-hidden bg-stone-light lg:aspect-[16/7]">
               <Image
-                src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-performance-team-wide.jpg")}
-                alt="Mathew Skyner addressing athletes in a USA Cricket training environment"
+                src={getPublicAssetPath("/media/images/usa-cricket-team-performance-environment.jpg")}
+                alt="USA Cricket players and performance staff at a T20 World Cup venue"
                 fill
                 sizes="100vw"
                 className="object-cover object-[50%_57%] saturate-[0.9] contrast-[1.03]"
@@ -327,10 +328,10 @@ export function ResultsPage() {
                 Experience across performance environments.
               </SectionHeading>
               <p className="mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-charcoal">
-                Mathew Skyner&apos;s experience spans professional rugby, USA Cricket, PSA Squash,
-                British Cycling, professional soccer and NCAA programmes. These environments differ
-                in sport, schedule and performance demand, but each places a premium on preparation
-                that can operate within real competitive constraints.
+                Mathew Skyner&apos;s experience in the USA Cricket environment is the principal cricket
+                proof currently available. Experience across professional rugby, PSA Squash, British
+                Cycling, professional soccer and NCAA programmes provides wider high-performance
+                context. These are experience categories, not CAIRNOX client claims.
               </p>
             </div>
 
@@ -450,10 +451,10 @@ export function ResultsPage() {
               </SectionHeading>
             </div>
             <BodyCopy className="text-charcoal lg:col-span-4">
-              CAIRNOX is at the beginning of its life as an independent brand. The coaching
-              experience behind it is established; the BASE, ELEVATE and APEX evidence library will
-              grow as the business develops and work can be documented with appropriate context and
-              permission.
+              CAIRNOX is at the beginning of its life as an independent cricket-performance brand.
+              The practitioner experience behind it is established; the BASE, ELEVATE and APEX
+              cricket evidence library will grow as work can be documented with appropriate context
+              and permission.
             </BodyCopy>
           </div>
 
@@ -507,7 +508,7 @@ export function ResultsPage() {
                 Choose the level of support that fits what you are trying to achieve now.
               </BodyCopy>
               <ButtonLink href="/contact" className="mt-8">
-                Work with Mathew
+                Work with CAIRNOX
               </ButtonLink>
             </div>
           </div>

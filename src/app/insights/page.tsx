@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Insights",
   description:
-    "Practical thinking on physical preparation, athlete development, performance planning and the systems surrounding high-performance sport.",
+    "Practical thinking on cricket physical preparation, athlete development, performance planning, workload and cricket performance systems.",
   pathname: "/insights",
 });
 

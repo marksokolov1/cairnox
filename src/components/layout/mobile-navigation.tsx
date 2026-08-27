@@ -75,7 +75,7 @@ export function MobileNavigation() {
               className="mt-5 w-full"
               onClick={closeMenu}
             >
-              Work with Mathew
+              Work with CAIRNOX
             </ButtonLink>
           </nav>
         </div>

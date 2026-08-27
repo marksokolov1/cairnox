@@ -2,9 +2,9 @@ import { ElevatePage as ElevatePageContent } from "@/components/elevate/elevate-
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "ELEVATE | 1:1 Performance Coaching",
+  title: "ELEVATE | 1:1 Cricket Performance Coaching",
   description:
-    "Personalised performance coaching built around your sport, schedule and development needs. CAIRNOX ELEVATE is delivered directly by Mathew Skyner.",
+    "Individual cricket performance coaching built around the player's role, schedule, season and development needs, delivered directly by Mathew Skyner.",
   pathname: "/elevate",
 });
 
