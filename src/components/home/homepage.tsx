@@ -121,20 +121,20 @@ export function Homepage() {
     <main id="main-content" className="homepage">
       <section aria-labelledby="hero-title" className="border-b border-line bg-canvas">
         <Container className="grid min-h-[calc(100svh-4.75rem)] lg:grid-cols-12 lg:items-stretch">
-          <div className="flex flex-col justify-center py-12 sm:py-20 lg:col-span-7 lg:min-h-[44rem] lg:-translate-y-[4.5rem] lg:py-24 lg:pr-[clamp(2.5rem,5vw,6.5rem)]">
+          <div className="flex flex-col justify-center py-9 sm:py-20 lg:col-span-7 lg:min-h-[44rem] lg:-translate-y-[4.5rem] lg:py-24 lg:pr-[clamp(2.5rem,5vw,6.5rem)]">
             <Eyebrow className="text-moss">Cricket Performance Coaching &amp; Consultancy</Eyebrow>
             <DisplayHeading
               id="hero-title"
-              className="type-hero mt-7 sm:mt-9"
+              className="type-hero mt-6 sm:mt-9"
             >
               <span className="block lg:whitespace-nowrap">Cricket performance,</span>
               <span className="block lg:whitespace-nowrap">built layer by layer.</span>
             </DisplayHeading>
-            <BodyCopy className="mt-8 max-w-[42rem] text-charcoal sm:mt-10">
+            <BodyCopy className="mt-6 max-w-[42rem] text-charcoal sm:mt-10">
               Cricket physical preparation, structured performance programmes, individual coaching
               and consultancy for serious players and cricket organisations. Led by Mathew Skyner.
             </BodyCopy>
-            <div className="mt-9 flex flex-col gap-3 min-[440px]:flex-row sm:mt-11">
+            <div className="mt-7 flex flex-col gap-2.5 min-[440px]:flex-row sm:mt-11 sm:gap-3">
               <ButtonLink href="/contact" className="min-h-11 py-[0.72rem] sm:min-h-[2.875rem] sm:py-[0.8rem]">
                 Find your pathway
               </ButtonLink>
@@ -146,19 +146,19 @@ export function Homepage() {
                 Explore the CAIRNOX Method
               </ButtonLink>
             </div>
-            <p className="mt-10 border-t border-line pt-4 text-[0.7rem] font-bold tracking-[0.12em] text-mineral uppercase sm:mt-14">
+            <p className="mt-8 border-t border-line pt-3 text-[0.68rem] leading-relaxed font-bold tracking-[0.1em] text-mineral uppercase sm:mt-14 sm:pt-4 sm:text-[0.7rem] sm:tracking-[0.12em]">
               Cricket physical preparation / Athlete development / Performance systems
             </p>
           </div>
 
-          <div className="relative min-h-[23rem] overflow-hidden bg-stone-light sm:min-h-[32rem] lg:col-span-5 lg:my-8 lg:min-h-0">
+          <div className="relative aspect-[4/5] min-h-0 overflow-hidden bg-stone-light sm:aspect-auto sm:min-h-[32rem] lg:col-span-5 lg:my-8 lg:min-h-0">
             <Image
               src={getPublicAssetPath("/media/images/mathew-skyner-usa-cricket-performance-coach-portrait.jpg")}
               alt="Mathew Skyner in a USA Cricket performance environment"
               fill
               priority
               sizes="(min-width: 1024px) 42vw, 100vw"
-              className="object-cover object-[50%_42%] saturate-[0.9] contrast-[1.04] sepia-[0.02]"
+              className="object-cover object-[50%_38%] saturate-[0.9] contrast-[1.04] sepia-[0.02] sm:object-[50%_42%]"
             />
           </div>
         </Container>
