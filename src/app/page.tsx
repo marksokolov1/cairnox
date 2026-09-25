@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Homepage } from "@/components/home/homepage";
 import { getAbsoluteUrl } from "@/config/site";
+import { getPublishedInsights } from "@/content/insights/articles";
 
 export const metadata: Metadata = {
   title: { absolute: "CAIRNOX | Cricket Performance Coaching & Consultancy" },
@@ -16,5 +17,9 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <Homepage />;
+  const latestInsight = [...getPublishedInsights()].sort((a, b) =>
+    b.publicationDate.localeCompare(a.publicationDate),
+  )[0];
+
+  return <Homepage latestInsight={latestInsight} />;
 }

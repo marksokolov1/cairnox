@@ -6,7 +6,7 @@ import type {
   InsightBodyBlock,
   PublishedInsightArticle,
 } from "@/types/insight-article";
-import { getPublicAssetPath } from "@/config/site";
+import { getAbsoluteUrl, getPublicAssetPath } from "@/config/site";
 
 function headingId(text: string) {
   return text
@@ -126,6 +126,7 @@ function formatDate(date: string) {
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "UTC",
   }).format(new Date(`${date}T00:00:00Z`));
 }
 
@@ -145,10 +146,10 @@ export function InsightArticlePage({
     description: article.description,
     author: { "@type": "Person", name: article.author.name },
     datePublished: article.publicationDate,
-    ...(article.updatedDate ? { dateModified: article.updatedDate } : {}),
-    mainEntityOfPage: `${siteUrl}/insights/${article.slug}`,
+    dateModified: article.updatedDate ?? article.publicationDate,
+    mainEntityOfPage: getAbsoluteUrl(`/insights/${article.slug}/`),
     publisher: { "@type": "Organization", name: "CAIRNOX", url: siteUrl },
-    ...(article.heroImage ? { image: `${siteUrl}${article.heroImage.src}` } : {}),
+    ...(article.heroImage ? { image: getAbsoluteUrl(getPublicAssetPath(article.heroImage.src)) } : {}),
   };
 
   return (
@@ -166,7 +167,12 @@ export function InsightArticlePage({
             <dl className="mt-12 grid max-w-3xl border-y border-ink sm:grid-cols-3">
               <div className="border-b border-ink py-5 sm:border-b-0 sm:pr-6">
                 <dt className="type-eyebrow text-mineral">Author</dt>
-                <dd className="mt-2 text-[0.98rem]">{article.author.name}</dd>
+                <dd className="mt-2 text-[0.98rem]">
+                  {article.author.name}
+                  {article.author.role ? (
+                    <span className="mt-1 block text-[0.85rem] leading-snug text-charcoal">{article.author.role}</span>
+                  ) : null}
+                </dd>
               </div>
               <div className="border-b border-ink py-5 sm:border-b-0 sm:border-l sm:px-6">
                 <dt className="type-eyebrow text-mineral">Published</dt>
@@ -184,13 +190,13 @@ export function InsightArticlePage({
           <Container className="pt-10 sm:pt-16">
             <figure>
               <Image
-                src={article.heroImage.src}
+                src={getPublicAssetPath(article.heroImage.src)}
                 alt={article.heroImage.alt}
                 width={article.heroImage.width}
                 height={article.heroImage.height}
                 priority
                 sizes="(min-width: 1536px) 1408px, calc(100vw - 8vw)"
-                className="max-h-[48rem] w-full object-cover saturate-[0.9] contrast-[1.03]"
+                className="max-h-[48rem] w-full object-cover object-center saturate-[0.9] contrast-[1.03]"
               />
               {article.heroImage.caption ? (
                 <figcaption className="type-eyebrow mt-4 text-mineral">{article.heroImage.caption}</figcaption>
@@ -263,7 +269,7 @@ export function InsightArticlePage({
       </article>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
     </main>
   );

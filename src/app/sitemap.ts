@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const insightRoutes = getPublishedInsights().map((article) => ({
-    url: getAbsoluteUrl(`/insights/${article.slug}`),
+    url: getAbsoluteUrl(`/insights/${article.slug}/`),
     lastModified: article.updatedDate ?? article.publicationDate,
     changeFrequency: "monthly" as const,
     priority: 0.6,

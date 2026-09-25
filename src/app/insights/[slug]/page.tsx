@@ -38,7 +38,7 @@ export async function generateMetadata({
   const openGraphImage = article.seo?.openGraphImage ?? article.heroImage?.src;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: getAbsoluteUrl(pathname) },
     robots: { index: true, follow: true },
@@ -49,7 +49,7 @@ export async function generateMetadata({
       description,
       url: getAbsoluteUrl(pathname),
       publishedTime: article.publicationDate,
-      modifiedTime: article.updatedDate,
+      modifiedTime: article.updatedDate ?? article.publicationDate,
       authors: [article.author.name],
       images: openGraphImage ? [{ url: getAbsoluteUrl(openGraphImage) }] : undefined,
     },

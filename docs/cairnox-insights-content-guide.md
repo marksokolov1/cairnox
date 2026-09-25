@@ -1,10 +1,10 @@
 # CAIRNOX Insights Content Guide
 
-Status: launch editorial implementation reference
+Status: published editorial implementation reference
 
 Content model: typed local TypeScript
 
-Public library at launch: intentionally empty
+Public library: two published cricket performance articles (25 September 2026)
 
 ## Purpose
 
@@ -87,7 +87,7 @@ Draft entries are excluded from:
 
 The dynamic route uses `dynamicParams = false`. In production, only slugs returned by `generateStaticParams()` are generated. Unknown or draft slugs do not render as public articles.
 
-At launch, `allInsights` is empty because no articles are approved. The public page explains the editorial territory without pretending planned work is already published.
+The first published articles are `speed-training-in-cricket` and `game-day-warm-ups`. The Insights index reads the published collection, features the first entry when publication dates tie, and lists every published article. Drafts remain private to the content file.
 
 ## SEO fields
 
@@ -124,8 +124,8 @@ Check every source before publication. Do not cite research from summaries when 
 
 ## Listing and sitemap behavior
 
-When published entries exist, `getPublishedInsights()` can populate a featured article and latest-articles listing on `/insights`. Category controls should be introduced only when the number of published articles makes filtering useful.
+`getPublishedInsights()` populates the featured article and latest-articles listing on `/insights`. Collection order resolves same-day publication ties. Category controls should be introduced only when the number of published articles makes filtering useful.
 
 Published articles automatically enter `src/app/sitemap.ts` with their canonical URL and most recent approved date. Drafts remain excluded. Search and category archive pages are deliberately deferred until the library justifies them.
 
-For the empty launch library, the static build uses a reserved validation slug required by Next.js and removes it from `out/` immediately after export. It is not published, listed or added to the sitemap.
+If the library is temporarily empty, the static build retains a reserved validation slug required by Next.js and removes it from `out/` after export. It is not published, listed or added to the sitemap.

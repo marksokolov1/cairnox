@@ -1,4 +1,5 @@
 import { InsightsPage as InsightsPageContent } from "@/components/insights/insights-page";
+import { getPublishedInsights } from "@/content/insights/articles";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -9,5 +10,5 @@ export const metadata = createPageMetadata({
 });
 
 export default function InsightsPage() {
-  return <InsightsPageContent />;
+  return <InsightsPageContent articles={getPublishedInsights()} />;
 }
