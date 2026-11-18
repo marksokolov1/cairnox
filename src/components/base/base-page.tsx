@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { AmbientVideo } from "@/components/home/ambient-video";
+import { FoundationWeekSignup } from "@/components/base/foundation-week-signup";
+import { foundationWeekSignupEnabled } from "@/config/foundation-week";
 import { getPublicAssetPath } from "@/config/site";
 import {
   ArrowLink,
@@ -517,6 +519,8 @@ export function BasePage() {
           </div>
         </Container>
       </Section>
+
+      {foundationWeekSignupEnabled && <FoundationWeekSignup />}
 
       <Section
         id="programmes"
