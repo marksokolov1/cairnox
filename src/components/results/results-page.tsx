@@ -11,29 +11,6 @@ import {
   SectionHeading,
 } from "@/components/ui/primitives";
 
-const proofPrinciples = [
-  {
-    number: "01",
-    title: "Define the objective",
-    copy: "Know what the work is intended to improve.",
-  },
-  {
-    number: "02",
-    title: "Understand the context",
-    copy: "Consider the athlete, sport, schedule and surrounding demands.",
-  },
-  {
-    number: "03",
-    title: "Track what matters",
-    copy: "Use relevant information rather than collecting data for its own sake.",
-  },
-  {
-    number: "04",
-    title: "Review over time",
-    copy: "Judge progress across the development process rather than from a single session.",
-  },
-] as const;
-
 const experience = [
   "USA Cricket",
   "Professional Rugby",
@@ -41,74 +18,6 @@ const experience = [
   "British Cycling",
   "Professional Soccer",
   "NCAA Programmes",
-] as const;
-
-const tierEvidence = [
-  {
-    number: "01 / Foundation",
-    title: "BASE",
-    descriptor: "Cricket Performance Programmes",
-    copy: "A structured programme should ultimately be evaluated against its stated physical-development objective and how effectively the athlete can progress through it.",
-  },
-  {
-    number: "02 / Progression",
-    title: "ELEVATE",
-    descriptor: "1:1 Cricket Performance Coaching",
-    copy: "Individual coaching should be evaluated against the player's specific objectives, role, training response and competitive context.",
-  },
-  {
-    number: "03 / Peak",
-    title: "APEX",
-    descriptor: "Cricket Performance Consultancy",
-    copy: "Consultancy should be evaluated against the problem the organisation is trying to solve and whether the resulting systems improve clarity, delivery or decision-making.",
-  },
-] as const;
-
-const caseStudyStandard = [
-  {
-    number: "01",
-    title: "Context",
-    copy: "Who or what environment was being supported?",
-  },
-  {
-    number: "02",
-    title: "Objective",
-    copy: "What was the work intended to address?",
-  },
-  {
-    number: "03",
-    title: "Approach",
-    copy: "What was implemented and why?",
-  },
-  {
-    number: "04",
-    title: "Evidence",
-    copy: "What information can responsibly demonstrate change?",
-  },
-  {
-    number: "05",
-    title: "Outcome",
-    copy: "What happened relative to the original objective?",
-  },
-  {
-    number: "06",
-    title: "Learning",
-    copy: "What should be carried forward or adapted?",
-  },
-] as const;
-
-const availableProof = [
-  "Genuine athlete testimonials",
-  "Verified experience inside cricket and high-performance environments",
-  "Documentary performance media",
-  "Established CAIRNOX methodology",
-] as const;
-
-const futureEvidence = [
-  "BASE programme case studies",
-  "ELEVATE athlete case studies",
-  "APEX consultancy case studies",
-  "Quantified outcomes where appropriate and responsibly documented",
 ] as const;
 
 const pathways = [
@@ -145,10 +54,10 @@ export function ResultsPage() {
   return (
     <main id="main-content" className="results-page">
       <section aria-labelledby="results-hero-title" className="border-b border-line bg-canvas">
-        <Container className="flex min-h-[44rem] flex-col justify-between py-14 sm:py-20 lg:min-h-[48rem] lg:py-24">
+        <Container className="py-12 sm:py-16 lg:py-20">
           <Eyebrow className="text-moss">CAIRNOX Results</Eyebrow>
 
-          <div className="mt-16 grid gap-12 lg:mt-24 lg:grid-cols-12 lg:items-end">
+          <div className="mt-6 grid gap-6 lg:grid-cols-12 lg:items-end">
             <DisplayHeading
               id="results-hero-title"
               className="type-hero max-w-[10ch] lg:col-span-7"
@@ -162,10 +71,6 @@ export function ResultsPage() {
                 launch, that proof comes from verified cricket-environment experience, wider
                 high-performance work and genuine professional-rugby testimonials.
               </BodyCopy>
-              <p className="mt-6 border-t border-line pt-5 text-[0.96rem] leading-relaxed text-charcoal">
-                Cricket case studies and quantified outcomes will be added only as CAIRNOX
-                programmes and engagements develop and can be documented responsibly.
-              </p>
               <div className="mt-8 flex flex-col gap-3 min-[460px]:flex-row lg:flex-col xl:flex-row">
                 <ButtonLink href="#athlete-voices">Hear from the athletes</ButtonLink>
                 <ButtonLink href="/method" variant="secondary">
@@ -175,69 +80,8 @@ export function ResultsPage() {
             </div>
           </div>
 
-          <div className="mt-16 grid border-y border-ink sm:grid-cols-2 lg:mt-24 lg:grid-cols-4">
-            {["Athlete voices", "Performance environments", "Methodology", "Future case studies"].map(
-              (item, index) => (
-                <p
-                  key={item}
-                  className={`flex min-h-24 items-end border-b border-ink py-5 text-[0.76rem] font-bold tracking-[0.1em] uppercase sm:px-6 ${
-                    index % 2 === 1 ? "sm:border-l" : "sm:pl-0"
-                  } ${index > 1 ? "sm:border-b-0" : ""} ${
-                    index === 0 ? "lg:border-l-0 lg:pl-0" : "lg:border-l lg:px-6"
-                  } lg:border-b-0`}
-                >
-                  {item}
-                </p>
-              ),
-            )}
-          </div>
         </Container>
       </section>
-
-      <Section aria-labelledby="proof-title" tone="muted" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">Evidence before claims</Eyebrow>
-              <SectionHeading id="proof-title" className="mt-6 max-w-[14ch]">
-                Results have to mean something in context.
-              </SectionHeading>
-            </div>
-            <BodyCopy className="text-charcoal lg:col-span-5">
-              A performance result only matters relative to the objective, the athlete and the
-              environment in which the work was carried out. CAIRNOX therefore avoids generic
-              transformation claims or isolated numbers without context.
-            </BodyCopy>
-          </div>
-
-          <ol className="mt-16 grid border-y border-ink sm:grid-cols-2 lg:mt-24 lg:grid-cols-4">
-            {proofPrinciples.map((principle, index) => (
-              <li
-                key={principle.number}
-                className={`flex min-h-64 flex-col justify-between border-b border-ink py-8 sm:px-7 ${
-                  index % 2 === 1 ? "sm:border-l" : "sm:pl-0"
-                } ${index > 1 ? "sm:border-b-0" : ""} ${
-                  index === 0 ? "lg:border-l-0 lg:pl-0" : "lg:border-l lg:px-7"
-                } lg:border-b-0`}
-              >
-                <p className="type-eyebrow text-mineral">{principle.number}</p>
-                <div className="mt-16">
-                  <h3 className="text-xl font-semibold leading-tight tracking-[-0.025em] uppercase">
-                    {principle.title}
-                  </h3>
-                  <p className="mt-5 max-w-xs text-[0.98rem] leading-relaxed text-charcoal">
-                    {principle.copy}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <p className="mt-6 max-w-3xl text-[0.8rem] leading-relaxed text-mineral">
-            These are evidence principles, not a proprietary measurement system or fixed testing
-            protocol.
-          </p>
-        </Container>
-      </Section>
 
       <Section
         id="athlete-voices"
@@ -355,146 +199,32 @@ export function ResultsPage() {
         </Container>
       </Section>
 
-      <Section aria-labelledby="context-specific-title" tone="dark" spacing="large">
+      <Section aria-labelledby="evidence-library-title" tone="dark" spacing="compact">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-8">
-              <Eyebrow className="text-stone">No generic scorecard</Eyebrow>
-              <SectionHeading id="context-specific-title" className="mt-6 max-w-[14ch]">
-                Different work requires different proof.
-              </SectionHeading>
-            </div>
-            <p className="max-w-lg text-[1.05rem] leading-relaxed text-stone-light lg:col-span-4 lg:pb-1">
-              The objective defines the evidence. A useful result for one athlete, programme or
-              organisation cannot be assumed to prove another.
-            </p>
-          </div>
-
-          <div className="mt-16 grid border-y border-white/30 lg:mt-24 lg:grid-cols-3">
-            {tierEvidence.map((tier, index) => (
-              <article
-                key={tier.title}
-                className={`flex min-h-[30rem] flex-col border-b border-white/30 py-10 last:border-b-0 lg:border-b-0 lg:px-9 lg:py-12 ${
-                  index === 0 ? "lg:pl-0" : "lg:border-l"
-                }`}
-              >
-                <p className="type-eyebrow text-stone">{tier.number}</p>
-                <h3 className="mt-12 text-[clamp(2.5rem,4vw,4.4rem)] font-semibold leading-none tracking-[-0.05em]">
-                  {tier.title}
-                </h3>
-                <p className="mt-5 text-[0.82rem] font-bold tracking-[0.1em] text-stone uppercase">
-                  {tier.descriptor}
-                </p>
-                <p className="mt-10 max-w-md text-[1.02rem] leading-relaxed text-stone-light">
-                  {tier.copy}
-                </p>
-                <p className="mt-auto border-t border-white/30 pt-6 text-[0.76rem] font-bold tracking-[0.1em] text-stone uppercase">
-                  Evidence assessed against purpose and context
-                </p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="case-study-title" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">How CAIRNOX will document the work</Eyebrow>
-              <SectionHeading id="case-study-title" className="mt-6 max-w-[13ch]">
-                Context before the outcome.
-              </SectionHeading>
-            </div>
-            <div className="lg:col-span-5">
-              <BodyCopy className="text-charcoal">
-                Future case studies will follow a consistent editorial standard so that an outcome
-                can be understood rather than simply advertised.
-              </BodyCopy>
-              <p className="mt-5 text-[0.84rem] leading-relaxed text-mineral">
-                The framework below describes the publication standard. It is not populated with
-                invented examples.
+          <Eyebrow className="text-stone">Current proof / future evidence</Eyebrow>
+          <SectionHeading id="evidence-library-title" className="mt-4">What the evidence can tell us.</SectionHeading>
+          <div className="mt-7 grid gap-6 border-t border-white/30 pt-6 md:grid-cols-2 md:gap-12">
+            <div>
+              <h3 className="text-xl font-semibold">Available now</h3>
+              <p className="mt-2 max-w-lg leading-relaxed text-stone-light">
+                Mathew’s cricket-environment experience and professional rugby testimonials show
+                where he has worked and how athletes describe his coaching. They don’t establish
+                quantified cricket outcomes or results for BASE, ELEVATE or APEX.
               </p>
             </div>
-          </div>
-
-          <ol className="mt-16 grid border-t border-ink sm:grid-cols-2 lg:mt-24 lg:grid-cols-3">
-            {caseStudyStandard.map((step, index) => (
-              <li
-                key={step.number}
-                className={`flex min-h-64 flex-col justify-between border-b border-ink py-8 sm:px-8 ${
-                  index % 2 === 1 ? "sm:border-l" : "sm:pl-0"
-                } ${index % 3 === 0 ? "lg:border-l-0 lg:pl-0" : "lg:border-l lg:px-8"}`}
-              >
-                <p className="type-eyebrow text-mineral">{step.number}</p>
-                <div className="mt-14">
-                  <h3 className="text-[clamp(1.5rem,2.5vw,2.6rem)] font-semibold leading-none tracking-[-0.04em] uppercase">
-                    {step.title}
-                  </h3>
-                  <p className="mt-5 max-w-sm text-[1rem] leading-relaxed text-charcoal">
-                    {step.copy}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="evidence-library-title" tone="muted" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-8">
-              <Eyebrow className="text-moss">Current proof / future evidence</Eyebrow>
-              <SectionHeading id="evidence-library-title" className="mt-6 max-w-[16ch]">
-                Build the evidence the same way you build performance.
-              </SectionHeading>
-            </div>
-            <BodyCopy className="text-charcoal lg:col-span-4">
-              CAIRNOX is at the beginning of its life as an independent cricket-performance brand.
-              The practitioner experience behind it is established; the BASE, ELEVATE and APEX
-              cricket evidence library will grow as work can be documented with appropriate context
-              and permission.
-            </BodyCopy>
-          </div>
-
-          <div className="mt-16 border-y border-ink lg:mt-24 lg:grid lg:grid-cols-2">
-            <div className="bg-ink px-7 py-10 text-canvas sm:px-10 lg:px-12 lg:py-14">
-              <p className="type-eyebrow text-stone">Available now</p>
-              <ul className="mt-10 border-t border-white/30">
-                {availableProof.map((item) => (
-                  <li
-                    key={item}
-                    className="flex min-h-20 items-center border-b border-white/30 text-[1.02rem] font-semibold"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="px-0 py-10 lg:border-l lg:border-ink lg:px-12 lg:py-14">
-              <p className="type-eyebrow text-mineral">To be added</p>
-              <ul className="mt-10 border-t border-ink">
-                {futureEvidence.map((item) => (
-                  <li
-                    key={item}
-                    className="flex min-h-20 items-center border-b border-ink text-[1.02rem] font-semibold"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-7 text-[0.82rem] leading-relaxed text-mineral">
-                Published only when the context, evidence and permission support a responsible
-                account of the work.
+            <div>
+              <h3 className="text-xl font-semibold">What we’ll document</h3>
+              <p className="mt-2 max-w-lg leading-relaxed text-stone-light">
+                Future case studies will explain the context, objective, approach, evidence and outcome,
+                including what we learned. We’ll publish quantified results only where the evidence and
+                permission support them.
               </p>
             </div>
           </div>
         </Container>
       </Section>
 
-      <Section aria-labelledby="next-step-title" spacing="large">
+      <Section aria-labelledby="next-step-title" spacing="compact">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">

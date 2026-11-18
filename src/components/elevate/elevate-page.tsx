@@ -12,29 +12,6 @@ import {
   SectionHeading,
 } from "@/components/ui/primitives";
 
-const audiences = [
-  {
-    number: "01",
-    title: "Competitive cricketers",
-    copy: "Physical preparation around a demanding cricket calendar.",
-  },
-  {
-    number: "02",
-    title: "Professional & aspiring professional players",
-    copy: "Cricket physical preparation aligned with higher performance demands.",
-  },
-  {
-    number: "03",
-    title: "Players with complex schedules",
-    copy: "Training that can adapt around travel, matches, tournaments and changing workloads.",
-  },
-  {
-    number: "04",
-    title: "Highly motivated performers",
-    copy: "A high level of structure, accountability and coaching detail.",
-  },
-] as const;
-
 const serviceElements = [
   {
     title: "Personalised programming",
@@ -94,15 +71,6 @@ const processSteps = [
   },
 ] as const;
 
-const athleteContext = [
-  "Physical training",
-  "Cricket practice",
-  "Matches",
-  "Recovery",
-  "Travel",
-  "Adaptation",
-] as const;
-
 function TestimonialAttribution({ name }: { name: string }) {
   return (
     <footer className="mt-7 border-t border-current/20 pt-4">
@@ -158,7 +126,7 @@ export function ElevatePage() {
         </Container>
       </section>
 
-      <Section aria-labelledby="comparison-title" tone="muted" spacing="large">
+      <Section aria-labelledby="comparison-title" tone="muted" spacing="compact">
         <Container>
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
@@ -168,13 +136,13 @@ export function ElevatePage() {
               </SectionHeading>
             </div>
             <p className="max-w-xl text-[1.05rem] leading-relaxed text-charcoal lg:col-span-5 lg:pb-1">
-              Both routes are built on the same cricket performance philosophy. The difference is
-              how the programme responds to the player.
+              ELEVATE is for competitive cricketers, including professional and aspiring players, who need
+              direct coaching rather than a fixed programme they follow independently.
             </p>
           </div>
 
-          <div className="mt-14 grid border-y border-ink lg:mt-20 lg:grid-cols-2">
-            <article className="py-9 lg:min-h-[25rem] lg:pr-12 lg:py-12">
+          <div className="mt-8 grid border-y border-ink lg:grid-cols-2">
+            <article className="py-9 lg:pr-12 lg:py-12">
               <p className="type-eyebrow text-mineral">01 / BASE</p>
               <h3 className="mt-8 text-[clamp(2.5rem,4vw,4.5rem)] font-semibold leading-none tracking-[-0.05em]">
                 The player follows the programme.
@@ -183,7 +151,7 @@ export function ElevatePage() {
                 Structured independent performance programming.
               </p>
             </article>
-            <article className="border-t border-ink py-9 lg:min-h-[25rem] lg:border-t-0 lg:border-l lg:py-12 lg:pl-12">
+            <article className="border-t border-ink py-9 lg:border-t-0 lg:border-l lg:py-12 lg:pl-12">
               <p className="type-eyebrow text-mineral">02 / ELEVATE</p>
               <h3 className="mt-8 text-[clamp(2.5rem,4vw,4.5rem)] font-semibold leading-none tracking-[-0.05em]">
                 The programme follows the player.
@@ -198,40 +166,6 @@ export function ElevatePage() {
           <p className="mt-12 max-w-[30ch] text-[clamp(1.65rem,3vw,3.2rem)] font-semibold leading-[1.05] tracking-[-0.04em] lg:mt-16">
             BASE gives the player the system. ELEVATE adapts the system around the player.
           </p>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="audience-title" spacing="large">
-        <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            <Eyebrow className="text-moss">Built for serious performers</Eyebrow>
-            <SectionHeading id="audience-title" className="mt-6 max-w-[13ch]">
-              When generic programming isn&apos;t enough.
-            </SectionHeading>
-            <p className="mt-8 max-w-lg text-[1.05rem] leading-relaxed text-charcoal">
-              ELEVATE is for cricketers who need direct individual coaching and a physical training
-              structure that can respond to the realities of their cricket environment.
-            </p>
-          </div>
-
-          <div className="border-t border-ink lg:col-span-7 lg:grid lg:grid-cols-2">
-            {audiences.map((audience, index) => (
-              <article
-                key={audience.title}
-                className={`border-b border-ink py-8 lg:min-h-64 lg:px-8 ${
-                  index % 2 === 1 ? "lg:border-l" : "lg:pl-0"
-                }`}
-              >
-                <p className="type-eyebrow text-mineral">{audience.number}</p>
-                <h3 className="mt-8 text-xl font-semibold leading-tight tracking-[-0.02em] uppercase">
-                  {audience.title}
-                </h3>
-                <p className="mt-4 max-w-sm text-[0.96rem] leading-relaxed text-charcoal">
-                  {audience.copy}
-                </p>
-              </article>
-            ))}
-          </div>
         </Container>
       </Section>
 
@@ -254,12 +188,12 @@ export function ElevatePage() {
             {serviceElements.map((item, index) => (
               <div
                 key={item.title}
-                className={`border-b border-white/30 py-8 sm:min-h-56 sm:px-8 ${
+                className={`border-b border-white/30 py-6 sm:px-8 ${
                   index % 2 === 1 ? "sm:border-l" : "sm:pl-0"
                 }`}
               >
                 <p className="type-eyebrow text-stone">{String(index + 1).padStart(2, "0")}</p>
-                <dt className="mt-7 text-lg font-semibold tracking-[-0.015em] uppercase">
+                <dt className="mt-4 text-lg font-semibold tracking-[-0.015em] uppercase">
                   {item.title}
                 </dt>
                 <dd className="mt-4 max-w-md text-[0.96rem] leading-relaxed text-stone-light">
@@ -283,58 +217,27 @@ export function ElevatePage() {
             Structure that evolves with you.
           </SectionHeading>
           <BodyCopy className="mt-8 max-w-2xl text-charcoal">
-              The coaching process creates a clear starting structure, then keeps it responsive to
-              the player, cricket schedule, season phase, training response and recovery demands.
+              Mathew builds your physical preparation around your playing role, practice, matches and travel,
+              then adjusts it as your workload and recovery change. This is physical preparation,
+              not technical batting or bowling coaching.
           </BodyCopy>
 
           <ol className="mt-14 border-t border-ink lg:mt-20 lg:grid lg:grid-cols-5">
             {processSteps.map((step, index) => (
               <li
                 key={step.number}
-                className={`border-b border-ink py-8 lg:min-h-[23rem] lg:border-b-0 lg:px-7 lg:py-10 ${
+                className={`border-b border-ink py-8 lg:border-b-0 lg:px-7 lg:py-10 ${
                   index > 0 ? "lg:border-l" : "lg:pl-0"
                 }`}
               >
                 <p className="type-eyebrow text-mineral">{step.number}</p>
-                <h3 className="mt-10 text-xl font-semibold tracking-[-0.02em] uppercase">
+                <h3 className="mt-4 text-xl font-semibold tracking-[-0.02em] uppercase">
                   {step.title}
                 </h3>
                 <p className="mt-5 text-[0.95rem] leading-relaxed text-charcoal">{step.copy}</p>
               </li>
             ))}
           </ol>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="context-title" tone="dark" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
-            <div className="lg:col-span-7">
-              <Eyebrow className="text-stone">The player doesn&apos;t exist in isolation</Eyebrow>
-              <SectionHeading id="context-title" className="mt-6 max-w-[13ch]">
-                Training has to fit cricket.
-              </SectionHeading>
-            </div>
-            <p className="max-w-xl text-[clamp(1.05rem,1.4vw,1.25rem)] leading-relaxed text-stone-light lg:col-span-5 lg:pb-1">
-              Physical preparation has to coexist with cricket practice, matches, travel, recovery
-              and the realities of the season. ELEVATE manages that wider context rather than
-              treating every training week the same. It is not technical batting or bowling coaching.
-            </p>
-          </div>
-
-          <ul className="mt-14 grid border-t border-white/30 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
-            {athleteContext.map((item, index) => (
-              <li
-                key={item}
-                className={`flex min-h-40 flex-col justify-between border-b border-white/30 py-7 sm:px-7 ${
-                  index % 2 === 1 ? "sm:border-l" : "sm:pl-0"
-                } ${index % 3 === 0 ? "lg:border-l-0 lg:pl-0" : "lg:border-l lg:pl-7"}`}
-              >
-                <span className="type-eyebrow text-stone">{String(index + 1).padStart(2, "0")}</span>
-                <span className="text-xl font-semibold tracking-[-0.02em] uppercase">{item}</span>
-              </li>
-            ))}
-          </ul>
         </Container>
       </Section>
 
@@ -396,37 +299,7 @@ export function ElevatePage() {
         </Container>
       </Section>
 
-      <Section aria-labelledby="availability-title" tone="dark" spacing="default">
-        <Container className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-16">
-          <div className="lg:col-span-7">
-            <Eyebrow className="text-stone">Limited coaching capacity</Eyebrow>
-            <SectionHeading id="availability-title" className="mt-6 max-w-[12ch]">
-              Individual by design.
-            </SectionHeading>
-            <p className="mt-8 max-w-2xl text-[clamp(1.05rem,1.4vw,1.25rem)] leading-relaxed text-stone-light">
-              ELEVATE is intentionally limited to a small number of clients so the coaching can
-              remain genuinely personalised and responsive.
-            </p>
-          </div>
-          <ul className="border-t border-white/30 lg:col-span-5">
-            {[
-              "Monthly coaching",
-              "Delivered directly",
-              "Intentionally limited",
-            ].map((item, index) => (
-              <li
-                key={item}
-                className="grid grid-cols-[2.5rem_1fr] border-b border-white/30 py-4 text-[0.9rem] font-semibold tracking-[0.08em] uppercase"
-              >
-                <span className="text-stone">0{index + 1}</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="application-title" spacing="large">
+      <Section aria-labelledby="application-title" spacing="compact">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
@@ -437,9 +310,8 @@ export function ElevatePage() {
             </div>
             <div className="lg:col-span-5">
               <p className="max-w-xl text-lg leading-relaxed text-charcoal">
-                If you are looking for individual cricket performance coaching built around your
-                role, schedule, season and development needs, apply to discuss whether ELEVATE is the
-                right fit.
+                Mathew works directly with a limited number of players through monthly coaching. Apply to
+                discuss your cricket schedule, what you need from training and whether ELEVATE fits.
               </p>
               <div className="mt-8 flex flex-col items-start gap-5 min-[440px]:flex-row min-[440px]:items-center">
                 <ButtonLink href="/contact/elevate">Apply for ELEVATE</ButtonLink>

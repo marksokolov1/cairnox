@@ -55,8 +55,6 @@ const layers = [
   },
 ] as const;
 
-const accumulation = ["Session", "Week", "Block", "Season", "Performance"] as const;
-
 const pillars = [
   {
     number: "01",
@@ -160,12 +158,6 @@ const sports = [
   "NCAA Programmes",
 ] as const;
 
-const finalPaths = [
-  { label: "BASE", descriptor: "Cricket Performance Programmes", href: "/base" },
-  { label: "ELEVATE", descriptor: "1:1 Cricket Performance Coaching", href: "/elevate" },
-  { label: "APEX", descriptor: "Cricket Performance Consultancy", href: "/apex" },
-] as const;
-
 export function MethodPage() {
   return (
     <main id="main-content" className="method-page">
@@ -234,14 +226,14 @@ export function MethodPage() {
             {cairnPrinciples.map((principle, index) => (
               <li
                 key={principle.number}
-                className={`flex min-h-64 flex-col justify-between border-b border-ink py-8 last:border-b-0 sm:px-7 ${
+                className={`border-b border-ink py-6 last:border-b-0 sm:px-7 ${
                   index % 2 === 1 ? "sm:border-l" : "sm:pl-0"
                 } ${index > 1 ? "sm:border-b-0" : ""} ${
                   index === 0 ? "lg:border-l-0 lg:pl-0" : "lg:border-l lg:px-7"
                 } lg:border-b-0`}
               >
                 <p className="type-eyebrow text-mineral">{principle.number}</p>
-                <div className="mt-16">
+                <div className="mt-4">
                   <h3 className="text-xl font-semibold tracking-[-0.02em] uppercase">
                     {principle.title}
                   </h3>
@@ -289,59 +281,6 @@ export function MethodPage() {
         </Container>
       </Section>
 
-      <Section aria-labelledby="accumulation-title" tone="dark" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-8">
-              <Eyebrow className="text-stone">Performance is accumulated</Eyebrow>
-              <SectionHeading id="accumulation-title" className="mt-6 max-w-[14ch]">
-                One session is not the outcome.
-              </SectionHeading>
-            </div>
-            <p className="max-w-xl text-[1.08rem] leading-relaxed text-stone-light lg:col-span-4 lg:pb-1">
-              A single session rarely changes performance in isolation. Development comes from what
-              is repeated across days, weeks, training blocks and seasons.
-            </p>
-          </div>
-
-          <ol className="mt-16 border-y border-white/30 lg:mt-24 lg:grid lg:grid-cols-5">
-            {accumulation.map((item, index) => (
-              <li
-                key={item}
-                className={`relative flex min-h-40 items-end border-b border-white/30 py-7 last:border-b-0 lg:min-h-56 lg:border-b-0 lg:px-7 lg:py-9 ${
-                  index === 0 ? "lg:pl-0" : "lg:border-l"
-                }`}
-              >
-                <div>
-                  <p className="type-eyebrow text-stone">0{index + 1}</p>
-                  <h3 className="mt-12 text-[clamp(1.5rem,2.2vw,2.4rem)] font-semibold tracking-[-0.035em] uppercase">
-                    {item}
-                  </h3>
-                </div>
-                {index < accumulation.length - 1 ? (
-                  <span
-                    aria-hidden="true"
-                    className="absolute right-1 bottom-7 text-xl text-stone lg:-right-3 lg:bottom-auto lg:top-1/2 lg:z-10 lg:-translate-y-1/2"
-                  >
-                    ↓
-                  </span>
-                ) : null}
-              </li>
-            ))}
-          </ol>
-
-          <div className="mt-10 grid gap-8 lg:grid-cols-12">
-            <p className="text-[clamp(1.6rem,3vw,3rem)] font-medium leading-tight tracking-[-0.04em] lg:col-span-5">
-              Every session adds a layer.
-            </p>
-            <p className="max-w-2xl text-[1.02rem] leading-relaxed text-stone-light lg:col-span-6 lg:col-start-7">
-              The quality of each layer matters. So does how each layer connects to what came before
-              and what needs to happen next.
-            </p>
-          </div>
-        </Container>
-      </Section>
-
       <Section aria-labelledby="pillars-title" spacing="large">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
@@ -361,12 +300,12 @@ export function MethodPage() {
             {pillars.map((pillar, index) => (
               <li
                 key={pillar.number}
-                className={`min-h-72 border-b border-ink py-9 sm:px-9 lg:min-h-80 lg:py-11 ${
+                className={`border-b border-ink py-6 sm:px-9 lg:py-8 ${
                   index % 2 === 1 ? "sm:border-l" : "sm:pl-0"
                 }`}
               >
                 <p className="type-eyebrow text-mineral">{pillar.number}</p>
-                <h3 className="mt-16 max-w-[20ch] text-[clamp(1.45rem,2.4vw,2.6rem)] font-semibold leading-tight tracking-[-0.035em] uppercase">
+                <h3 className="mt-4 max-w-[20ch] text-[clamp(1.45rem,2.4vw,2.6rem)] font-semibold leading-tight tracking-[-0.035em] uppercase">
                   {pillar.title}
                 </h3>
                 <p className="mt-5 max-w-xl text-[1rem] leading-relaxed text-charcoal">
@@ -398,12 +337,12 @@ export function MethodPage() {
             {contextFactors.map((factor, index) => (
               <li
                 key={factor.number}
-                className={`flex min-h-60 flex-col justify-between border-b border-ink py-8 sm:px-8 ${
+                className={`border-b border-ink py-6 sm:px-8 ${
                   index % 2 === 1 ? "sm:border-l" : "sm:pl-0"
                 } ${index % 3 === 0 ? "lg:border-l-0 lg:pl-0" : "lg:border-l lg:px-8"}`}
               >
                 <p className="type-eyebrow text-mineral">{factor.number}</p>
-                <div className="mt-14">
+                <div className="mt-4">
                   <h3 className="text-xl font-semibold tracking-[-0.02em] uppercase">{factor.title}</h3>
                   <p className="mt-4 max-w-sm text-[0.98rem] leading-relaxed text-charcoal">
                     {factor.copy}
@@ -439,23 +378,22 @@ export function MethodPage() {
                 Train today for what needs to exist tomorrow.
               </SectionHeading>
               <BodyCopy className="mt-8 max-w-2xl text-charcoal">
-                Good programming is not a collection of difficult sessions. Each stage should
-                contribute to the next, creating a logical progression rather than isolated training
-                stress.
+                Performance builds across sessions, weeks, training blocks and seasons. Each stage
+                develops what the next stage needs rather than adding work for its own sake.
               </BodyCopy>
             </div>
           </div>
 
-          <ol className="mt-16 border-y border-ink lg:mt-24 lg:grid lg:grid-cols-5">
+          <ol className="mt-8 border-y border-ink lg:grid lg:grid-cols-5">
             {progression.map((step, index) => (
               <li
                 key={step}
-                className={`relative flex min-h-40 flex-col justify-between border-b border-ink py-7 last:border-b-0 lg:min-h-56 lg:border-b-0 lg:px-7 lg:py-9 ${
+                className={`relative flex flex-col border-b border-ink py-7 last:border-b-0 lg:border-b-0 lg:px-7 lg:py-9 ${
                   index === 0 ? "lg:pl-0" : "lg:border-l"
                 }`}
               >
                 <p className="type-eyebrow text-mineral">0{index + 1}</p>
-                <h3 className="mt-12 max-w-[16ch] text-lg font-semibold leading-tight tracking-[-0.02em] uppercase">
+                <h3 className="mt-4 max-w-[16ch] pr-7 text-lg font-semibold leading-tight tracking-[-0.02em] uppercase">
                   {step}
                 </h3>
                 {index < progression.length - 1 ? (
@@ -472,47 +410,6 @@ export function MethodPage() {
           <p className="mt-5 max-w-3xl text-[0.8rem] leading-relaxed text-mineral">
             A general methodology for connecting decisions over time—not a fixed testing protocol.
           </p>
-        </Container>
-      </Section>
-
-      <Section
-        id="applications"
-        aria-labelledby="applications-title"
-        tone="dark"
-        spacing="large"
-        className="scroll-mt-24"
-      >
-        <Container>
-          <Eyebrow className="text-stone">One system. Three ways to apply it.</Eyebrow>
-          <SectionHeading id="applications-title" className="mt-6 max-w-[13ch]">
-            The method scales with the need.
-          </SectionHeading>
-
-          <div className="mt-16 grid border-y border-white/30 lg:mt-24 lg:grid-cols-3">
-            {applications.map((application, index) => (
-              <article
-                key={application.title}
-                className={`flex min-h-[34rem] flex-col border-b border-white/30 py-10 last:border-b-0 lg:border-b-0 lg:px-9 lg:py-12 ${
-                  index === 0 ? "lg:pl-0" : "lg:border-l"
-                }`}
-              >
-                <p className="type-eyebrow text-stone">{application.number}</p>
-                <h3 className="mt-12 text-[clamp(2.4rem,4vw,4.25rem)] font-semibold leading-none tracking-[-0.05em]">
-                  {application.title}
-                </h3>
-                <p className="mt-8 text-xl font-semibold tracking-[-0.02em]">{application.role}</p>
-                <p className="mt-4 max-w-sm text-[1rem] leading-relaxed text-stone-light">
-                  {application.copy}
-                </p>
-                <p className="mt-8 text-[0.8rem] font-bold tracking-[0.09em] text-stone uppercase">
-                  {application.expression}
-                </p>
-                <div className="mt-auto pt-10">
-                  <ArrowLink href={application.href}>{application.cta}</ArrowLink>
-                </div>
-              </article>
-            ))}
-          </div>
         </Container>
       </Section>
 
@@ -562,40 +459,48 @@ export function MethodPage() {
         </Container>
       </Section>
 
-      <Section aria-labelledby="final-method-title" spacing="large">
+      <Section
+        id="applications"
+        aria-labelledby="applications-title"
+        tone="dark"
+        spacing="compact"
+        className="scroll-mt-24"
+      >
         <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">Choose how you build</Eyebrow>
-              <SectionHeading id="final-method-title" className="mt-6 max-w-[13ch]">
-                Start with the layer you need.
-              </SectionHeading>
-            </div>
-            <div className="lg:col-span-5">
-              <BodyCopy className="text-charcoal">
-                The CAIRNOX philosophy stays consistent across cricket. The level of support changes
-                depending on the player or organisation and what is needed from the system.
-              </BodyCopy>
-              <ButtonLink href="/contact" className="mt-8">
-                Work with CAIRNOX
-              </ButtonLink>
-            </div>
-          </div>
+          <Eyebrow className="text-stone">One system. Three ways to apply it.</Eyebrow>
+          <SectionHeading id="applications-title" className="mt-6 max-w-[13ch]">
+            The method scales with the need.
+          </SectionHeading>
 
-          <nav aria-label="CAIRNOX service pathways" className="mt-16 border-y border-ink lg:mt-24">
-            {finalPaths.map((path) => (
-              <div
-                key={path.label}
-                className="grid gap-4 border-b border-ink py-7 last:border-b-0 sm:grid-cols-[1fr_1.5fr_auto] sm:items-center sm:gap-8"
+          <div className="mt-8 grid border-y border-white/30 lg:grid-cols-3">
+            {applications.map((application, index) => (
+              <article
+                key={application.title}
+                className={`flex flex-col border-b border-white/30 py-10 last:border-b-0 lg:border-b-0 lg:px-9 lg:py-12 ${
+                  index === 0 ? "lg:pl-0" : "lg:border-l"
+                }`}
               >
-                <p className="text-2xl font-semibold tracking-[-0.03em]">{path.label}</p>
-                <p className="text-[1rem] text-charcoal">{path.descriptor}</p>
-                <ArrowLink href={path.href}>Explore {path.label}</ArrowLink>
-              </div>
+                <p className="type-eyebrow text-stone">{application.number}</p>
+                <h3 className="mt-6 text-[clamp(2.4rem,4vw,4.25rem)] font-semibold leading-none tracking-[-0.05em]">
+                  {application.title}
+                </h3>
+                <p className="mt-4 text-xl font-semibold tracking-[-0.02em]">{application.role}</p>
+                <p className="mt-4 max-w-sm text-[1rem] leading-relaxed text-stone-light">
+                  {application.copy}
+                </p>
+                <p className="mt-8 text-[0.8rem] font-bold tracking-[0.09em] text-stone uppercase">
+                  {application.expression}
+                </p>
+                <div className="mt-auto pt-6">
+                  <ArrowLink href={application.href}>{application.cta}</ArrowLink>
+                </div>
+              </article>
             ))}
-          </nav>
+          </div>
+          <ArrowLink href="/contact" className="mt-7">Work with CAIRNOX</ArrowLink>
         </Container>
       </Section>
+
     </main>
   );
 }

@@ -30,15 +30,6 @@ const consultancyPrinciples = [
   },
 ] as const;
 
-const environmentAreas = [
-  "Physical development",
-  "Cricket practice",
-  "Match workload",
-  "Monitoring",
-  "Recovery",
-  "Staff alignment",
-] as const;
-
 const consultancyAreas = [
   {
     number: "01",
@@ -127,29 +118,6 @@ const deliveryModels = [
   },
 ] as const;
 
-const audiences = [
-  {
-    number: "01",
-    title: "Coaches",
-    copy: "Seeking stronger physical-development structure around their cricket players.",
-  },
-  {
-    number: "02",
-    title: "Schools & cricket academies",
-    copy: "Building or refining long-term player-development processes.",
-  },
-  {
-    number: "03",
-    title: "Clubs & teams",
-    copy: "Looking to improve cricket physical preparation, workload planning or performance systems.",
-  },
-  {
-    number: "04",
-    title: "Cricket organisations",
-    copy: "Seeking practitioner-led support around wider cricket-performance strategy.",
-  },
-] as const;
-
 export function ApexPage() {
   return (
     <main id="main-content" className="apex-page">
@@ -217,51 +185,17 @@ export function ApexPage() {
             {consultancyPrinciples.map((principle, index) => (
               <li
                 key={principle.number}
-                className={`min-h-[21rem] border-b border-ink py-9 last:border-b-0 lg:border-b-0 lg:px-9 lg:py-11 ${
+                className={`border-b border-ink py-9 last:border-b-0 lg:border-b-0 lg:px-9 lg:py-11 ${
                   index > 0 ? "lg:border-l" : "lg:pl-0"
                 }`}
               >
                 <p className="type-eyebrow text-mineral">{principle.number}</p>
-                <h3 className="mt-20 text-xl font-semibold tracking-[-0.02em] uppercase">
+                <h3 className="mt-6 text-xl font-semibold tracking-[-0.02em] uppercase">
                   {principle.title}
                 </h3>
                 <p className="mt-4 max-w-sm text-[0.98rem] leading-relaxed text-charcoal">
                   {principle.copy}
                 </p>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="environment-title" tone="dark" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-8">
-              <Eyebrow className="text-stone">Performance is never one variable</Eyebrow>
-              <SectionHeading id="environment-title" className="mt-6 max-w-[15ch]">
-                The player is shaped by the system around them.
-              </SectionHeading>
-            </div>
-            <p className="max-w-xl text-[1.05rem] leading-relaxed text-stone-light lg:col-span-4 lg:pb-1">
-              Physical preparation does not sit in isolation. Cricket practice, matches, workload,
-              recovery, monitoring and staff communication all influence how players are developed
-              and supported.
-            </p>
-          </div>
-
-          <ol className="mt-14 grid border-t border-white/30 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
-            {environmentAreas.map((area, index) => (
-              <li
-                key={area}
-                className={`flex min-h-52 flex-col justify-between border-b border-white/30 py-8 sm:px-8 ${
-                  index % 2 === 1 ? "sm:border-l" : "sm:pl-0"
-                } ${index % 3 === 0 ? "lg:border-l-0 lg:pl-0" : "lg:border-l lg:px-8"}`}
-              >
-                <p className="type-eyebrow text-stone">0{index + 1}</p>
-                <h3 className="mt-16 text-[clamp(1.35rem,2vw,2rem)] font-semibold leading-tight tracking-[-0.03em] uppercase">
-                  {area}
-                </h3>
               </li>
             ))}
           </ol>
@@ -287,7 +221,7 @@ export function ApexPage() {
             {consultancyAreas.map((area, index) => (
               <div
                 key={area.number}
-                className={`min-h-64 border-b border-ink py-9 md:px-9 ${
+                className={`border-b border-ink py-6 md:px-9 ${
                   index % 2 === 1 ? "md:border-l" : "md:pl-0"
                 }`}
               >
@@ -295,7 +229,7 @@ export function ApexPage() {
                   <span className="text-mineral">{area.number}</span>
                   <span>{area.title}</span>
                 </dt>
-                <dd className="mt-10 max-w-lg text-[1rem] leading-relaxed text-charcoal md:ml-[3.75rem]">
+                <dd className="mt-3 max-w-lg text-[1rem] leading-relaxed text-charcoal md:ml-[3.75rem]">
                   {area.copy}
                 </dd>
               </div>
@@ -328,12 +262,12 @@ export function ApexPage() {
             {process.map((step, index) => (
               <li
                 key={step.number}
-                className={`grid min-h-64 grid-cols-[3rem_1fr] gap-3 border-b border-ink py-9 lg:block lg:min-h-[25rem] lg:px-8 lg:py-10 ${
+                className={`grid grid-cols-[3rem_1fr] gap-3 border-b border-ink py-6 lg:block lg:px-8 lg:py-8 ${
                   index > 0 ? "lg:border-l" : "lg:pl-0"
                 }`}
               >
                 <p className="type-eyebrow text-mineral">{step.number}</p>
-                <div className="lg:mt-28">
+                <div className="lg:mt-6">
                   <h3 className="text-xl font-semibold tracking-[-0.02em] uppercase">{step.title}</h3>
                   <p className="mt-5 max-w-sm text-[0.96rem] leading-relaxed text-charcoal">
                     {step.copy}
@@ -345,7 +279,7 @@ export function ApexPage() {
         </Container>
       </Section>
 
-      <Section aria-labelledby="systems-title" tone="dark" spacing="large">
+      <Section aria-labelledby="systems-title" tone="dark" spacing="compact">
         <Container className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <AmbientVideo
@@ -365,9 +299,8 @@ export function ApexPage() {
               Good performance environments connect the work.
             </SectionHeading>
             <p className="mt-8 max-w-2xl text-[clamp(1.05rem,1.4vw,1.25rem)] leading-relaxed text-stone-light">
-              A strong programme is only useful if it fits the wider cricket environment. APEX
-              considers how physical preparation interacts with cricket practice, matches, travel,
-              workload, recovery, monitoring and staff decision-making.
+              APEX helps staff plan physical development alongside practice, matches and travel. Shared workload
+              and recovery information can support decisions about when to train, adjust or rest.
             </p>
 
             <div className="mt-12 border-y border-white/30 sm:grid sm:grid-cols-2">
@@ -415,12 +348,12 @@ export function ApexPage() {
             {deliveryModels.map((model, index) => (
               <li
                 key={model.number}
-                className={`min-h-[21rem] border-b border-ink py-9 last:border-b-0 lg:border-b-0 lg:px-9 lg:py-11 ${
+                className={`border-b border-ink py-9 last:border-b-0 lg:border-b-0 lg:px-9 lg:py-11 ${
                   index > 0 ? "lg:border-l" : "lg:pl-0"
                 }`}
               >
                 <p className="type-eyebrow text-mineral">{model.number}</p>
-                <h3 className="mt-24 text-2xl font-semibold tracking-[-0.03em] uppercase">
+                <h3 className="mt-5 text-2xl font-semibold tracking-[-0.03em] uppercase">
                   {model.title}
                 </h3>
                 <p className="mt-5 max-w-sm text-[0.98rem] leading-relaxed text-charcoal">{model.copy}</p>
@@ -459,42 +392,6 @@ export function ApexPage() {
         </Container>
       </Section>
 
-      <Section aria-labelledby="audience-title" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-8">
-              <Eyebrow className="text-moss">Who we work with</Eyebrow>
-              <SectionHeading id="audience-title" className="mt-6 max-w-[15ch]">
-                For the people responsible for developing cricketers.
-              </SectionHeading>
-            </div>
-            <p className="max-w-lg text-[1.05rem] leading-relaxed text-charcoal lg:col-span-4 lg:pb-1">
-              APEX is designed for coaches, performance staff, school and academy leaders, club
-              leadership and cricket programme decision-makers.
-            </p>
-          </div>
-
-          <ol className="mt-14 grid border-t border-ink md:grid-cols-2 lg:mt-20">
-            {audiences.map((audience, index) => (
-              <li
-                key={audience.number}
-                className={`min-h-56 border-b border-ink py-9 md:px-9 ${
-                  index % 2 === 1 ? "md:border-l" : "md:pl-0"
-                }`}
-              >
-                <p className="type-eyebrow text-mineral">{audience.number}</p>
-                <h3 className="mt-10 text-xl font-semibold tracking-[-0.02em] uppercase">
-                  {audience.title}
-                </h3>
-                <p className="mt-4 max-w-lg text-[0.98rem] leading-relaxed text-charcoal">
-                  {audience.copy}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </Section>
-
       <Section aria-labelledby="engagement-title" tone="muted" spacing="large">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
@@ -506,9 +403,8 @@ export function ApexPage() {
             </div>
             <div className="lg:col-span-5">
               <p className="max-w-xl text-lg leading-relaxed text-charcoal">
-                APEX engagements begin with the cricket performance problem, the environment and the
-                people involved. Start a conversation about where CAIRNOX may be able to support your
-                team or organisation.
+                Tell us what your coaches, performance staff or programme leads are trying to improve.
+                We’ll discuss the challenge, your cricket environment and where APEX could help.
               </p>
               <div className="mt-8 flex flex-col items-start gap-5 min-[440px]:flex-row min-[440px]:items-center">
                 <ButtonLink href="/contact/apex">Discuss a project</ButtonLink>
