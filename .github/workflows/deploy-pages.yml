@@ -42,9 +42,9 @@ jobs:
         run: pnpm build
         env:
           NEXT_PUBLIC_SITE_URL: https://cairnox.com/
-          # Stage 1: publish the redirect target, not the email signup.
+          # The Mailchimp redirect and subscriber tagging were tested before launch.
           NEXT_PUBLIC_FOUNDATION_WEEK_DOWNLOAD: "true"
-          NEXT_PUBLIC_FOUNDATION_WEEK_SIGNUP: "false"
+          NEXT_PUBLIC_FOUNDATION_WEEK_SIGNUP: "true"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

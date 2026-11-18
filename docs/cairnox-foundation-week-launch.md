@@ -7,10 +7,12 @@
 ## Staged launch
 
 1. Confirm PDF distribution approval. `/privacy` has a local draft reflecting the owner’s confirmations: Mathew Skyner operates CAIRNOX in the United States; enquiry copies have no fixed deletion schedule and may be retained indefinitely. Before publication, review the applicable jurisdictions and complaint authorities, retention practices for subscriber records, legal bases where applicable, and hosting/email/FormSubmit transfer arrangements. Confirm Mailchimp tracking and consent settings. The draft does not certify compliance.
-2. With publish approval, deploy stage 1: the GitHub Pages workflow sets `NEXT_PUBLIC_FOUNDATION_WEEK_DOWNLOAD=true` and `NEXT_PUBLIC_FOUNDATION_WEEK_SIGNUP=false`. Verify the thank-you page and PDF load on the public domain. Outside the deployment workflow both flags are off unless set explicitly.
+2. On the first deployment, use `NEXT_PUBLIC_FOUNDATION_WEEK_DOWNLOAD=true` and `NEXT_PUBLIC_FOUNDATION_WEEK_SIGNUP=false`. Verify the thank-you page and PDF load on the public domain. Outside the deployment workflow both flags are off unless set explicitly.
 3. In Mailchimp, go to **Forms → Settings → Basic Subscribe Form → Edit → Outline → Success**. Set the external URL to `https://cairnox.com/base/foundation-week/thanks/`. This setting is shared with the audience’s basic form; get approval before changing it and check both forms. [Mailchimp instructions](https://mailchimp.com/help/design-and-host-your-own-thank-you-pages/).
 4. With an expressly authorized test address, test a fresh signup, tag assignment, success redirect, PDF download, repeat signup and unsubscribe path. Check phone and desktop layouts. Do not submit a real address without permission. Do not publish the signup if delivery or consent is unverified.
 5. Set `NEXT_PUBLIC_FOUNDATION_WEEK_SIGNUP: "true"` in the GitHub Pages workflow and redeploy only after testing and approval. If rolling back, hide the signup first, restore Mailchimp’s prior success setting, then disable the download page.
+
+Launch verification: the live thank-you page and production PDF were verified. A fresh authorized test through the local BASE embed reached the live download page, and the Cairnox audience showed the contact as Subscribed with the `Foundation Week / BASE` tag. The deployment workflow now enables the signup.
 
 Local export preview: `NEXT_PUBLIC_FOUNDATION_WEEK_DOWNLOAD=true NEXT_PUBLIC_FOUNDATION_WEEK_SIGNUP=true pnpm build`. Serve `out` with `pnpm start`. Supply the flags as shell environment variables so both Next.js and the export preparation script see them.
 
