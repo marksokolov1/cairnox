@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Route } from "next";
+import { foundationWeekSignupEnabled, foundationWeekSignupPath } from "@/config/foundation-week";
 import { getPublicAssetPath } from "@/config/site";
 import type { PublishedInsightArticle } from "@/types/insight-article";
 import {
@@ -11,6 +12,7 @@ import {
   Eyebrow,
   Section,
   SectionHeading,
+  TextLink,
 } from "@/components/ui/primitives";
 
 const experience = [
@@ -130,9 +132,14 @@ export function Homepage({ latestInsight }: { latestInsight?: PublishedInsightAr
                   {pathway.descriptor}
                 </p>
                 <p className="mt-3 max-w-sm leading-relaxed text-charcoal">{pathway.copy}</p>
-                <ArrowLink href={pathway.href} className="mt-7 lg:mt-auto lg:pt-7">
-                  {pathway.cta}
-                </ArrowLink>
+                <div className="mt-7 lg:mt-auto lg:pt-7">
+                  <ArrowLink href={pathway.href}>{pathway.cta}</ArrowLink>
+                  {foundationWeekSignupEnabled && pathway.label === "BASE" && (
+                    <p className="mt-3 text-sm">
+                      <TextLink href={foundationWeekSignupPath}>Get the free training guide</TextLink>
+                    </p>
+                  )}
+                </div>
               </article>
             ))}
           </div>

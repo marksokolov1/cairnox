@@ -14,6 +14,8 @@
 
 Launch verification: the live thank-you page and production PDF were verified. A fresh authorized test through the local BASE embed reached the live download page, and the Cairnox audience showed the contact as Subscribed with the `Foundation Week / BASE` tag. The deployment workflow now enables the signup.
 
+Placement update: one signup stays on BASE at `/base/#foundation-week`, immediately after the BASE introduction. The BASE hero, homepage BASE pathway and both cricket Insights articles link to that section only when signup is enabled. Use `https://cairnox.com/base/#foundation-week` for guide-specific social links. The existing tag identifies the offer, not the referring link; no tracking has been added. Compare confirmed signups against BASE visits if available, and watch programme-interest enquiries separately.
+
 Local export preview: `NEXT_PUBLIC_FOUNDATION_WEEK_DOWNLOAD=true NEXT_PUBLIC_FOUNDATION_WEEK_SIGNUP=true pnpm build`. Serve `out` with `pnpm start`. Supply the flags as shell environment variables so both Next.js and the export preparation script see them.
 
 ### Newsletter consent review

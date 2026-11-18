@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { AmbientVideo } from "@/components/home/ambient-video";
 import { FoundationWeekSignup } from "@/components/base/foundation-week-signup";
-import { foundationWeekSignupEnabled } from "@/config/foundation-week";
+import { foundationWeekAnchor, foundationWeekSignupEnabled } from "@/config/foundation-week";
 import { getPublicAssetPath } from "@/config/site";
 import {
   ArrowLink,
@@ -14,151 +14,10 @@ import {
   SectionHeading,
 } from "@/components/ui/primitives";
 
-const commercialModel = [
-  {
-    number: "01",
-    title: "One-time purchase",
-    copy: "No ongoing coaching commitment.",
-  },
-  {
-    number: "02",
-    title: "Structured programming",
-    copy: "Training organised around clear physical-development objectives.",
-  },
-  {
-    number: "03",
-    title: "Independent delivery",
-    copy: "Follow the programme around your own cricket and training schedule.",
-  },
-] as const;
-
 const foundationPillars = [
-  {
-    number: "01",
-    title: "Strength",
-    copy: "Build the force-producing qualities performance depends upon.",
-  },
-  {
-    number: "02",
-    title: "Power",
-    copy: "Develop the ability to express force quickly and athletically.",
-  },
-  {
-    number: "03",
-    title: "Conditioning",
-    copy: "Build the capacity to meet the repeated physical demands of practice and matches.",
-  },
-] as const;
-
-const progression = [
-  {
-    number: "01",
-    title: "Foundation",
-    copy: "Establish the physical base required for later work.",
-  },
-  {
-    number: "02",
-    title: "Develop",
-    copy: "Progress the qualities relevant to performance.",
-  },
-  {
-    number: "03",
-    title: "Build",
-    copy: "Increase training challenge as capacity improves.",
-  },
-  {
-    number: "04",
-    title: "Express",
-    copy: "Bring developed qualities together into stronger athletic outputs.",
-  },
-] as const;
-
-const systemElements = [
-  {
-    number: "01",
-    title: "Structured training programme",
-    copy: "A complete performance programme with progressive training structure.",
-  },
-  {
-    number: "02",
-    title: "Strength, power & conditioning",
-    copy: "Integrated development rather than isolated workouts.",
-  },
-  {
-    number: "03",
-    title: "Exercise guidance",
-    copy: "Clear instruction designed to make the programme practical to follow independently.",
-  },
-  {
-    number: "04",
-    title: "Performance education",
-    copy: "Supporting information designed to help players understand the principles behind the work.",
-  },
-  {
-    number: "05",
-    title: "Supporting resources",
-    copy: "Selected CAIRNOX ebooks and resources complement the programme.",
-  },
-  {
-    number: "06",
-    title: "Progression framework",
-    copy: "Training is structured to develop over time rather than remain static.",
-  },
-] as const;
-
-const audiences = [
-  {
-    number: "01",
-    title: "Competitive cricketers",
-    copy: "Players who want organised physical preparation alongside cricket.",
-  },
-  {
-    number: "02",
-    title: "Aspiring professional players",
-    copy: "Cricketers looking to establish a stronger physical training structure.",
-  },
-  {
-    number: "03",
-    title: "Independent players",
-    copy: "Cricketers capable of training independently but seeking better programming.",
-  },
-  {
-    number: "04",
-    title: "Highly motivated performers",
-    copy: "Players who want serious cricket performance programming rather than generic fitness plans.",
-  },
-] as const;
-
-const process = [
-  {
-    number: "01",
-    title: "Choose",
-    copy: "Select the BASE programme that best matches your training objective and context.",
-  },
-  {
-    number: "02",
-    title: "Follow",
-    copy: "Work through the structured programme independently.",
-  },
-  {
-    number: "03",
-    title: "Progress",
-    copy: "Build physical qualities through deliberate progression over time.",
-  },
-] as const;
-
-const baseComparison = [
-  "Structured programme",
-  "Independent training",
-  "One-time purchase",
-  "Expert direction without ongoing personal coaching",
-] as const;
-
-const elevateComparison = [
-  "Personalised programme",
-  "Ongoing direct support",
-  "Adaptation around cricket role and schedule",
-  "Coaching that responds continually to the individual",
+  { title: "Strength", copy: "Build the force-producing qualities cricket performance depends on." },
+  { title: "Power", copy: "Develop the ability to express force quickly." },
+  { title: "Conditioning", copy: "Build the capacity to meet repeated training and match demands." },
 ] as const;
 
 export function BasePage() {
@@ -188,6 +47,11 @@ export function BasePage() {
                 How BASE works
               </ButtonLink>
             </div>
+            {foundationWeekSignupEnabled && (
+              <ArrowLink href={foundationWeekAnchor} className="mt-5 self-start">
+                Get the free training guide
+              </ArrowLink>
+            )}
             <p className="mt-10 border-t border-line pt-4 text-[0.72rem] font-bold tracking-[0.12em] text-mineral uppercase sm:mt-14">
               Expert programming / Clear progression / Independence
             </p>
@@ -207,244 +71,64 @@ export function BasePage() {
         </Container>
       </section>
 
-      <Section aria-labelledby="what-base-title" tone="muted" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">The CAIRNOX entry point</Eyebrow>
-              <SectionHeading id="what-base-title" className="mt-6 max-w-[13ch]">
-                The system, in your hands.
-              </SectionHeading>
-            </div>
-            <BodyCopy className="text-charcoal lg:col-span-5">
-              BASE takes the principles behind CAIRNOX cricket performance coaching and turns them
-              into complete, progressive programmes players can follow independently.
-            </BodyCopy>
+      <Section aria-labelledby="what-base-title" spacing="compact">
+        <Container className="grid gap-5 lg:grid-cols-12 lg:items-center lg:gap-12">
+          <div className="lg:col-span-6">
+            <Eyebrow className="text-moss">The CAIRNOX entry point</Eyebrow>
+            <SectionHeading id="what-base-title" className="mt-4 max-w-[15ch]">
+              The system, in your hands.
+            </SectionHeading>
           </div>
-
-          <ol className="mt-14 grid border-y border-ink lg:mt-20 lg:grid-cols-3">
-            {commercialModel.map((item, index) => (
-              <li
-                key={item.number}
-                className={`min-h-56 border-b border-ink py-8 last:border-b-0 lg:border-b-0 lg:px-8 lg:py-10 ${
-                  index > 0 ? "lg:border-l" : "lg:pl-0"
-                }`}
-              >
-                <p className="type-eyebrow text-mineral">{item.number}</p>
-                <h3 className="mt-9 text-xl font-semibold tracking-[-0.02em] uppercase">
-                  {item.title}
-                </h3>
-                <p className="mt-4 max-w-sm text-[0.96rem] leading-relaxed text-charcoal">{item.copy}</p>
-              </li>
-            ))}
-          </ol>
-
-          <p className="mt-12 max-w-[26ch] text-[clamp(1.8rem,3vw,3.25rem)] font-medium leading-[1.08] tracking-[-0.04em] lg:mt-16">
-            BASE gives the player the system.
-          </p>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="foundation-title" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">Build from what matters</Eyebrow>
-              <SectionHeading id="foundation-title" className="mt-6 max-w-[13ch]">
-                Performance needs a foundation.
-              </SectionHeading>
-            </div>
-            <p className="max-w-xl text-[1.05rem] leading-relaxed text-charcoal lg:col-span-5 lg:pb-1">
-              BASE develops the strength, power and conditioning that support cricket performance
-              through connected, progressive training rather than random workouts.
+          <div className="space-y-3 lg:col-span-6">
+            <BodyCopy className="text-charcoal">
+              BASE is for competitive cricketers and other serious players who want a clear plan
+              they can follow independently around practice and matches.
+            </BodyCopy>
+            <p className="text-base leading-relaxed text-charcoal">
+              One purchase gives you a complete programme without an ongoing coaching commitment.
             </p>
           </div>
-
-          <ol className="mt-14 grid border-y border-ink lg:mt-20 lg:grid-cols-3">
-            {foundationPillars.map((pillar, index) => (
-              <li
-                key={pillar.number}
-                className={`flex min-h-[23rem] flex-col border-b border-ink py-9 last:border-b-0 lg:border-b-0 lg:px-9 lg:py-11 ${
-                  index > 0 ? "lg:border-l" : "lg:pl-0"
-                }`}
-              >
-                <p className="type-eyebrow text-mineral">{pillar.number}</p>
-                <h3 className="mt-auto pt-20 text-[clamp(2.5rem,4vw,4.75rem)] font-semibold leading-[0.94] tracking-[-0.055em]">
-                  {pillar.title}
-                </h3>
-                <p className="mt-5 max-w-sm text-[1rem] leading-relaxed text-charcoal">{pillar.copy}</p>
-              </li>
-            ))}
-          </ol>
         </Container>
       </Section>
 
-      <Section aria-labelledby="construction-title" tone="muted" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">Structured progression</Eyebrow>
-              <SectionHeading id="construction-title" className="mt-6 max-w-[14ch]">
-                Built to progress, not just to be completed.
-              </SectionHeading>
-            </div>
-            <BodyCopy className="text-charcoal lg:col-span-5 lg:pt-1">
-              A programme should do more than tell a player what to do today. BASE is designed
-              around progression across the complete training process.
-            </BodyCopy>
-          </div>
-
-          <ol className="mt-14 border-t border-ink lg:mt-20 lg:grid lg:grid-cols-4">
-            {progression.map((stage, index) => (
-              <li
-                key={stage.number}
-                className={`grid min-h-56 grid-cols-[3rem_1fr] gap-3 border-b border-ink py-8 lg:block lg:min-h-[22rem] lg:px-7 lg:py-9 ${
-                  index > 0 ? "lg:border-l" : "lg:pl-0"
-                }`}
-              >
-                <p className="type-eyebrow text-mineral">{stage.number}</p>
-                <div className="lg:mt-24">
-                  <h3 className="text-2xl font-semibold tracking-[-0.03em] uppercase">{stage.title}</h3>
-                  <p className="mt-4 max-w-xs text-[0.96rem] leading-relaxed text-charcoal">
-                    {stage.copy}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="receive-title" tone="dark" spacing="large">
-        <Container>
-          <Eyebrow className="text-stone">The complete BASE system</Eyebrow>
-          <SectionHeading id="receive-title" className="mt-6 max-w-[13ch]">
-            More than a list of exercises.
-          </SectionHeading>
-
-          <dl className="mt-14 grid border-t border-white/30 md:grid-cols-2 lg:mt-20">
-            {systemElements.map((item, index) => (
-              <div
-                key={item.number}
-                className={`min-h-56 border-b border-white/30 py-8 md:px-8 ${
-                  index % 2 === 1 ? "md:border-l" : "md:pl-0"
-                }`}
-              >
-                <dt className="grid grid-cols-[2.75rem_1fr] gap-3 text-[0.8rem] font-bold tracking-[0.1em] uppercase">
-                  <span className="text-stone">{item.number}</span>
-                  <span>{item.title}</span>
-                </dt>
-                <dd className="mt-8 max-w-lg text-[1rem] leading-relaxed text-stone-light md:ml-[3.5rem]">
-                  {item.copy}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="who-for-title" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-            <Eyebrow className="text-moss">Built for independent cricketers</Eyebrow>
-              <SectionHeading id="who-for-title" className="mt-6 max-w-[13ch]">
-                Expert structure. Your execution.
-              </SectionHeading>
-            </div>
-            <p className="max-w-xl text-[1.05rem] leading-relaxed text-charcoal lg:col-span-5 lg:pb-1">
-              BASE is for serious players who want better physical-preparation direction and are
-              ready to take responsibility for the work.
-            </p>
-          </div>
-
-          <ol className="mt-14 grid border-t border-ink md:grid-cols-2 lg:mt-20">
-            {audiences.map((audience, index) => (
-              <li
-                key={audience.number}
-                className={`min-h-56 border-b border-ink py-8 md:px-8 ${
-                  index % 2 === 1 ? "md:border-l" : "md:pl-0"
-                }`}
-              >
-                <p className="type-eyebrow text-mineral">{audience.number}</p>
-                <h3 className="mt-9 text-xl font-semibold tracking-[-0.02em] uppercase">
-                  {audience.title}
-                </h3>
-                <p className="mt-4 max-w-lg text-[0.96rem] leading-relaxed text-charcoal">
-                  {audience.copy}
-                </p>
-              </li>
-            ))}
-          </ol>
-
-          <aside className="mt-14 border-y border-ink py-9 lg:mt-20 lg:grid lg:grid-cols-12 lg:gap-12 lg:py-12">
-            <div className="lg:col-span-5">
-              <Eyebrow className="text-mineral">BASE may not be right for you if...</Eyebrow>
-              <p className="mt-6 max-w-[17ch] text-[clamp(1.65rem,2.6vw,2.8rem)] font-medium leading-[1.08] tracking-[-0.035em]">
-                Your training needs to keep adapting around you.
-              </p>
-            </div>
-            <div className="mt-9 lg:col-span-7 lg:mt-0">
-              <p className="text-[0.78rem] font-bold tracking-[0.11em] uppercase">You need</p>
-              <ul className="mt-4 border-t border-line">
-                {[
-                  "Individual programme adaptation",
-                  "Ongoing direct communication",
-                  "Detailed competition-schedule management",
-                  "Highly personalised coaching",
-                ].map((need) => (
-                  <li key={need} className="border-b border-line py-3.5 text-[0.98rem] text-charcoal">
-                    {need}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-7 text-lg font-semibold">That is what ELEVATE is built for.</p>
-              <ArrowLink href="/elevate" className="mt-6">
-                Explore ELEVATE
-              </ArrowLink>
-            </div>
-          </aside>
-        </Container>
-      </Section>
+      {foundationWeekSignupEnabled && <FoundationWeekSignup />}
 
       <Section
         id="how-base-works"
         aria-labelledby="process-title"
-        tone="muted"
-        spacing="large"
         className="scroll-mt-24"
       >
         <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">Simple to start. Structured to follow.</Eyebrow>
-              <SectionHeading id="process-title" className="mt-6 max-w-[14ch]">
-                Your programme. Your training. Clear direction.
+          <div className="grid gap-5 lg:grid-cols-12 lg:items-end lg:gap-12">
+            <div className="lg:col-span-6">
+              <Eyebrow className="text-moss">What you get / How it works</Eyebrow>
+              <SectionHeading id="process-title" className="mt-4 max-w-[15ch]">
+                A programme built to progress.
               </SectionHeading>
             </div>
-            <p className="max-w-lg text-[1.05rem] leading-relaxed text-charcoal lg:col-span-5 lg:pb-1">
-              A direct route from selecting the right programme to progressing through the work.
-            </p>
+            <BodyCopy className="text-charcoal lg:col-span-6">
+              Choose a programme that fits your objective and cricket calendar. Follow the sessions
+              independently with exercise guidance and selected CAIRNOX training resources.
+            </BodyCopy>
           </div>
 
-          <ol className="mt-14 grid border-y border-ink lg:mt-20 lg:grid-cols-3">
-            {process.map((step, index) => (
-              <li
-                key={step.number}
-                className={`min-h-[22rem] border-b border-ink py-9 last:border-b-0 lg:border-b-0 lg:px-9 lg:py-11 ${
-                  index > 0 ? "lg:border-l" : "lg:pl-0"
-                }`}
-              >
-                <p className="type-eyebrow text-mineral">{step.number}</p>
-                <h3 className="mt-24 text-2xl font-semibold tracking-[-0.03em] uppercase">{step.title}</h3>
-                <p className="mt-4 max-w-sm text-[0.98rem] leading-relaxed text-charcoal">{step.copy}</p>
-              </li>
+          <dl className="mt-8 grid border-y border-line md:grid-cols-3">
+            {foundationPillars.map((pillar, index) => (
+              <div key={pillar.title} className={`border-b border-line py-5 last:border-b-0 md:border-b-0 ${index > 0 ? "md:border-l md:px-6" : "md:pr-6"}`}>
+                <dt className="text-xl font-semibold tracking-tight">{pillar.title}</dt>
+                <dd className="mt-2 text-base leading-relaxed text-charcoal">{pillar.copy}</dd>
+              </div>
             ))}
-          </ol>
+          </dl>
+
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-charcoal">
+            Training starts by building a foundation. The demands increase as your capacity improves,
+            so each stage prepares you for the next rather than repeating the same workouts.
+          </p>
         </Container>
       </Section>
 
-      <Section aria-labelledby="experience-title" spacing="large">
+      <Section aria-labelledby="experience-title" tone="muted" spacing="compact">
         <Container className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <figure className="relative aspect-[4/3] overflow-hidden bg-charcoal lg:col-span-5 lg:aspect-[5/4]">
             <Image
@@ -458,13 +142,12 @@ export function BasePage() {
           <div className="lg:col-span-6 lg:col-start-7 lg:pt-7">
             <Eyebrow className="text-moss">Built from high-performance experience</Eyebrow>
             <SectionHeading id="experience-title" className="mt-6 max-w-[15ch]">
-              Programming shaped by the environments that demand it.
+              Built from work in cricket.
             </SectionHeading>
             <BodyCopy className="mt-8 text-charcoal">
-              CAIRNOX is led by Mathew Skyner. His USA Cricket performance-environment experience
-              leads the application, supported by work across professional rugby, PSA Squash,
-              British Cycling, professional soccer and NCAA programmes. BASE translates that wider
-              performance experience into cricket programming players can access independently.
+              Mathew Skyner brings experience from USA Cricket and other high-performance sports to
+              BASE. The programmes apply that work to the physical demands cricketers face in training
+              and competition.
             </BodyCopy>
             <ArrowLink href="/about" className="mt-9">
               About Mathew
@@ -473,60 +156,35 @@ export function BasePage() {
         </Container>
       </Section>
 
-      <Section aria-labelledby="comparison-title" tone="muted" spacing="large">
+      <Section aria-labelledby="comparison-title" spacing="compact">
         <Container>
-          <Eyebrow className="text-moss">Choose the level of support you need</Eyebrow>
-          <SectionHeading id="comparison-title" className="mt-6 max-w-[13ch]">
+          <Eyebrow className="text-moss">Choose the support you need</Eyebrow>
+          <SectionHeading id="comparison-title" className="mt-4">
             The system or the coaching.
           </SectionHeading>
-
-          <div className="mt-14 border-y border-ink lg:mt-20 lg:grid lg:grid-cols-2">
-            <article className="border-b border-ink py-10 lg:min-h-[34rem] lg:border-r lg:border-b-0 lg:pr-12 lg:py-12">
-              <p className="type-eyebrow text-mineral">01 / Foundation</p>
-              <h3 className="mt-8 text-[clamp(3rem,5vw,5.75rem)] font-semibold leading-[0.94] tracking-[-0.055em]">
-                BASE
-              </h3>
-              <p className="mt-5 text-2xl font-semibold tracking-[-0.03em]">The system.</p>
-              <ul className="mt-10 border-t border-line">
-                {baseComparison.map((item) => (
-                  <li key={item} className="border-b border-line py-3.5 text-[0.98rem] text-charcoal">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-8 text-[0.75rem] font-bold tracking-[0.11em] uppercase">
-                Current page / Cricket Performance Programmes
+          <div className="mt-8 grid border-y border-line md:grid-cols-2">
+            <div className="border-b border-line py-6 md:border-b-0 md:pr-8">
+              <h3 className="text-2xl font-semibold tracking-tight">BASE</h3>
+              <p className="mt-2 max-w-md leading-relaxed text-charcoal">
+                Follow a structured cricket performance programme independently.
               </p>
-            </article>
-
-            <article className="py-10 lg:min-h-[34rem] lg:pl-12 lg:py-12">
-              <p className="type-eyebrow text-mineral">02 / Progression</p>
-              <h3 className="mt-8 text-[clamp(3rem,5vw,5.75rem)] font-semibold leading-[0.94] tracking-[-0.055em]">
-                ELEVATE
-              </h3>
-              <p className="mt-5 text-2xl font-semibold tracking-[-0.03em]">The coaching.</p>
-              <ul className="mt-10 border-t border-line">
-                {elevateComparison.map((item) => (
-                  <li key={item} className="border-b border-line py-3.5 text-[0.98rem] text-charcoal">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <ArrowLink href="/elevate" className="mt-8">
-                Explore ELEVATE
-              </ArrowLink>
-            </article>
+            </div>
+            <div className="py-6 md:border-l md:border-line md:pl-8">
+              <h3 className="text-2xl font-semibold tracking-tight">ELEVATE</h3>
+              <p className="mt-2 max-w-md leading-relaxed text-charcoal">
+                Work 1:1 with Mathew for coaching that adapts to your role, schedule and training needs.
+              </p>
+              <ArrowLink href="/elevate" className="mt-4">Explore ELEVATE</ArrowLink>
+            </div>
           </div>
         </Container>
       </Section>
-
-      {foundationWeekSignupEnabled && <FoundationWeekSignup />}
 
       <Section
         id="programmes"
         aria-labelledby="programmes-title"
         tone="dark"
-        spacing="large"
+        spacing="default"
         className="scroll-mt-24"
       >
         <Container>
@@ -541,47 +199,12 @@ export function BasePage() {
               <p className="text-[clamp(1.35rem,2vw,1.8rem)] font-medium leading-snug tracking-[-0.025em]">
                 The first CAIRNOX BASE cricket performance programmes are being prepared for release.
               </p>
-              <p className="mt-6 max-w-xl text-[1rem] leading-relaxed text-stone-light">
-                Programmes will focus on cricket strength, power, conditioning and athletic
-                development, with clear guidance for players training independently. Future programme
-                territories may include off-season and in-season development, fast-bowling physical
-                preparation and batting power; no products are presented as launched yet.
+              <p className="mt-4 max-w-xl leading-relaxed text-stone-light">
+                Register your interest if you’d like to hear when the full programmes are available.
               </p>
-              <div className="mt-9 flex flex-col items-start gap-5 min-[440px]:flex-row min-[440px]:items-center">
-                <ButtonLink href="/contact/base" variant="inverse">
-                  Register interest
-                </ButtonLink>
-                <ArrowLink href="/elevate" className="text-canvas">
-                  ELEVATE 1:1 coaching
-                </ArrowLink>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-16 border-y border-white/30 py-6 lg:mt-24">
-            <p className="type-eyebrow text-stone">Product catalogue / launch state</p>
-          </div>
-        </Container>
-      </Section>
-
-      <Section aria-labelledby="final-cta-title" spacing="large">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <Eyebrow className="text-moss">Start with the foundation</Eyebrow>
-              <SectionHeading id="final-cta-title" className="mt-6 max-w-[12ch]">
-                Build your first layer.
-              </SectionHeading>
-            </div>
-            <div className="lg:col-span-5">
-              <p className="max-w-xl text-lg leading-relaxed text-charcoal">
-                BASE gives cricket players the structure to train with purpose, progress deliberately
-                and build the physical foundation performance depends upon.
-              </p>
-              <div className="mt-8 flex flex-col items-start gap-5 min-[440px]:flex-row min-[440px]:items-center">
-                <ButtonLink href="/contact/base">Register interest</ButtonLink>
-                <ArrowLink href="/elevate">Explore ELEVATE</ArrowLink>
-              </div>
+              <ButtonLink href="/contact/base" variant="inverse" className="mt-6">
+                Register interest
+              </ButtonLink>
             </div>
           </div>
         </Container>

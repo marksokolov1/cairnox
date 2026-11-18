@@ -8,7 +8,7 @@ const signupAction = "https://cairnox.us7.list-manage.com/subscribe/post?u=07a7f
 
 export function FoundationWeekSignup() {
   return (
-    <Section id="foundation-week" aria-labelledby="foundation-week-title" tone="muted" className="scroll-mt-24">
+    <Section id="foundation-week" aria-labelledby="foundation-week-title" tone="muted" spacing="compact" className="scroll-mt-24">
       <Container>
         <div className="grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-center lg:gap-20">
           <div className="order-2 md:order-1">

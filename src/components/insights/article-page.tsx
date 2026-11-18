@@ -2,11 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Route } from "next";
 import { ArrowLink, Container, Eyebrow } from "@/components/ui/primitives";
+import { foundationWeekSignupEnabled, foundationWeekSignupPath } from "@/config/foundation-week";
 import type {
   InsightBodyBlock,
   PublishedInsightArticle,
 } from "@/types/insight-article";
 import { getAbsoluteUrl, getPublicAssetPath } from "@/config/site";
+
+const foundationWeekCallout: Readonly<Partial<Record<string, string>>> = {
+  "speed-training-in-cricket": "See how linear and lateral speed work fit alongside strength and power across three early off-season sessions for cricketers.",
+  "game-day-warm-ups": "Take the same preparation-first thinking into training. The Foundation Week includes a warm-up before each of its three early off-season sessions.",
+};
 
 function headingId(text: string) {
   return text
@@ -233,6 +239,14 @@ export function InsightArticlePage({
                 </ol>
               </section>
             ) : null}
+            {foundationWeekSignupEnabled && foundationWeekCallout[article.slug] && (
+              <aside aria-labelledby="foundation-week-callout" className="border-y border-line py-6 sm:py-8">
+                <Eyebrow className="text-moss">Free CAIRNOX BASE guide</Eyebrow>
+                <h2 id="foundation-week-callout" className="mt-3 text-2xl font-semibold tracking-tight">Try The Foundation Week.</h2>
+                <p className="mt-3 leading-relaxed text-charcoal">{foundationWeekCallout[article.slug]}</p>
+                <ArrowLink href={foundationWeekSignupPath} className="mt-4">Get the free training guide</ArrowLink>
+              </aside>
+            )}
           </div>
         </Container>
 
