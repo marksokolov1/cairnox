@@ -1,0 +1,23 @@
+{
+  "pages": 19,
+  "source_rows_checked": 34,
+  "source_values": "PASS",
+  "exported_cells": "PASS",
+  "bounds": "PASS",
+  "overlapping_text_boxes": 0,
+  "fonts_embedded": [
+    "AAAAAA+HelveticaNeue-0",
+    "AAAAAA+HelveticaNeue-Bold-1"
+  ],
+  "internal_links": 16,
+  "pyramid_fidelity": "PASS",
+  "external_links": [
+    "https://cairnox.com/about/",
+    "https://cairnox.com/insights/game-day-warm-ups/",
+    "https://cairnox.com/insights/speed-training-in-cricket/",
+    "https://cairnox.com/contact/elevate/",
+    "https://cairnox.com/contact/apex/",
+    "mailto:mathew@cairnox.com"
+  ],
+  "release_status": "REVIEW - coaching clarifications outstanding"
+}

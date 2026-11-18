@@ -1,0 +1,64 @@
+day,block,id,source_page,ebook_page,source_exercise,ebook_exercise,source_week1,ebook_week1,status
+1,performance,1A,7,8,Barbell Bench Press,Barbell Bench Press,"4x8
+70%","4 x 8
+70%",PASS
+1,performance,1B,7,8,Med Ball Chest Pass,Med Ball Chest Pass,4x5,4 x 5,PASS
+1,performance,2A,7,8,Weighted Chin Up,Weighted Chin Up,4x5,4 x 5,PASS
+1,resilience,3A,7,9,Landmine Press,Landmine Press,3x6 ES,3 x 6 ES,PASS
+1,resilience,3B,7,9,Bird Dog Row,Bird Dog Row,3x8,3 x 8,PASS
+1,resilience,4A,7,9,DB Shrugs,DB Shrugs,4x10,4 x 10,PASS
+1,resilience,4B,7,9,Banded Rotations/Chops,Banded Rotations / Chops,3x10,3 x 10,PASS
+1,resilience,4C,7,9,Stability Ball Rotations,Stability Ball Rotations,3x6 ES,3 x 6 ES,PASS
+1,conditioning,C,7,9,"Assault Bike, Ski-Erg or
+WATT Bike
+2 Mins Rest between sets","Assault Bike, Ski-Erg or WATT Bike2 mins rest between sets","20 ON:40 OFF
+3x5","20 ON : 40 OFF
+3 x 5",PASS
+2,performance,1A,8,10,TB Deadlift,TB Deadlift,"4x5
+75%","4 x 5
+75%",PASS
+2,performance,2A,8,10,DB Split Squat,DB Split Squat,4x8 EL,4 x 8 EL,PASS
+2,performance,2B,8,10,Coppenhagen’s,Coppenhagen's,4x10s ES,4 x 10s ES,PASS
+2,resilience,3A,8,11,"GHD Prone ISO (Engage
+glutes and hamstrings)",GHD Prone ISOEngage glutes and hamstrings,3x20s,3 x 20s,PASS
+2,resilience,3B,8,11,Hip Flexions (Banded),Hip FlexionsBanded,3x6 ES,3 x 6 ES,PASS
+2,resilience,4A,8,11,"Calf Raise Machine (Slow &
+Controlled)",Calf Raise MachineSlow & controlled,3x12,3 x 12,PASS
+2,resilience,4B,8,11,Stability Ball Stir the Pot,Stability Ball Stir the Pot,3x10 ES,3 x 10 ES,PASS
+2,conditioning,C,8,11,"Speed & Acceleration
+Walk back as recovery; max effort
+on each rep",Speed & AccelerationWalk back as recovery; max effort on each rep,"10m Linear
+Sprint
+3x5","10m Linear Sprint
+3 x 5",PASS
+3,performance,1A,9,12,Overhead Press,Overhead Press,4x5,4 x 5,PASS
+3,performance,1B,9,12,Med Ball Hip to Hip Toss,Med Ball Hip to Hip Toss,4x4 ES,4 x 4 ES,PASS
+3,performance,2A,9,12,Pendlay Row,Pendlay Row,4x5,4 x 5,PASS
+3,resilience,3A,9,13,Cuban Press,Cuban Press,3x6 ES,3 x 6 ES,PASS
+3,resilience,3B,9,13,"SA DB Bench Press
+(On Stability Ball)",SA DB Bench PressOn stability ball,3x8 ES,3 x 8 ES,PASS
+3,resilience,4A,9,13,"Single Arm Pulldown
+(Cable or Banded)",Single Arm PulldownCable or banded,3x8 ES,3 x 8 ES,PASS
+3,resilience,4B,9,13,SA Farmers Carry,SA Farmers Carry,10m Each,10m each,PASS
+3,resilience,4C,9,13,Deadbugs Banded,Deadbugs Banded,3x10,3 x 10,PASS
+3,conditioning,C,9,13,"Any piece of equipment
+Explanation is in appendix below.",Any piece of equipmentExplanation is in appendix below.,"The Pyramid
+x2 Sets
+Up and down
+is 1 set","The Pyramid
+x2 sets
+Up and down is 1 set",PASS
+4,performance,1A,10,14,"Squat Variation
+Front Squat or Back Squat",Squat VariationFront squat or back squat,"4x5
+75%","4 x 5
+75%",PASS
+4,performance,2A,10,14,Single Leg RDL,Single Leg RDL,4x6 ES,4 x 6 ES,PASS
+4,performance,2B,10,14,"Drop Jump
+Small drop to big box",Drop JumpSmall drop to big box,3x4,3 x 4,PASS
+4,resilience,3A,10,15,"DB Step Up (Powerful and
+explosive drive)",DB Step UpPowerful and explosive drive,3x6 ES,3 x 6 ES,PASS
+4,resilience,3B,10,15,"Knee bent SL Calf Iso Hold
+Hold Heavy DB or KB",Knee Bent SL Calf ISO HoldHold heavy DB or KB,3x 20 sec ES,3 x 20 sec ES,PASS
+4,resilience,4A,10,15,SL Hip Thrust (Banded),SL Hip ThrustBanded,3x8 ES,3 x 8 ES,PASS
+4,resilience,4B,10,15,Side Plank w/ Leg Raised,Side Plank w/ Leg Raised,3 x 20 sec,3 x 20 sec,PASS
+4,resilience,4C,10,15,Pallof Press,Pallof Press,3x10 ES,3 x 10 ES,PASS

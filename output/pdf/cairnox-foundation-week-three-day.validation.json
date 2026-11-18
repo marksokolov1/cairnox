@@ -1,0 +1,30 @@
+{
+  "pages": 13,
+  "dimensions_pt": [
+    480,
+    680
+  ],
+  "source": "Mat: three-day replacement + relayed clarifications",
+  "exercise_rows": 23,
+  "exercise_values": "PASS",
+  "conditioning_and_speed": "PASS",
+  "warmups": "PASS",
+  "legacy_copy_removal": "PASS",
+  "bounds": "PASS",
+  "text_box_overlaps": 0,
+  "fonts_embedded": [
+    "AAAAAA+HelveticaNeue-0",
+    "AAAAAA+HelveticaNeue-Bold-1"
+  ],
+  "internal_links": 27,
+  "contents_folios": "PASS",
+  "external_links": [
+    "https://cairnox.com/about/",
+    "https://cairnox.com/insights/game-day-warm-ups/",
+    "https://cairnox.com/insights/speed-training-in-cricket/",
+    "mailto:mathew@cairnox.com",
+    "https://cairnox.com/contact/elevate/",
+    "https://cairnox.com/contact/apex/"
+  ],
+  "scope": "Content/layout validation; no clinical suitability certification or live form delivery test"
+}
